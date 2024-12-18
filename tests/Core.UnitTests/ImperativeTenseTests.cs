@@ -21,7 +21,7 @@ public class ImperativeTenseTests
     [InlineData("текшер", "чи")]
     [InlineData("отур", "чу")]
     [InlineData("үйрөт", "чү")]
-    public void GivenVerb_WhenSenPoliteImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
+    public void Imperative_СенPolite(string verb, string expectedResult)
     {
         // act
         var actualResult = ImperativeСенPolite.Generate(verb);
@@ -45,7 +45,7 @@ public class ImperativeTenseTests
     [InlineData("текшер", "гин")]
     [InlineData("отур", "гун")]
     [InlineData("үйрөт", "күн")]
-    public void GivenVerb_WhenSenOrderImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
+    public void Imperative_СенOrder(string verb, string expectedResult)
     {
         // act
         var actualResult = ImperativeСенOrder.GetImperativeSenOrderEnding(verb);
@@ -69,7 +69,7 @@ public class ImperativeTenseTests
     [InlineData("текшер", "гиле")]
     [InlineData("отур", "гула")]
     [InlineData("үйрөт", "күлө")]
-    public void GivenVerb_WhenSilerPoliteImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
+    public void Imperative_Силер(string verb, string expectedResult)
     {
         // act
         var actualResult = ImperativeСилер.GetImperativeSilerEnding(verb);
@@ -93,7 +93,7 @@ public class ImperativeTenseTests
     [InlineData("текшер", "иңиз")]
     [InlineData("отур", "уңуз")]
     [InlineData("үйрөт", "үңүз")]
-    public void GivenVerb_WhenSizImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
+    public void Imperative_Сиз(string verb, string expectedResult)
     {
         // act
         var actualResult = ImperativeСиз.Generate(verb);
@@ -118,7 +118,7 @@ public class ImperativeTenseTests
     [InlineData("текшер", "иңиздер")]
     [InlineData("отур", "уңуздар")]
     [InlineData("үйрөт", "үңүздөр")]
-    public void GivenVerb_WhenSizderImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
+    public void Imperative_Сиздер(string verb, string expectedResult)
     {
         // act
         var actualResult = ImperativeСиздер.Generate(verb);
@@ -142,7 +142,7 @@ public class ImperativeTenseTests
     [InlineData("текшер", "син")]
     [InlineData("отур", "сун")]
     [InlineData("үйрөт", "сүн")]
-    public void GivenVerb_WhenAlImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
+    public void Imperative_Ал(string verb, string expectedResult)
     {
         // act
         var actualResult = ImperativeАл.GetImperativeAlEnding(verb);
@@ -166,7 +166,7 @@ public class ImperativeTenseTests
     [InlineData("текшер", "ишсин")]
     [InlineData("отур", "ушсун")]
     [InlineData("үйрөт", "үшсүн")]
-    public void GivenVerb_WhenAlarImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
+    public void Imperative_Алар(string verb, string expectedResult)
     {
         // act
         var actualResult = ImperativeАлар.Generate(verb);

@@ -16,16 +16,6 @@ public class PluralEndingTests
     [InlineData("ачкыч", "тар")]
     [InlineData("жаңгак", "тар")]
     [InlineData("согуш", "тар")]
-    public void GivenWordWithFirstVowelGroupEnding_WhenAppliedPlural_ThenCorrectPluralIsReturned(string verb, string expectedResult)
-    {
-        // act
-        var actualResult = PluralEnding.GetPluralAffix(verb);
-
-        // assert
-        actualResult.Value.Should().Be(expectedResult);
-    }
-
-    [Theory]
     [InlineData("эл", "дер")]
     [InlineData("жемиш", "тер")]
     [InlineData("эже", "лер")]
@@ -35,16 +25,6 @@ public class PluralEndingTests
     [InlineData("ит", "тер")]
     [InlineData("миң", "дер")]
     [InlineData("кенеш", "тер")]
-    public void GivenWordWithSecondVowelGroupEnding_WhenAppliedPlural_ThenCorrectPluralIsReturned(string verb, string expectedResult)
-    {
-        // act
-        var actualResult = PluralEnding.GetPluralAffix(verb);
-
-        // assert
-        actualResult.Value.Should().Be(expectedResult);
-    }
-
-    [Theory]
     [InlineData("кол", "дор")]
     [InlineData("тоо", "лор")]
     [InlineData("тор", "лор")]
@@ -53,16 +33,6 @@ public class PluralEndingTests
     [InlineData("ооз", "дор")]
     [InlineData("тоок", "тор")]
     [InlineData("кой", "лор")]
-    public void GivenWordWithThirdVowelGroupEnding_WhenAppliedPlural_ThenCorrectPluralIsReturned(string verb, string expectedResult)
-    {
-        // act
-        var actualResult = PluralEnding.GetPluralAffix(verb);
-
-        // assert
-        actualResult.Value.Should().Be(expectedResult);
-    }
-
-    [Theory]
     [InlineData("көл", "дөр")]
     [InlineData("өрдөк", "төр")]
     [InlineData("үй", "лөр")]
@@ -71,7 +41,7 @@ public class PluralEndingTests
     [InlineData("өзөн", "дөр")]
     [InlineData("чөнтөк", "төр")]
     [InlineData("дүйнө", "лөр")]
-    public void GivenWordWithFourthVowelGroupEnding_WhenAppliedPlural_ThenCorrectPluralIsReturned(string verb, string expectedResult)
+    public void NounPlural(string verb, string expectedResult)
     {
         // act
         var actualResult = PluralEnding.GetPluralAffix(verb);

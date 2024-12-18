@@ -21,7 +21,7 @@ public class PresentAndFutureTenseTests
     [InlineData("текшер", "текшеремин")]
     [InlineData("отур", "отурамын")]
     [InlineData("үйрөт", "үйрөтөмүн")]
-    public void GivenVerb_WhenPresentForMenIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PresentAndFuture_Мен(string verb, string expectedResult)
     {
         // act
         var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Мен);
@@ -45,7 +45,7 @@ public class PresentAndFutureTenseTests
     [InlineData("текшер", "текшересиң")]
     [InlineData("отур", "отурасың")]
     [InlineData("үйрөт", "үйрөтөсүң")]
-    public void GivenVerb_WhenPresentForSenIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PresentAndFuture_Сен(string verb, string expectedResult)
     {
         // act
         var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сен);
@@ -69,7 +69,7 @@ public class PresentAndFutureTenseTests
     [InlineData("текшер", "текшересиз")]
     [InlineData("отур", "отурасыз")]
     [InlineData("үйрөт", "үйрөтөсүз")]
-    public void GivenVerb_WhenPresentForSizIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PresentAndFuture_Сиз(string verb, string expectedResult)
     {
         // act
         var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиз);
@@ -93,7 +93,7 @@ public class PresentAndFutureTenseTests
     [InlineData("текшер", "текшерет")]
     [InlineData("отур", "отурат")]
     [InlineData("үйрөт", "үйрөтөт")]
-    public void GivenVerb_WhenPresentForAlIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PresentAndFuture_Ал(string verb, string expectedResult)
     {
         // act
         var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Ал);
@@ -117,7 +117,7 @@ public class PresentAndFutureTenseTests
     [InlineData("текшер", "текшеребиз")]
     [InlineData("отур", "отурабыз")]
     [InlineData("үйрөт", "үйрөтөбүз")]
-    public void GivenVerb_WhenPresentForBizIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PresentAndFuture_Биз(string verb, string expectedResult)
     {
         // act
         var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Биз);
@@ -141,7 +141,7 @@ public class PresentAndFutureTenseTests
     [InlineData("текшер", "текшересиңер")]
     [InlineData("отур", "отурасыңар")]
     [InlineData("үйрөт", "үйрөтөсүңөр")]
-    public void GivenVerb_WhenPresentForSilerIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PresentAndFuture_Силер(string verb, string expectedResult)
     {
         // act
         var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Силер);
@@ -165,7 +165,7 @@ public class PresentAndFutureTenseTests
     [InlineData("текшер", "текшересиздер")]
     [InlineData("отур", "отурасыздар")]
     [InlineData("үйрөт", "үйрөтөсүздөр")]
-    public void GivenVerb_WhenPresentForSizderIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PresentAndFuture_Сиздер(string verb, string expectedResult)
     {
         // act
         var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиздер);
@@ -189,7 +189,7 @@ public class PresentAndFutureTenseTests
     [InlineData("текшер", "текшеришет")]
     [InlineData("отур", "отурушат")]
     [InlineData("үйрөт", "үйрөтүшөт")]
-    public void GivenVerb_WhenPresentForAlarIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PresentAndFuture_Алар(string verb, string expectedResult)
     {
         // act
         var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Алар);

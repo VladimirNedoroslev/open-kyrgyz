@@ -15,7 +15,7 @@ public class PastDefiniteTests
     [InlineData("чеч", "чечтим")]
     [InlineData("ук", "уктум")]
     [InlineData("күт", "күттүм")]
-    public void GivenVerb_WhenPastDefiniteForMenIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PastDefinite_Мен(string verb, string expectedResult)
     {
         // act
         var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Мен);
@@ -33,7 +33,7 @@ public class PastDefiniteTests
     [InlineData("чеч", "чечтиң")]
     [InlineData("ук", "уктуң")]
     [InlineData("күт", "күттүң")]
-    public void GivenVerb_WhenPastDefiniteForSenIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PastDefinite_Сен(string verb, string expectedResult)
     {
         // act
         var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сен);
@@ -51,7 +51,7 @@ public class PastDefiniteTests
     [InlineData("чеч", "чечтиңиз")]
     [InlineData("ук", "уктуңуз")]
     [InlineData("күт", "күттүңүз")]
-    public void GivenVerb_WhenPastDefiniteForSizIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PastDefinite_Сиз(string verb, string expectedResult)
     {
         // act
         var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиз);
@@ -69,7 +69,7 @@ public class PastDefiniteTests
     [InlineData("чеч", "чечти")]
     [InlineData("ук", "укту")]
     [InlineData("күт", "күттү")]
-    public void GivenVerb_WhenPastDefiniteForAlIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PastDefinite_Ал(string verb, string expectedResult)
     {
         // act
         var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Ал);
@@ -87,7 +87,7 @@ public class PastDefiniteTests
     [InlineData("чеч", "чечтик")]
     [InlineData("ук", "уктук")]
     [InlineData("күт", "күттүк")]
-    public void GivenVerb_WhenPastDefiniteForBizIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PastDefinite_Биз(string verb, string expectedResult)
     {
         // act
         var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Биз);
@@ -105,7 +105,7 @@ public class PastDefiniteTests
     [InlineData("чеч", "чечтиңер")]
     [InlineData("ук", "уктуңар")]
     [InlineData("күт", "күттүңөр")]
-    public void GivenVerb_WhenPastDefiniteForSilerIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PastDefinite_Силер(string verb, string expectedResult)
     {
         // act
         var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Силер);
@@ -123,7 +123,7 @@ public class PastDefiniteTests
     [InlineData("чеч", "чечтиңиздер")]
     [InlineData("ук", "уктуңуздар")]
     [InlineData("күт", "күттүңүздөр")]
-    public void GivenVerb_WhenPastDefiniteForSizderIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PastDefinite_Сиздер(string verb, string expectedResult)
     {
         // act
         var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиздер);
@@ -141,7 +141,7 @@ public class PastDefiniteTests
     [InlineData("чеч", "чечишти")]
     [InlineData("ук", "угушту")]
     [InlineData("күт", "күтүштү")]
-    public void GivenVerb_WhenPastDefiniteForAlarIsGenerated_ThenCorrectFormReturned(string verb, string expectedResult)
+    public void PastDefinite_Алар(string verb, string expectedResult)
     {
         // act
         var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Алар);

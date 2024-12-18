@@ -16,7 +16,7 @@ public class NegativeEndingTests
     [InlineData("же", "жебе")]
     [InlineData("көр", "көрбө")]
     [InlineData("кыймыл", "кыймылба")]
-    public void GivenVerbEndingInVowelsFromFirstGroup_WhenNegativeApplied_ThenReturnNegativeAppliedResult(string verb, string expectedResult)
+    public void Verb_Negative(string verb, string expectedResult)
     {
         // act
         var negativeToken = verb.GetNegativeAffix();
