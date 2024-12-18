@@ -1,6 +1,6 @@
 // ReSharper disable InconsistentNaming
 
-namespace OpenKyrgyz.Core.Common;
+namespace OpenKyrgyz.Core.Enums;
 
 public enum VowelGroupEnum
 {

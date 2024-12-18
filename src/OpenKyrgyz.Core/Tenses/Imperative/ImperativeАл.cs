@@ -1,11 +1,11 @@
-using OpenKyrgyz.Core.Common;
 using OpenKyrgyz.Core.Core;
+using OpenKyrgyz.Core.Enums;
 
 namespace OpenKyrgyz.Core.Tenses.Imperative;
 
 public class ImperativeАл
 {
-    private static readonly Dictionary<VowelGroupEnum, string> VowelGroupToAlEndingMappings = new()
+    private static readonly Dictionary<VowelGroupEnum, string> Mapping = new()
     {
         { VowelGroupEnum.а_я_ы, "сын" },
         { VowelGroupEnum.и_е_э, "син" },
@@ -14,11 +14,9 @@ public class ImperativeАл
         { VowelGroupEnum.ө_ү, "сүн" },
     };
     
-    public static string Generate(string verb)
+    public static string GetImperativeAlEnding(string verb)
     {
-        var lastVowelIndex = verb.GetLastVowelIndex();
-        var vowelGroup = Mappings.VowelToGroupMapping[verb[lastVowelIndex]];
-        var correspondingEnding = VowelGroupToAlEndingMappings[vowelGroup];
-        return $"{verb}{correspondingEnding}";
+        var vowelGroup = verb.GetVowelGroup();
+        return Mapping[vowelGroup];
     }
 }

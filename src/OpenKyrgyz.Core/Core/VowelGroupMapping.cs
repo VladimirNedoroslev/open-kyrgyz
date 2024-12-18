@@ -1,8 +1,8 @@
-using OpenKyrgyz.Core.Common;
+using OpenKyrgyz.Core.Enums;
 
-namespace OpenKyrgyz.Core.Tenses.Imperative;
+namespace OpenKyrgyz.Core.Core;
 
-public static class Mappings
+public static class VowelGroupMapping
 {
     public static readonly Dictionary<char, VowelGroupEnum> VowelToGroupMapping = new()
     {
@@ -24,9 +24,10 @@ public static class Mappings
         { 'ү', VowelGroupEnum.ө_ү },
     };
 
-    public static readonly Dictionary<char, char> ConsonantTransforms = new()
+    public static VowelGroupEnum GetVowelGroup(this string word)
     {
-        { 'к', 'г' },
-        { 'п', 'б' },
-    };
+        var lastVowelIndex = word.GetLastVowelIndex();
+        var lastVowel = word[lastVowelIndex];
+        return VowelToGroupMapping[lastVowel];
+    }
 }

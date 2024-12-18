@@ -1,11 +1,11 @@
-using OpenKyrgyz.Core.Common;
 using OpenKyrgyz.Core.Core;
+using OpenKyrgyz.Core.Enums;
 
 namespace OpenKyrgyz.Core.Tenses.Imperative;
 
 public class ImperativeСенPolite
 {
-    private static readonly Dictionary<VowelGroupEnum, string> VowelGroupToSenPoliteEndingMappings = new()
+    private static readonly Dictionary<VowelGroupEnum, string> Mapping = new()
     {
         { VowelGroupEnum.а_я_ы, "чы" },
         { VowelGroupEnum.и_е_э, "чи" },
@@ -16,9 +16,7 @@ public class ImperativeСенPolite
 
     public static string Generate(string verb)
     {
-        var lastVowelIndex = verb.GetLastVowelIndex();
-        var vowelGroup = Mappings.VowelToGroupMapping[verb[lastVowelIndex]];
-        var correspondingEnding = VowelGroupToSenPoliteEndingMappings[vowelGroup];
-        return $"{verb}{correspondingEnding}";
+        var vowelGroup = verb.GetVowelGroup();
+        return Mapping[vowelGroup];
     }
 }

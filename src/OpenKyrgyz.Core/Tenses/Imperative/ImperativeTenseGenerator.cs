@@ -17,11 +17,11 @@ public static class ImperativeTenseGenerator
         {
             ImperativeTypeEnum.Сен => verb,
             ImperativeTypeEnum.СенPolite => ImperativeСенPolite.Generate(verb),
-            ImperativeTypeEnum.СенOrder => ImperativeСенOrder.Generate(verb),
-            ImperativeTypeEnum.Силер => ImperativeСилер.Generate(verb),
+            ImperativeTypeEnum.СенOrder => ImperativeСенOrder.GetImperativeSenOrderEnding(verb),
+            ImperativeTypeEnum.Силер => ImperativeСилер.GetImperativeSilerEnding(verb),
             ImperativeTypeEnum.Сиз => ImperativeСиз.Generate(verb),
             ImperativeTypeEnum.Сиздер => ImperativeСиздер.Generate(verb),
-            ImperativeTypeEnum.Ал => ImperativeАл.Generate(verb),
+            ImperativeTypeEnum.Ал => ImperativeАл.GetImperativeAlEnding(verb),
             ImperativeTypeEnum.Алар => ImperativeАлар.Generate(verb),
             _ => null
         };
@@ -33,11 +33,11 @@ public static class ImperativeTenseGenerator
         {
             { ImperativeTypeEnum.Сен, verb },
             { ImperativeTypeEnum.СенPolite, ImperativeСенPolite.Generate(verb) },
-            { ImperativeTypeEnum.СенOrder, ImperativeСенOrder.Generate(verb) },
-            { ImperativeTypeEnum.Силер, ImperativeСилер.Generate(verb) },
+            { ImperativeTypeEnum.СенOrder, ImperativeСенOrder.GetImperativeSenOrderEnding(verb) },
+            { ImperativeTypeEnum.Силер, ImperativeСилер.GetImperativeSilerEnding(verb) },
             { ImperativeTypeEnum.Сиз, ImperativeСиз.Generate(verb) },
             { ImperativeTypeEnum.Сиздер, ImperativeСиздер.Generate(verb) },
-            { ImperativeTypeEnum.Ал, ImperativeАл.Generate(verb) },
+            { ImperativeTypeEnum.Ал, ImperativeАл.GetImperativeAlEnding(verb) },
             { ImperativeTypeEnum.Алар, ImperativeАлар.Generate(verb) },
         };
     }

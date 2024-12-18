@@ -1,10 +1,11 @@
-using OpenKyrgyz.Core.Common;
+using OpenKyrgyz.Core.Core;
+using OpenKyrgyz.Core.Enums;
 
 namespace OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;
 
-public static class PresentAndFutureSimpleEndingMappings
+public static class PresentAndFutureSimpleEnding
 {
-    private static readonly Dictionary<VowelGroupEnum, Dictionary<PronounEnum, string>> Mappings = new()
+    private static readonly Dictionary<VowelGroupEnum, Dictionary<PronounEnum, string>> Mapping = new()
     {
         {
             VowelGroupEnum.а_я_ы, new Dictionary<PronounEnum, string>
@@ -73,8 +74,14 @@ public static class PresentAndFutureSimpleEndingMappings
         }
     };
 
-    public static Dictionary<PronounEnum, string> GetEnding(VowelGroupEnum vowelGroup)
+    public static string GetEndingForPronoun(string verb, PronounEnum pronoun)
     {
-        return Mappings[vowelGroup];
+        var vowelGroup = verb.GetVowelGroup();
+        return Mapping[vowelGroup][pronoun];
+    }
+
+    public static string GetEndingForPronoun(VowelGroupEnum vowelGroup, PronounEnum pronoun)
+    {
+        return Mapping[vowelGroup][pronoun];
     }
 }

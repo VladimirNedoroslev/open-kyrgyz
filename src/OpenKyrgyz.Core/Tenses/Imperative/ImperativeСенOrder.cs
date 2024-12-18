@@ -1,33 +1,58 @@
-using OpenKyrgyz.Core.Common;
 using OpenKyrgyz.Core.Core;
+using OpenKyrgyz.Core.Enums;
 
 namespace OpenKyrgyz.Core.Tenses.Imperative;
 
 public class ImperativeСенOrder
 {
-    private static readonly Dictionary<VowelGroupEnum, string> VowelGroupToSenOrderEndingMappings = new()
+    private static readonly Dictionary<VowelGroupEnum, Dictionary<LetterTypeEnum, string>> Mapping = new()
     {
-        { VowelGroupEnum.а_я_ы, "ын" },
-        { VowelGroupEnum.и_е_э, "ин" },
-        { VowelGroupEnum.у_ю, "ун" },
-        { VowelGroupEnum.о_ё, "ун" },
-        { VowelGroupEnum.ө_ү, "үн" },
+        {
+            VowelGroupEnum.а_я_ы, new Dictionary<LetterTypeEnum, string>
+            {
+                { LetterTypeEnum.Vowel, "гын" },
+                { LetterTypeEnum.VoicedConsonant, "гын" },
+                { LetterTypeEnum.VoicelessConsonant, "кын" },
+            }
+        },
+        {
+            VowelGroupEnum.и_е_э, new Dictionary<LetterTypeEnum, string>
+            {
+                { LetterTypeEnum.Vowel, "гин" },
+                { LetterTypeEnum.VoicedConsonant, "гин" },
+                { LetterTypeEnum.VoicelessConsonant, "кин" },
+            }
+        },
+        {
+            VowelGroupEnum.у_ю, new Dictionary<LetterTypeEnum, string>
+            {
+                { LetterTypeEnum.Vowel, "гун" },
+                { LetterTypeEnum.VoicedConsonant, "гун" },
+                { LetterTypeEnum.VoicelessConsonant, "кун" },
+            }
+        },
+        {
+            VowelGroupEnum.о_ё, new Dictionary<LetterTypeEnum, string>
+            {
+                { LetterTypeEnum.Vowel, "гун" },
+                { LetterTypeEnum.VoicedConsonant, "гун" },
+                { LetterTypeEnum.VoicelessConsonant, "кун" },
+            }
+        },
+        {
+            VowelGroupEnum.ө_ү, new Dictionary<LetterTypeEnum, string>
+            {
+                { LetterTypeEnum.Vowel, "гүн" },
+                { LetterTypeEnum.VoicedConsonant, "гүн" },
+                { LetterTypeEnum.VoicelessConsonant, "күн" },
+            }
+        },
     };
 
-    public static string Generate(string verb)
+    public static string GetImperativeSenOrderEnding(string verb)
     {
-        var lastSymbol = verb[^1];
-
-        var lastVowelIndex = verb.GetLastVowelIndex();
-        var vowelGroup = Mappings.VowelToGroupMapping[verb[lastVowelIndex]];
-        var correspondingEnding = VowelGroupToSenOrderEndingMappings[vowelGroup];
-
-        var lastSymbolResult = lastSymbol.IsConsonant();
-        if (lastSymbolResult.IsT0 || lastSymbolResult.IsT2)
-        {
-            return $"{verb}г{correspondingEnding}";
-        }
-
-        return $"{verb}к{correspondingEnding}";
+        var vowelGroup = verb.GetVowelGroup();
+        var lastLetterType = verb.GetLastLetterType();
+        return Mapping[vowelGroup][lastLetterType];
     }
 }

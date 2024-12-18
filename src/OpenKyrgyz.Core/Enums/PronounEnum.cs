@@ -1,4 +1,4 @@
-namespace OpenKyrgyz.Core.Common;
+namespace OpenKyrgyz.Core.Enums;
 
 public enum PronounEnum
 {

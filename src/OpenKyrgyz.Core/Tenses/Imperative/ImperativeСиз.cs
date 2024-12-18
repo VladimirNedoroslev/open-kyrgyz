@@ -1,6 +1,5 @@
-using System.Text;
-using OpenKyrgyz.Core.Common;
 using OpenKyrgyz.Core.Core;
+using OpenKyrgyz.Core.Enums;
 
 namespace OpenKyrgyz.Core.Tenses.Imperative;
 
@@ -17,18 +16,14 @@ public static class ImperativeСиз
     
     public static string Generate(string verb)
     {
-        var lastSymbol = verb[^1];
-        
-        var lastVowelIndex = verb.GetLastVowelIndex();
-        var vowelGroup = Mappings.VowelToGroupMapping[verb[lastVowelIndex]];
+        var vowelGroup = verb.GetVowelGroup();
         var ending = VowelGroupToSizImperativeEndingMapping[vowelGroup];
-        
-        if (lastVowelIndex == verb.Length - 1)
-        {
-            return $"{verb}{ending}";
-        }
 
-        verb = verb.HarmonizeVerbEndingIfNecessary();
+        var lastLetterType = verb.GetLastLetterType();
+        if (lastLetterType == LetterTypeEnum.Vowel)
+        {
+            return ending;
+        }
         
         var linkingVowel = vowelGroup switch
         {
@@ -40,6 +35,6 @@ public static class ImperativeСиз
             _ => throw new ArgumentOutOfRangeException()
         };
         
-        return $"{verb}{linkingVowel}{ending}";
+        return linkingVowel + ending;
     }
 }

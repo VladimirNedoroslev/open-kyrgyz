@@ -1,12 +1,13 @@
 using System.Text;
 using OpenKyrgyz.Core.Common;
 using OpenKyrgyz.Core.Core;
+using OpenKyrgyz.Core.Enums;
 
 namespace OpenKyrgyz.Core.Tenses.Imperative;
 
 public class ImperativeАлар
 {
-    private static readonly Dictionary<VowelGroupEnum, string> VowelGroupToAlarEndingMappings = new()
+    private static readonly Dictionary<VowelGroupEnum, string> Mapping = new()
     {
         { VowelGroupEnum.а_я_ы, "шсын" },
         { VowelGroupEnum.и_е_э, "шсин" },
@@ -18,15 +19,13 @@ public class ImperativeАлар
     public static string Generate(string verb)
     {
         var lastVowelIndex = verb.GetLastVowelIndex();
-        var vowelGroup = Mappings.VowelToGroupMapping[verb[lastVowelIndex]];
-        var ending = VowelGroupToAlarEndingMappings[vowelGroup];
+        var vowelGroup = VowelGroupMapping.VowelToGroupMapping[verb[lastVowelIndex]];
+        var ending = Mapping[vowelGroup];
         
         if (lastVowelIndex == verb.Length - 1)
         {
-            return $"{verb}{ending}";
+            return ending;
         }
-
-        verb = verb.HarmonizeVerbEndingIfNecessary();
         
         var linkingVowel = vowelGroup switch
         {
@@ -38,6 +37,6 @@ public class ImperativeАлар
             _ => throw new ArgumentOutOfRangeException()
         };
         
-        return $"{verb}{linkingVowel}{ending}";
+        return linkingVowel + ending;
     }
 }

@@ -1,6 +1,6 @@
 namespace OpenKyrgyz.Core.Common;
 
-public class NegativeToken : Token
+public class PluralAffix : Affix
 {
     public override string Value { get; }
 }

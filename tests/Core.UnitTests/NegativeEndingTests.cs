@@ -1,17 +1,10 @@
 using FluentAssertions;
-using OpenKyrgyz.Core.Common;
+using OpenKyrgyz.Core.Negative;
 
 namespace UnitTests;
 
-public class NegativeApplierTests
+public class NegativeEndingTests
 {
-    private readonly NegativeApplier negativeApplier;
-
-    public NegativeApplierTests()
-    {
-        negativeApplier = new NegativeApplier();
-    }
-
     [Theory]
     [InlineData("иште", "иштебе")]
     [InlineData("кел", "келбе")]
@@ -26,7 +19,8 @@ public class NegativeApplierTests
     public void GivenVerbEndingInVowelsFromFirstGroup_WhenNegativeApplied_ThenReturnNegativeAppliedResult(string verb, string expectedResult)
     {
         // act
-        var actualResult = negativeApplier.Apply(verb);
+        var negativeToken = verb.GetNegativeAffix();
+        var actualResult = verb + negativeToken.Value;
 
         // assert
         actualResult.Should().Be(expectedResult);

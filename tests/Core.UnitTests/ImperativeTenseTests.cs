@@ -7,21 +7,21 @@ public class ImperativeTenseTests
 {
     
     [Theory]
-    [InlineData("бол", "болчу")]
-    [InlineData("иште", "иштечи")]
-    [InlineData("бар", "барчы")]
-    [InlineData("изилде", "изилдечи")]
-    [InlineData("кел", "келчи")]
-    [InlineData("ойно", "ойночу")]
-    [InlineData("күт", "күтчү")]
-    [InlineData("тап", "тапчы")]
-    [InlineData("кир", "кирчи")]
-    [InlineData("өт", "өтчү")]
-    [InlineData("чакыр", "чакырчы")]
-    [InlineData("текшер", "текшерчи")]
-    [InlineData("отур", "отурчу")]
-    [InlineData("үйрөт", "үйрөтчү")]
-    public void GivenVerb_WhenSenPoliteImperativeGenerated_ThenCorrectImperativeFormReturned(string verb, string expectedResult)
+    [InlineData("бол", "чу")]
+    [InlineData("иште", "чи")]
+    [InlineData("бар", "чы")]
+    [InlineData("изилде", "чи")]
+    [InlineData("кел", "чи")]
+    [InlineData("ойно", "чу")]
+    [InlineData("күт", "чү")]
+    [InlineData("тап", "чы")]
+    [InlineData("кир", "чи")]
+    [InlineData("өт", "чү")]
+    [InlineData("чакыр", "чы")]
+    [InlineData("текшер", "чи")]
+    [InlineData("отур", "чу")]
+    [InlineData("үйрөт", "чү")]
+    public void GivenVerb_WhenSenPoliteImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
     {
         // act
         var actualResult = ImperativeСенPolite.Generate(verb);
@@ -31,69 +31,69 @@ public class ImperativeTenseTests
     }
     
     [Theory]
-    [InlineData("бол", "болгун")]
-    [InlineData("иште", "иштегин")]
-    [InlineData("бар", "баргын")]
-    [InlineData("изилде", "изилдегин")]
-    [InlineData("кел", "келгин")]
-    [InlineData("ойно", "ойногун")]
-    [InlineData("күт", "күткүн")]
-    [InlineData("тап", "тапкын")]
-    [InlineData("кир", "киргин")]
-    [InlineData("өт", "өткүн")]
-    [InlineData("чакыр", "чакыргын")]
-    [InlineData("текшер", "текшергин")]
-    [InlineData("отур", "отургун")]
-    [InlineData("үйрөт", "үйрөткүн")]
-    public void GivenVerb_WhenSenOrderImperativeGenerated_ThenCorrectImperativeFormReturned(string verb, string expectedResult)
+    [InlineData("бол", "гун")]
+    [InlineData("иште", "гин")]
+    [InlineData("бар", "гын")]
+    [InlineData("изилде", "гин")]
+    [InlineData("кел", "гин")]
+    [InlineData("ойно", "гун")]
+    [InlineData("күт", "күн")]
+    [InlineData("тап", "кын")]
+    [InlineData("кир", "гин")]
+    [InlineData("өт", "күн")]
+    [InlineData("чакыр", "гын")]
+    [InlineData("текшер", "гин")]
+    [InlineData("отур", "гун")]
+    [InlineData("үйрөт", "күн")]
+    public void GivenVerb_WhenSenOrderImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
     {
         // act
-        var actualResult = ImperativeСенOrder.Generate(verb);
+        var actualResult = ImperativeСенOrder.GetImperativeSenOrderEnding(verb);
 
         // assert
         actualResult.Should().Be(expectedResult);
     }
     
     [Theory]
-    [InlineData("бол", "болгула")]
-    [InlineData("иште", "иштегиле")]
-    [InlineData("бар", "баргыла")]
-    [InlineData("изилде", "изилдегиле")]
-    [InlineData("кел", "келгиле")]
-    [InlineData("ойно", "ойногула")]
-    [InlineData("күт", "күткүлө")]
-    [InlineData("тап", "тапкыла")]
-    [InlineData("кир", "киргиле")]
-    [InlineData("өт", "өткүлө")]
-    [InlineData("чакыр", "чакыргыла")]
-    [InlineData("текшер", "текшергиле")]
-    [InlineData("отур", "отургула")]
-    [InlineData("үйрөт", "үйрөткүлө")]
-    public void GivenVerb_WhenSilerPoliteImperativeGenerated_ThenCorrectImperativeFormReturned(string verb, string expectedResult)
+    [InlineData("бол", "гула")]
+    [InlineData("иште", "гиле")]
+    [InlineData("бар", "гыла")]
+    [InlineData("изилде", "гиле")]
+    [InlineData("кел", "гиле")]
+    [InlineData("ойно", "гула")]
+    [InlineData("күт", "күлө")]
+    [InlineData("тап", "кыла")]
+    [InlineData("кир", "гиле")]
+    [InlineData("өт", "күлө")]
+    [InlineData("чакыр", "гыла")]
+    [InlineData("текшер", "гиле")]
+    [InlineData("отур", "гула")]
+    [InlineData("үйрөт", "күлө")]
+    public void GivenVerb_WhenSilerPoliteImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
     {
         // act
-        var actualResult = ImperativeСилер.Generate(verb);
+        var actualResult = ImperativeСилер.GetImperativeSilerEnding(verb);
 
         // assert
-        actualResult.Should().Be(expectedResult);
+        actualResult.Should().Be(expectedResult,verb);
     }
     
     [Theory]
-    [InlineData("бол", "болуңуз")]
-    [InlineData("иште", "иштеңиз")]
-    [InlineData("бар", "барыңыз")]
-    [InlineData("изилде", "изилдеңиз")]
-    [InlineData("кел", "келиңиз")]
-    [InlineData("ойно", "ойноңуз")]
-    [InlineData("күт", "күтүңүз")]
-    [InlineData("тап", "табыңыз")]
-    [InlineData("кир", "кириңиз")]
-    [InlineData("өт", "өтүңүз")]
-    [InlineData("чакыр", "чакырыңыз")]
-    [InlineData("текшер", "текшериңиз")]
-    [InlineData("отур", "отуруңуз")]
-    [InlineData("үйрөт", "үйрөтүңүз")]
-    public void GivenVerb_WhenSizImperativeGenerated_ThenCorrectImperativeFormReturned(string verb, string expectedResult)
+    [InlineData("бол", "уңуз")]
+    [InlineData("иште", "ңиз")]
+    [InlineData("бар", "ыңыз")]
+    [InlineData("изилде", "ңиз")]
+    [InlineData("кел", "иңиз")]
+    [InlineData("ойно", "ңуз")]
+    [InlineData("күт", "үңүз")]
+    [InlineData("тап", "ыңыз")]
+    [InlineData("кир", "иңиз")]
+    [InlineData("өт", "үңүз")]
+    [InlineData("чакыр", "ыңыз")]
+    [InlineData("текшер", "иңиз")]
+    [InlineData("отур", "уңуз")]
+    [InlineData("үйрөт", "үңүз")]
+    public void GivenVerb_WhenSizImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
     {
         // act
         var actualResult = ImperativeСиз.Generate(verb);
@@ -104,21 +104,21 @@ public class ImperativeTenseTests
     
     
     [Theory]
-    [InlineData("бол", "болуңуздар")]
-    [InlineData("иште", "иштеңиздер")]
-    [InlineData("бар", "барыңыздар")]
-    [InlineData("изилде", "изилдеңиздер")]
-    [InlineData("кел", "келиңиздер")]
-    [InlineData("ойно", "ойноңуздар")]
-    [InlineData("күт", "күтүңүздөр")]
-    [InlineData("тап", "табыңыздар")]
-    [InlineData("кир", "кириңиздер")]
-    [InlineData("өт", "өтүңүздөр")]
-    [InlineData("чакыр", "чакырыңыздар")]
-    [InlineData("текшер", "текшериңиздер")]
-    [InlineData("отур", "отуруңуздар")]
-    [InlineData("үйрөт", "үйрөтүңүздөр")]
-    public void GivenVerb_WhenSizderImperativeGenerated_ThenCorrectImperativeFormReturned(string verb, string expectedResult)
+    [InlineData("бол", "уңуздар")]
+    [InlineData("иште", "ңиздер")]
+    [InlineData("бар", "ыңыздар")]
+    [InlineData("изилде", "ңиздер")]
+    [InlineData("кел", "иңиздер")]
+    [InlineData("ойно", "ңуздар")]
+    [InlineData("күт", "үңүздөр")]
+    [InlineData("тап", "ыңыздар")]
+    [InlineData("кир", "иңиздер")]
+    [InlineData("өт", "үңүздөр")]
+    [InlineData("чакыр", "ыңыздар")]
+    [InlineData("текшер", "иңиздер")]
+    [InlineData("отур", "уңуздар")]
+    [InlineData("үйрөт", "үңүздөр")]
+    public void GivenVerb_WhenSizderImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
     {
         // act
         var actualResult = ImperativeСиздер.Generate(verb);
@@ -128,45 +128,45 @@ public class ImperativeTenseTests
     }
     
     [Theory]
-    [InlineData("бол", "болсун")]
-    [InlineData("иште", "иштесин")]
-    [InlineData("бар", "барсын")]
-    [InlineData("изилде", "изилдесин")]
-    [InlineData("кел", "келсин")]
-    [InlineData("ойно", "ойносун")]
-    [InlineData("күт", "күтсүн")]
-    [InlineData("тап", "тапсын")]
-    [InlineData("кир", "кирсин")]
-    [InlineData("өт", "өтсүн")]
-    [InlineData("чакыр", "чакырсын")]
-    [InlineData("текшер", "текшерсин")]
-    [InlineData("отур", "отурсун")]
-    [InlineData("үйрөт", "үйрөтсүн")]
-    public void GivenVerb_WhenAlImperativeGenerated_ThenCorrectImperativeFormReturned(string verb, string expectedResult)
+    [InlineData("бол", "сун")]
+    [InlineData("иште", "син")]
+    [InlineData("бар", "сын")]
+    [InlineData("изилде", "син")]
+    [InlineData("кел", "син")]
+    [InlineData("ойно", "сун")]
+    [InlineData("күт", "сүн")]
+    [InlineData("тап", "сын")]
+    [InlineData("кир", "син")]
+    [InlineData("өт", "сүн")]
+    [InlineData("чакыр", "сын")]
+    [InlineData("текшер", "син")]
+    [InlineData("отур", "сун")]
+    [InlineData("үйрөт", "сүн")]
+    public void GivenVerb_WhenAlImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
     {
         // act
-        var actualResult = ImperativeАл.Generate(verb);
+        var actualResult = ImperativeАл.GetImperativeAlEnding(verb);
 
         // assert
         actualResult.Should().Be(expectedResult);
     }
     
     [Theory]
-    [InlineData("бол", "болушсун")]
-    [InlineData("иште", "иштешсин")]
-    [InlineData("бар", "барышсын")]
-    [InlineData("изилде", "изилдешсин")]
-    [InlineData("кел", "келишсин")]
-    [InlineData("ойно", "ойношсун")]
-    [InlineData("күт", "күтүшсүн")]
-    [InlineData("тап", "табышсын")]
-    [InlineData("кир", "киришсин")]
-    [InlineData("өт", "өтүшсүн")]
-    [InlineData("чакыр", "чакырышсын")]
-    [InlineData("текшер", "текшеришсин")]
-    [InlineData("отур", "отурушсун")]
-    [InlineData("үйрөт", "үйрөтүшсүн")]
-    public void GivenVerb_WhenAlarImperativeGenerated_ThenCorrectImperativeFormReturned(string verb, string expectedResult)
+    [InlineData("бол", "ушсун")]
+    [InlineData("иште", "шсин")]
+    [InlineData("бар", "ышсын")]
+    [InlineData("изилде", "шсин")]
+    [InlineData("кел", "ишсин")]
+    [InlineData("ойно", "шсун")]
+    [InlineData("күт", "үшсүн")]
+    [InlineData("тап", "ышсын")]
+    [InlineData("кир", "ишсин")]
+    [InlineData("өт", "үшсүн")]
+    [InlineData("чакыр", "ышсын")]
+    [InlineData("текшер", "ишсин")]
+    [InlineData("отур", "ушсун")]
+    [InlineData("үйрөт", "үшсүн")]
+    public void GivenVerb_WhenAlarImperativeGenerated_ThenCorrectImperativeEndingReturned(string verb, string expectedResult)
     {
         // act
         var actualResult = ImperativeАлар.Generate(verb);
