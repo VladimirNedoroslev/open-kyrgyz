@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenKyrgyz.Console", "src\OpenKyrgyz.Console\OpenKyrgyz.Console.csproj", "{588A8D20-539F-46B4-9D09-0DC3E6A77D23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.UnitTests", "tests\Core.UnitTests\Core.UnitTests.csproj", "{E80126C3-5F8C-42E3-8BCD-C39ADB701367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenKyrgyz.Core", "src\OpenKyrgyz.Core\OpenKyrgyz.Core.csproj", "{40BF279E-9E37-4B0C-9DD8-1D4DB427112C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3D26D2FE-812C-4C7F-A1B7-7FCA339DC13C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AAB86F55-C095-4EA5-AC73-94CA4E356703}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{588A8D20-539F-46B4-9D09-0DC3E6A77D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588A8D20-539F-46B4-9D09-0DC3E6A77D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588A8D20-539F-46B4-9D09-0DC3E6A77D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588A8D20-539F-46B4-9D09-0DC3E6A77D23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E80126C3-5F8C-42E3-8BCD-C39ADB701367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E80126C3-5F8C-42E3-8BCD-C39ADB701367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E80126C3-5F8C-42E3-8BCD-C39ADB701367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E80126C3-5F8C-42E3-8BCD-C39ADB701367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40BF279E-9E37-4B0C-9DD8-1D4DB427112C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40BF279E-9E37-4B0C-9DD8-1D4DB427112C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40BF279E-9E37-4B0C-9DD8-1D4DB427112C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40BF279E-9E37-4B0C-9DD8-1D4DB427112C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{588A8D20-539F-46B4-9D09-0DC3E6A77D23} = {3D26D2FE-812C-4C7F-A1B7-7FCA339DC13C}
+		{40BF279E-9E37-4B0C-9DD8-1D4DB427112C} = {3D26D2FE-812C-4C7F-A1B7-7FCA339DC13C}
+		{E80126C3-5F8C-42E3-8BCD-C39ADB701367} = {AAB86F55-C095-4EA5-AC73-94CA4E356703}
+	EndGlobalSection
+EndGlobal
