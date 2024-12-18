@@ -6,19 +6,13 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-
     <ItemGroup>
-        <PackageReference Include="OneOf" Version="3.0.271"/>
-    </ItemGroup>
-
-
-    <ItemGroup>
-      <Folder Include="Tenses\ConditionalTense\" />
-      <Folder Include="Tenses\FutureGoingTo\" />
-      <Folder Include="Tenses\FutureProbable\" />
-      <Folder Include="Tenses\PastIndefinite\" />
-      <Folder Include="Tenses\PastSudden\" />
-      <Folder Include="Tenses\PresentContinuous\" />
+        <Folder Include="Tenses\ConditionalTense\"/>
+        <Folder Include="Tenses\FutureGoingTo\"/>
+        <Folder Include="Tenses\FutureProbable\"/>
+        <Folder Include="Tenses\PastIndefinite\"/>
+        <Folder Include="Tenses\PastSudden\"/>
+        <Folder Include="Tenses\PresentContinuous\"/>
     </ItemGroup>
 
 </Project>

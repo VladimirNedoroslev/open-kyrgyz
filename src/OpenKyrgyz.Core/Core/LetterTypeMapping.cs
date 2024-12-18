@@ -32,6 +32,7 @@ public static class LetterTypeMapping
         { 'н', LetterTypeEnum.VoicedConsonant },
         { 'р', LetterTypeEnum.VoicedConsonant },
         { 'й', LetterTypeEnum.VoicedConsonant },
+        { 'ң', LetterTypeEnum.VoicedConsonant },
 
         // Voiceless consonants
         { 'п', LetterTypeEnum.VoicelessConsonant },
@@ -43,7 +44,6 @@ public static class LetterTypeMapping
         { 'х', LetterTypeEnum.VoicelessConsonant },
         { 'ц', LetterTypeEnum.VoicelessConsonant },
         { 'ч', LetterTypeEnum.VoicelessConsonant },
-        { 'ң', LetterTypeEnum.VoicelessConsonant },
 
         // Special cases
         { 'ъ', LetterTypeEnum.VoicedConsonant }, // Hard sign (can be adapted if needed)

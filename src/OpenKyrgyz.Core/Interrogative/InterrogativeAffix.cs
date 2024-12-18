@@ -4,14 +4,15 @@ namespace OpenKyrgyz.Core.Interrogative;
 
 public class InterrogativeAffix : Affix
 {
-    public static InterrogativeAffix Бы = new("бы");
-    public static InterrogativeAffix Би = new("би");
-    public static InterrogativeAffix Бу = new("бу");
-    public static InterrogativeAffix Бү = new("бү");
-    public static InterrogativeAffix Пы = new("пы");
-    public static InterrogativeAffix Пи = new("пи");
-    public static InterrogativeAffix Пу = new("пу");
-    public static InterrogativeAffix Пү = new("пү");
+    public static readonly InterrogativeAffix Бы = new("бы");
+    public static readonly InterrogativeAffix Би = new("би");
+    public static readonly InterrogativeAffix Бу = new("бу");
+    public static readonly InterrogativeAffix Бү = new("бү");
+    
+    public static readonly InterrogativeAffix Пы = new("пы");
+    public static readonly InterrogativeAffix Пи = new("пи");
+    public static readonly InterrogativeAffix Пу = new("пу");
+    public static readonly InterrogativeAffix Пү = new("пү");
     
     public override string Value { get; }
 

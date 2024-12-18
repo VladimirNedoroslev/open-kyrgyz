@@ -1,12 +1,12 @@
+using OpenKyrgyz.Core.Enums;
+
 namespace OpenKyrgyz.Core.Core;
 
-public static class Vowels
+public static class CharVowelExtensions
 {
-    public static readonly HashSet<char> AllVowels = ['а', 'я', 'ы', 'о', 'ё', 'у', 'ю', 'е', 'э', 'и', 'ө', 'ү'];
-
-    public static bool IsVowel(this char symbol)
+    public static bool IsVowel(this char letter)
     {
-        return AllVowels.Contains(symbol);
+        return letter.GetLetterType() is LetterTypeEnum.Vowel;
     }
 
     public static int GetLastVowelIndex(this string word)

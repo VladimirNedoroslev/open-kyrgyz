@@ -1,5 +1,3 @@
-using System.Text;
-using OpenKyrgyz.Core.Common;
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 
@@ -18,11 +16,11 @@ public class ImperativeАлар
     
     public static string Generate(string verb)
     {
-        var lastVowelIndex = verb.GetLastVowelIndex();
-        var vowelGroup = VowelGroupMapping.VowelToGroupMapping[verb[lastVowelIndex]];
+        var vowelGroup = verb.GetVowelGroup();
         var ending = Mapping[vowelGroup];
-        
-        if (lastVowelIndex == verb.Length - 1)
+
+        var lastLetterType = verb.GetLastLetterType();
+        if (lastLetterType is LetterTypeEnum.Vowel)
         {
             return ending;
         }
