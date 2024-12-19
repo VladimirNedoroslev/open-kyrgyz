@@ -24,7 +24,7 @@ public class PresentAndFutureTenseTests
     public void PresentAndFuture_Мен(string verb, string expectedResult)
     {
         // act
-        var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Мен);
+        var actualResult = PresentAndFutureSimpleTenseConjugator.Conjugate(verb, PronounEnum.Мен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -48,7 +48,7 @@ public class PresentAndFutureTenseTests
     public void PresentAndFuture_Сен(string verb, string expectedResult)
     {
         // act
-        var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сен);
+        var actualResult = PresentAndFutureSimpleTenseConjugator.Conjugate(verb, PronounEnum.Сен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -72,7 +72,7 @@ public class PresentAndFutureTenseTests
     public void PresentAndFuture_Сиз(string verb, string expectedResult)
     {
         // act
-        var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиз);
+        var actualResult = PresentAndFutureSimpleTenseConjugator.Conjugate(verb, PronounEnum.Сиз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -96,7 +96,7 @@ public class PresentAndFutureTenseTests
     public void PresentAndFuture_Ал(string verb, string expectedResult)
     {
         // act
-        var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Ал);
+        var actualResult = PresentAndFutureSimpleTenseConjugator.Conjugate(verb, PronounEnum.Ал);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -120,7 +120,7 @@ public class PresentAndFutureTenseTests
     public void PresentAndFuture_Биз(string verb, string expectedResult)
     {
         // act
-        var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Биз);
+        var actualResult = PresentAndFutureSimpleTenseConjugator.Conjugate(verb, PronounEnum.Биз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -144,7 +144,7 @@ public class PresentAndFutureTenseTests
     public void PresentAndFuture_Силер(string verb, string expectedResult)
     {
         // act
-        var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Силер);
+        var actualResult = PresentAndFutureSimpleTenseConjugator.Conjugate(verb, PronounEnum.Силер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -168,7 +168,7 @@ public class PresentAndFutureTenseTests
     public void PresentAndFuture_Сиздер(string verb, string expectedResult)
     {
         // act
-        var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиздер);
+        var actualResult = PresentAndFutureSimpleTenseConjugator.Conjugate(verb, PronounEnum.Сиздер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -192,7 +192,7 @@ public class PresentAndFutureTenseTests
     public void PresentAndFuture_Алар(string verb, string expectedResult)
     {
         // act
-        var actualResult = PresentAndFutureSimpleTenseGenerator.GenerateForPronoun(verb, PronounEnum.Алар);
+        var actualResult = PresentAndFutureSimpleTenseConjugator.Conjugate(verb, PronounEnum.Алар);
 
         // assert
         actualResult.Should().Be(expectedResult);

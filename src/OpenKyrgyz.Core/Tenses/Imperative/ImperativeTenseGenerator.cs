@@ -27,9 +27,9 @@ public static class ImperativeTenseGenerator
         };
     }
 
-    public static Dictionary<ImperativeTypeEnum, string> GenerateAllImperativeTensesForVerb(string verb)
+    public static SortedDictionary<ImperativeTypeEnum, string> GenerateAllImperativeTensesForVerb(string verb)
     {
-        return new Dictionary<ImperativeTypeEnum, string>
+        return new SortedDictionary<ImperativeTypeEnum, string>
         {
             { ImperativeTypeEnum.Сен, verb },
             { ImperativeTypeEnum.СенPolite, ImperativeСенPolite.Generate(verb) },

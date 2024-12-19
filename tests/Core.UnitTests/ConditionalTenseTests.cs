@@ -18,7 +18,7 @@ public class ConditionalTenseTests
     public void Conditional_Мен(string verb, string expectedResult)
     {
         // act
-        var actualResult = ConditionalTenseGenerator.GenerateForPronoun(verb, PronounEnum.Мен);
+        var actualResult = ConditionalTenseConjugator.Conjugate(verb, PronounEnum.Мен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -36,7 +36,7 @@ public class ConditionalTenseTests
     public void Conditional_Сен(string verb, string expectedResult)
     {
         // act
-        var actualResult = ConditionalTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сен);
+        var actualResult = ConditionalTenseConjugator.Conjugate(verb, PronounEnum.Сен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -54,7 +54,7 @@ public class ConditionalTenseTests
     public void Conditional_Сиз(string verb, string expectedResult)
     {
         // act
-        var actualResult = ConditionalTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиз);
+        var actualResult = ConditionalTenseConjugator.Conjugate(verb, PronounEnum.Сиз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -72,7 +72,7 @@ public class ConditionalTenseTests
     public void Conditional_Ал(string verb, string expectedResult)
     {
         // act
-        var actualResult = ConditionalTenseGenerator.GenerateForPronoun(verb, PronounEnum.Ал);
+        var actualResult = ConditionalTenseConjugator.Conjugate(verb, PronounEnum.Ал);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -90,7 +90,7 @@ public class ConditionalTenseTests
     public void Conditional_Биз(string verb, string expectedResult)
     {
         // act
-        var actualResult = ConditionalTenseGenerator.GenerateForPronoun(verb, PronounEnum.Биз);
+        var actualResult = ConditionalTenseConjugator.Conjugate(verb, PronounEnum.Биз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -108,7 +108,7 @@ public class ConditionalTenseTests
     public void Conditional_Силер(string verb, string expectedResult)
     {
         // act
-        var actualResult = ConditionalTenseGenerator.GenerateForPronoun(verb, PronounEnum.Силер);
+        var actualResult = ConditionalTenseConjugator.Conjugate(verb, PronounEnum.Силер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -126,7 +126,7 @@ public class ConditionalTenseTests
     public void Conditional_Сиздер(string verb, string expectedResult)
     {
         // act
-        var actualResult = ConditionalTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиздер);
+        var actualResult = ConditionalTenseConjugator.Conjugate(verb, PronounEnum.Сиздер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -144,7 +144,7 @@ public class ConditionalTenseTests
     public void Conditional_Алар(string verb, string expectedResult)
     {
         // act
-        var actualResult = ConditionalTenseGenerator.GenerateForPronoun(verb, PronounEnum.Алар);
+        var actualResult = ConditionalTenseConjugator.Conjugate(verb, PronounEnum.Алар);
 
         // assert
         actualResult.Should().Be(expectedResult);

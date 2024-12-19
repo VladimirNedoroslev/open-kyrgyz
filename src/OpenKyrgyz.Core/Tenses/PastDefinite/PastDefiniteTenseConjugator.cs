@@ -3,9 +3,13 @@ using OpenKyrgyz.Core.Enums;
 
 namespace OpenKyrgyz.Core.Tenses.PastDefinite;
 
-public class PastDefiniteTenseGenerator
+public class PastDefiniteTenseConjugator
 {
-    public static string GenerateForPronoun(string verb, PronounEnum pronoun)
+    public static string Conjugate(
+        string verb,
+        PronounEnum pronoun,
+        VerbFormEnum form = VerbFormEnum.Positive
+    )
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;
@@ -23,23 +27,8 @@ public class PastDefiniteTenseGenerator
         }
 
         var ending = PastDefiniteEnding.GetEnding(verb, pronoun);
-        
-        return $"{verb}{ending}";
-    }
 
-    public static Dictionary<PronounEnum, string> GenerateForAllPronouns(string verb)
-    {
-        return new Dictionary<PronounEnum, string>
-        {
-            { PronounEnum.Мен, GenerateForPronoun(verb, PronounEnum.Мен) },
-            { PronounEnum.Сен, GenerateForPronoun(verb, PronounEnum.Сен) },
-            { PronounEnum.Сиз, GenerateForPronoun(verb, PronounEnum.Сиз) },
-            { PronounEnum.Ал, GenerateForPronoun(verb, PronounEnum.Ал) },
-            { PronounEnum.Биз, GenerateForPronoun(verb, PronounEnum.Биз) },
-            { PronounEnum.Силер, GenerateForPronoun(verb, PronounEnum.Силер) },
-            { PronounEnum.Сиздер, GenerateForPronoun(verb, PronounEnum.Сиздер) },
-            { PronounEnum.Алар, GenerateForPronoun(verb, PronounEnum.Алар) },
-        };
+        return $"{verb}{ending}";
     }
 
     private static readonly Dictionary<VowelGroupEnum, char> LinkingLetterForAlarCase = new()

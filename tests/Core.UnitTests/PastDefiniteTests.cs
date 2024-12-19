@@ -18,7 +18,7 @@ public class PastDefiniteTests
     public void PastDefinite_Мен(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Мен);
+        var actualResult = PastDefiniteTenseConjugator.Conjugate(verb, PronounEnum.Мен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -36,7 +36,7 @@ public class PastDefiniteTests
     public void PastDefinite_Сен(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сен);
+        var actualResult = PastDefiniteTenseConjugator.Conjugate(verb, PronounEnum.Сен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -54,7 +54,7 @@ public class PastDefiniteTests
     public void PastDefinite_Сиз(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиз);
+        var actualResult = PastDefiniteTenseConjugator.Conjugate(verb, PronounEnum.Сиз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -72,7 +72,7 @@ public class PastDefiniteTests
     public void PastDefinite_Ал(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Ал);
+        var actualResult = PastDefiniteTenseConjugator.Conjugate(verb, PronounEnum.Ал);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -90,7 +90,7 @@ public class PastDefiniteTests
     public void PastDefinite_Биз(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Биз);
+        var actualResult = PastDefiniteTenseConjugator.Conjugate(verb, PronounEnum.Биз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -108,7 +108,7 @@ public class PastDefiniteTests
     public void PastDefinite_Силер(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Силер);
+        var actualResult = PastDefiniteTenseConjugator.Conjugate(verb, PronounEnum.Силер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -126,7 +126,7 @@ public class PastDefiniteTests
     public void PastDefinite_Сиздер(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиздер);
+        var actualResult = PastDefiniteTenseConjugator.Conjugate(verb, PronounEnum.Сиздер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -144,7 +144,7 @@ public class PastDefiniteTests
     public void PastDefinite_Алар(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastDefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Алар);
+        var actualResult = PastDefiniteTenseConjugator.Conjugate(verb, PronounEnum.Алар);
 
         // assert
         actualResult.Should().Be(expectedResult);

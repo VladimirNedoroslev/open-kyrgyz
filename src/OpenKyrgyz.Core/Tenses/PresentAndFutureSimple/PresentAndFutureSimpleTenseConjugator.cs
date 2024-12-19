@@ -3,13 +3,16 @@ using OpenKyrgyz.Core.Enums;
 
 namespace OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;
 
-public class PresentAndFutureSimpleTenseGenerator
+public class PresentAndFutureSimpleTenseConjugator
 {
-    public static string GenerateForPronoun(string verb, PronounEnum pronoun)
+    public static string Conjugate(
+        string verb,
+        PronounEnum pronoun,
+        VerbFormEnum form = VerbFormEnum.Positive)
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;
-        
+
         // TODO: check other edge cases with alar
         if (verb == "бол" && pronoun == PronounEnum.Алар)
             return "болушат";
@@ -54,18 +57,18 @@ public class PresentAndFutureSimpleTenseGenerator
         return $"{verb}{ending}";
     }
 
-    public static Dictionary<PronounEnum, string> GenerateForAllPronouns(string verb)
+    public static SortedDictionary<PronounEnum, string> GenerateForAllPronouns(string verb)
     {
-        return new Dictionary<PronounEnum, string>
+        return new SortedDictionary<PronounEnum, string>
         {
-            { PronounEnum.Мен, GenerateForPronoun(verb, PronounEnum.Мен) },
-            { PronounEnum.Сен, GenerateForPronoun(verb, PronounEnum.Сен) },
-            { PronounEnum.Сиз, GenerateForPronoun(verb, PronounEnum.Сиз) },
-            { PronounEnum.Ал, GenerateForPronoun(verb, PronounEnum.Ал) },
-            { PronounEnum.Биз, GenerateForPronoun(verb, PronounEnum.Биз) },
-            { PronounEnum.Силер, GenerateForPronoun(verb, PronounEnum.Силер) },
-            { PronounEnum.Сиздер, GenerateForPronoun(verb, PronounEnum.Сиздер) },
-            { PronounEnum.Алар, GenerateForPronoun(verb, PronounEnum.Алар) },
+            { PronounEnum.Мен, Conjugate(verb, PronounEnum.Мен) },
+            { PronounEnum.Сен, Conjugate(verb, PronounEnum.Сен) },
+            { PronounEnum.Сиз, Conjugate(verb, PronounEnum.Сиз) },
+            { PronounEnum.Ал, Conjugate(verb, PronounEnum.Ал) },
+            { PronounEnum.Биз, Conjugate(verb, PronounEnum.Биз) },
+            { PronounEnum.Силер, Conjugate(verb, PronounEnum.Силер) },
+            { PronounEnum.Сиздер, Conjugate(verb, PronounEnum.Сиздер) },
+            { PronounEnum.Алар, Conjugate(verb, PronounEnum.Алар) },
         };
     }
 

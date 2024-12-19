@@ -19,7 +19,7 @@ public class FutureProbableTests
     public void FutureProbable_Мен(string verb, string expectedResult)
     {
         // act
-        var actualResult = FutureProbableTenseGenerator.GenerateForPronoun(verb, PronounEnum.Мен);
+        var actualResult = FutureProbableTenseConjugator.Conjugate(verb, PronounEnum.Мен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -37,7 +37,7 @@ public class FutureProbableTests
     public void FutureProbable_Сен(string verb, string expectedResult)
     {
         // act
-        var actualResult = FutureProbableTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сен);
+        var actualResult = FutureProbableTenseConjugator.Conjugate(verb, PronounEnum.Сен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -55,7 +55,7 @@ public class FutureProbableTests
     public void FutureProbable_Сиз(string verb, string expectedResult)
     {
         // act
-        var actualResult = FutureProbableTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиз);
+        var actualResult = FutureProbableTenseConjugator.Conjugate(verb, PronounEnum.Сиз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -73,7 +73,7 @@ public class FutureProbableTests
     public void FutureProbable_Ал(string verb, string expectedResult)
     {
         // act
-        var actualResult = FutureProbableTenseGenerator.GenerateForPronoun(verb, PronounEnum.Ал);
+        var actualResult = FutureProbableTenseConjugator.Conjugate(verb, PronounEnum.Ал);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -91,7 +91,7 @@ public class FutureProbableTests
     public void FutureProbable_Биз(string verb, string expectedResult)
     {
         // act
-        var actualResult = FutureProbableTenseGenerator.GenerateForPronoun(verb, PronounEnum.Биз);
+        var actualResult = FutureProbableTenseConjugator.Conjugate(verb, PronounEnum.Биз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -109,7 +109,7 @@ public class FutureProbableTests
     public void FutureProbable_Силер(string verb, string expectedResult)
     {
         // act
-        var actualResult = FutureProbableTenseGenerator.GenerateForPronoun(verb, PronounEnum.Силер);
+        var actualResult = FutureProbableTenseConjugator.Conjugate(verb, PronounEnum.Силер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -127,7 +127,7 @@ public class FutureProbableTests
     public void FutureProbable_Сиздер(string verb, string expectedResult)
     {
         // act
-        var actualResult = FutureProbableTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиздер);
+        var actualResult = FutureProbableTenseConjugator.Conjugate(verb, PronounEnum.Сиздер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -145,7 +145,7 @@ public class FutureProbableTests
     public void FutureProbable_Алар(string verb, string expectedResult)
     {
         // act
-        var actualResult = FutureProbableTenseGenerator.GenerateForPronoun(verb, PronounEnum.Алар);
+        var actualResult = FutureProbableTenseConjugator.Conjugate(verb, PronounEnum.Алар);
 
         // assert
         actualResult.Should().Be(expectedResult);

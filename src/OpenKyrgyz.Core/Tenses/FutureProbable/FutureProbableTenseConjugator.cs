@@ -1,17 +1,19 @@
-using System.Text;
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;
 
 namespace OpenKyrgyz.Core.Tenses.FutureProbable;
 
-public class FutureProbableTenseGenerator
+public class FutureProbableTenseConjugator
 {
-    public static string GenerateForPronoun(string verb, PronounEnum pronoun)
+    public static string Conjugate(
+        string verb,
+        PronounEnum pronoun,
+        VerbFormEnum formEnum = VerbFormEnum.Positive)
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;
-        
+
         if (pronoun is PronounEnum.Алар)
         {
             var lastLetterType = verb.GetLastLetterType();
@@ -29,7 +31,7 @@ public class FutureProbableTenseGenerator
         }
 
         var ending = FutureProbableEnding.GetEndingForPronoun(verb, pronoun);
-        
+
         return $"{verb}{ending}";
     }
 
@@ -41,29 +43,14 @@ public class FutureProbableTenseGenerator
         {
             return $"{verb}{ending}";
         }
-        
+
         var vowelGroup = verb.GetVowelGroup();
         var linkingLetter = LinkingLetterForAlarCase[vowelGroup];
         verb = verb.HarmonizeVerbEndingIfNecessary();
 
         verb += linkingLetter;
-        
-        return $"{verb}{ending}";
-    }
 
-    public static Dictionary<PronounEnum, string> GenerateForAllPronouns(string verb)
-    {
-        return new Dictionary<PronounEnum, string>
-        {
-            { PronounEnum.Мен, GenerateForPronoun(verb, PronounEnum.Мен) },
-            { PronounEnum.Сен, GenerateForPronoun(verb, PronounEnum.Сен) },
-            { PronounEnum.Сиз, GenerateForPronoun(verb, PronounEnum.Сиз) },
-            { PronounEnum.Ал, GenerateForPronoun(verb, PronounEnum.Ал) },
-            { PronounEnum.Биз, GenerateForPronoun(verb, PronounEnum.Биз) },
-            { PronounEnum.Силер, GenerateForPronoun(verb, PronounEnum.Силер) },
-            { PronounEnum.Сиздер, GenerateForPronoun(verb, PronounEnum.Сиздер) },
-            { PronounEnum.Алар, GenerateForAlar(verb) },
-        };
+        return $"{verb}{ending}";
     }
 
     private static readonly Dictionary<VowelGroupEnum, char> LinkingLetterForAlarCase = new()

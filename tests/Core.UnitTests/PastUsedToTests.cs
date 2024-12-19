@@ -18,7 +18,7 @@ public class PastUsedToTests
     public void PastUsedTo_Мен(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastUsedToGenerator.GenerateForPronoun(verb, PronounEnum.Мен);
+        var actualResult = PastUsedToConjugate.Conjugate(verb, PronounEnum.Мен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -36,7 +36,7 @@ public class PastUsedToTests
     public void PastUsedTo_Сен(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastUsedToGenerator.GenerateForPronoun(verb, PronounEnum.Сен);
+        var actualResult = PastUsedToConjugate.Conjugate(verb, PronounEnum.Сен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -54,7 +54,7 @@ public class PastUsedToTests
     public void PastUsedTo_Сиз(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastUsedToGenerator.GenerateForPronoun(verb, PronounEnum.Сиз);
+        var actualResult = PastUsedToConjugate.Conjugate(verb, PronounEnum.Сиз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -72,7 +72,7 @@ public class PastUsedToTests
     public void PastUsedTo_Ал(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastUsedToGenerator.GenerateForPronoun(verb, PronounEnum.Ал);
+        var actualResult = PastUsedToConjugate.Conjugate(verb, PronounEnum.Ал);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -90,7 +90,7 @@ public class PastUsedToTests
     public void PastUsedTo_Биз(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastUsedToGenerator.GenerateForPronoun(verb, PronounEnum.Биз);
+        var actualResult = PastUsedToConjugate.Conjugate(verb, PronounEnum.Биз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -108,7 +108,7 @@ public class PastUsedToTests
     public void PastUsedTo_Силер(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastUsedToGenerator.GenerateForPronoun(verb, PronounEnum.Силер);
+        var actualResult = PastUsedToConjugate.Conjugate(verb, PronounEnum.Силер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -126,7 +126,7 @@ public class PastUsedToTests
     public void PastUsedTo_Сиздер(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastUsedToGenerator.GenerateForPronoun(verb, PronounEnum.Сиздер);
+        var actualResult = PastUsedToConjugate.Conjugate(verb, PronounEnum.Сиздер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -144,7 +144,7 @@ public class PastUsedToTests
     public void PastUsedTo_Алар(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastUsedToGenerator.GenerateForPronoun(verb, PronounEnum.Алар);
+        var actualResult = PastUsedToConjugate.Conjugate(verb, PronounEnum.Алар);
 
         // assert
         actualResult.Should().Be(expectedResult);

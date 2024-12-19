@@ -1,0 +1,23 @@
+@page
+@model VerbConjugationsPage
+@{
+    ViewData["Title"] = "Verb Conjugator";
+}
+
+<h1>Verb Conjugator</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="InputVerb">Enter a Verb:</label>
+        <input type="text" id="InputVerb" class="form-control" asp-for="InputVerb" required/>
+    </div>
+    <button type="submit" class="btn btn-primary">Conjugate</button>
+</form>
+
+<partial name="VerbsConjugationTable" model="Model.PresentAndFutureConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.FutureProbableConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.PastDefiniteConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.PastIndefiniteConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.PastSuddenConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.PastUsedToConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.ConditionalConjugations"/>

@@ -1,0 +1,29 @@
+@model OpenKyrgyz.WebApp.ViewModels.VerbConjugationTableView?
+
+@if (Model is not null)
+{
+    <h2>@Model.TenseName</h2>
+    <table class="table table-hover table-sm">
+        <thead>
+        <tr>
+            <th scope="col">Местоимение</th>
+            <th scope="col">Утвердительная</th>
+            <th scope="col">Отрицательная</th>
+            <th scope="col">Вопросительная</th>
+            <th scope="col">Отрицательная + вопросительная</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var dto in Model.VerbConjugatedByPronouns)
+        {
+            <tr>
+                <td>@dto.Pronoun.ToString("G")</td>
+                <td>@dto.Positive</td>
+                <td>@dto.Negative</td>
+                <td>@dto.Interrogative</td>
+                <td>@dto.NegativeInterrogative</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

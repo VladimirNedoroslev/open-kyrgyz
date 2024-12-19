@@ -18,7 +18,7 @@ public class PastSuddenTests
     public void PastSudden_Мен(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastSuddenTenseGenerator.GenerateForPronoun(verb, PronounEnum.Мен);
+        var actualResult = PastSuddenTenseConjugator.Conjugate(verb, PronounEnum.Мен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -36,7 +36,7 @@ public class PastSuddenTests
     public void PastSudden_Сен(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastSuddenTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сен);
+        var actualResult = PastSuddenTenseConjugator.Conjugate(verb, PronounEnum.Сен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -54,7 +54,7 @@ public class PastSuddenTests
     public void PastSudden_Сиз(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastSuddenTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиз);
+        var actualResult = PastSuddenTenseConjugator.Conjugate(verb, PronounEnum.Сиз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -72,7 +72,7 @@ public class PastSuddenTests
     public void PastSudden_Ал(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastSuddenTenseGenerator.GenerateForPronoun(verb, PronounEnum.Ал);
+        var actualResult = PastSuddenTenseConjugator.Conjugate(verb, PronounEnum.Ал);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -90,7 +90,7 @@ public class PastSuddenTests
     public void PastSudden_Биз(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastSuddenTenseGenerator.GenerateForPronoun(verb, PronounEnum.Биз);
+        var actualResult = PastSuddenTenseConjugator.Conjugate(verb, PronounEnum.Биз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -108,7 +108,7 @@ public class PastSuddenTests
     public void PastSudden_Силер(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastSuddenTenseGenerator.GenerateForPronoun(verb, PronounEnum.Силер);
+        var actualResult = PastSuddenTenseConjugator.Conjugate(verb, PronounEnum.Силер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -126,7 +126,7 @@ public class PastSuddenTests
     public void PastSudden_Сиздер(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastSuddenTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиздер);
+        var actualResult = PastSuddenTenseConjugator.Conjugate(verb, PronounEnum.Сиздер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -144,7 +144,7 @@ public class PastSuddenTests
     public void PastSudden_Алар(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastSuddenTenseGenerator.GenerateForPronoun(verb, PronounEnum.Алар);
+        var actualResult = PastSuddenTenseConjugator.Conjugate(verb, PronounEnum.Алар);
 
         // assert
         actualResult.Should().Be(expectedResult);

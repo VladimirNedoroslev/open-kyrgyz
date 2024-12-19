@@ -9,6 +9,7 @@
     <ItemGroup>
         <Folder Include="Tenses\FutureGoingTo\"/>
         <Folder Include="Tenses\PresentContinuous\"/>
+        <Folder Include="Tenses\SecondConditional\" />
     </ItemGroup>
 
 </Project>

@@ -18,7 +18,7 @@ public class PastIndefiniteTests
     public void PastIndefinite_Мен(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastIndefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Мен);
+        var actualResult = PastIndefiniteTenseConjugator.Conjugate(verb, PronounEnum.Мен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -36,7 +36,7 @@ public class PastIndefiniteTests
     public void PastIndefinite_Сен(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastIndefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сен);
+        var actualResult = PastIndefiniteTenseConjugator.Conjugate(verb, PronounEnum.Сен);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -54,7 +54,7 @@ public class PastIndefiniteTests
     public void PastIndefinite_Сиз(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastIndefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиз);
+        var actualResult = PastIndefiniteTenseConjugator.Conjugate(verb, PronounEnum.Сиз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -72,7 +72,7 @@ public class PastIndefiniteTests
     public void PastIndefinite_Ал(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastIndefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Ал);
+        var actualResult = PastIndefiniteTenseConjugator.Conjugate(verb, PronounEnum.Ал);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -90,7 +90,7 @@ public class PastIndefiniteTests
     public void PastIndefinite_Биз(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastIndefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Биз);
+        var actualResult = PastIndefiniteTenseConjugator.Conjugate(verb, PronounEnum.Биз);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -108,7 +108,7 @@ public class PastIndefiniteTests
     public void PastIndefinite_Силер(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastIndefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Силер);
+        var actualResult = PastIndefiniteTenseConjugator.Conjugate(verb, PronounEnum.Силер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -126,7 +126,7 @@ public class PastIndefiniteTests
     public void PastIndefinite_Сиздер(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastIndefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Сиздер);
+        var actualResult = PastIndefiniteTenseConjugator.Conjugate(verb, PronounEnum.Сиздер);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -144,7 +144,7 @@ public class PastIndefiniteTests
     public void PastIndefinite_Алар(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastIndefiniteTenseGenerator.GenerateForPronoun(verb, PronounEnum.Алар);
+        var actualResult = PastIndefiniteTenseConjugator.Conjugate(verb, PronounEnum.Алар);
 
         // assert
         actualResult.Should().Be(expectedResult);
