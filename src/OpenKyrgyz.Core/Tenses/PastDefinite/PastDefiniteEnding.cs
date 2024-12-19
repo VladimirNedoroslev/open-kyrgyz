@@ -49,7 +49,7 @@ public static class PastDefiniteEnding
         },
     };
 
-    private static readonly Dictionary<VowelGroupEnum, Dictionary<PronounEnum, string>> PastPronounMapping = new()
+    private static readonly Dictionary<VowelGroupEnum, Dictionary<PronounEnum, string>> PronounMapping = new()
     {
         {
             VowelGroupEnum.а_я_ы, new Dictionary<PronounEnum, string>
@@ -121,7 +121,7 @@ public static class PastDefiniteEnding
     public static string GetEnding(string verb, PronounEnum pronoun)
     {
         var vowelGroup = verb.GetVowelGroup();
-        var pastPronounEnding = PastPronounMapping[vowelGroup][pronoun];
+        var pastPronounEnding = PronounMapping[vowelGroup][pronoun];
         if (pronoun == PronounEnum.Алар)
             return pastPronounEnding;
         

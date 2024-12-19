@@ -1,4 +1,3 @@
-using System.Text;
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 
@@ -10,24 +9,30 @@ public class PresentAndFutureSimpleTenseGenerator
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;
-
+        
         // TODO: check other edge cases with alar
         if (verb == "бол" && pronoun == PronounEnum.Алар)
             return "болушат";
 
+        var vowelGroup = verb.GetVowelGroup();
+        var lastLetterType = verb.GetLastLetterType();
+        char? linkingLetter = null;
         if (pronoun == PronounEnum.Алар)
-            return GenerateForAlar(verb);
-
-        var linkingLetter = АеөойLinkingLetter.GetLinkingChar(verb);
+        {
+            if (lastLetterType is not LetterTypeEnum.Vowel)
+                linkingLetter = LinkingLetterForAlarCase[vowelGroup];
+        }
+        else
+        {
+            linkingLetter = АеөойLinkingLetter.GetLinkingChar(verb);
+        }
 
         verb = verb.HarmonizeVerbEndingIfNecessary();
-
-        var sb = new StringBuilder(verb);
-        sb.Append(linkingLetter);
-        verb = sb.ToString();
+        if (linkingLetter.HasValue)
+            verb += linkingLetter;
 
         var ending = PresentAndFutureSimpleEnding.GetEndingForPronoun(verb, pronoun);
-        
+
         return $"{verb}{ending}";
     }
 
@@ -39,13 +44,13 @@ public class PresentAndFutureSimpleTenseGenerator
         {
             return $"{verb}{ending}";
         }
-        
+
         var vowelGroup = verb.GetVowelGroup();
         var linkingLetter = LinkingLetterForAlarCase[vowelGroup];
         verb = verb.HarmonizeVerbEndingIfNecessary();
 
         verb += linkingLetter;
-        
+
         return $"{verb}{ending}";
     }
 
@@ -60,7 +65,7 @@ public class PresentAndFutureSimpleTenseGenerator
             { PronounEnum.Биз, GenerateForPronoun(verb, PronounEnum.Биз) },
             { PronounEnum.Силер, GenerateForPronoun(verb, PronounEnum.Силер) },
             { PronounEnum.Сиздер, GenerateForPronoun(verb, PronounEnum.Сиздер) },
-            { PronounEnum.Алар, GenerateForAlar(verb) },
+            { PronounEnum.Алар, GenerateForPronoun(verb, PronounEnum.Алар) },
         };
     }
 

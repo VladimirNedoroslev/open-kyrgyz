@@ -1,35 +1,46 @@
+using System.Text;
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.PastDefinite;
+using OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;
 
-namespace OpenKyrgyz.Core.Tenses.ConditionalTense;
+namespace OpenKyrgyz.Core.Tenses.FutureProbable;
 
-public class ConditionalTenseGenerator
+public class FutureProbableTenseGenerator
 {
     public static string GenerateForPronoun(string verb, PronounEnum pronoun)
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;
+        
+        if (pronoun is PronounEnum.Алар)
+        {
+            var lastLetterType = verb.GetLastLetterType();
+            if (lastLetterType is not LetterTypeEnum.Vowel)
+            {
+                var vowelGroup = verb.GetVowelGroup();
+                var linkingLetter = LinkingLetterForAlarCase[vowelGroup];
+                verb = verb.HarmonizeVerbEndingIfNecessary();
+                verb += linkingLetter;
+            }
+        }
+        else
+        {
+            verb = verb.HarmonizeVerbEndingIfNecessary();
+        }
 
-        if (pronoun == PronounEnum.Алар)
-            return GenerateForAlar(verb);
-
-        var ending = ConditionalEnding.GetEnding(verb, pronoun);
+        var ending = FutureProbableEnding.GetEndingForPronoun(verb, pronoun);
         
         return $"{verb}{ending}";
     }
 
     private static string GenerateForAlar(string verb)
     {
-        
-        //TODO: finish logic here
         var lastLetterType = verb.GetLastLetterType();
-        var ending = ConditionalEnding.GetEnding(verb, PronounEnum.Алар);
+        var ending = PresentAndFutureSimpleEnding.GetEndingForPronoun(verb, PronounEnum.Алар);
         if (lastLetterType is LetterTypeEnum.Vowel)
         {
             return $"{verb}{ending}";
         }
-
         
         var vowelGroup = verb.GetVowelGroup();
         var linkingLetter = LinkingLetterForAlarCase[vowelGroup];

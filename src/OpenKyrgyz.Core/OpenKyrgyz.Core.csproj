@@ -8,9 +8,6 @@
 
     <ItemGroup>
         <Folder Include="Tenses\FutureGoingTo\"/>
-        <Folder Include="Tenses\FutureProbable\"/>
-        <Folder Include="Tenses\PastIndefinite\"/>
-        <Folder Include="Tenses\PastSudden\"/>
         <Folder Include="Tenses\PresentContinuous\"/>
     </ItemGroup>
 

@@ -1,9 +1,9 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 
-namespace OpenKyrgyz.Core.Tenses.PastDefinite;
+namespace OpenKyrgyz.Core.Tenses.Conditional;
 
-public class PastDefiniteTenseGenerator
+public class ConditionalTenseGenerator
 {
     public static string GenerateForPronoun(string verb, PronounEnum pronoun)
     {
@@ -22,8 +22,8 @@ public class PastDefiniteTenseGenerator
             }
         }
 
-        var ending = PastDefiniteEnding.GetEnding(verb, pronoun);
-        
+        var ending = ConditionalEnding.GetEnding(verb, pronoun);
+
         return $"{verb}{ending}";
     }
 
@@ -38,7 +38,7 @@ public class PastDefiniteTenseGenerator
             { PronounEnum.Биз, GenerateForPronoun(verb, PronounEnum.Биз) },
             { PronounEnum.Силер, GenerateForPronoun(verb, PronounEnum.Силер) },
             { PronounEnum.Сиздер, GenerateForPronoun(verb, PronounEnum.Сиздер) },
-            { PronounEnum.Алар, GenerateForPronoun(verb, PronounEnum.Алар) },
+            { PronounEnum.Алар, GenerateForPronoun(verb, PronounEnum.Алар)  },
         };
     }
 

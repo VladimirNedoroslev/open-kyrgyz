@@ -1,9 +1,10 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
+using OpenKyrgyz.Core.Tenses.PastDefinite;
 
-namespace OpenKyrgyz.Core.Tenses.PastDefinite;
+namespace OpenKyrgyz.Core.Tenses.PastIndefinite;
 
-public class PastDefiniteTenseGenerator
+public class PastIndefiniteTenseGenerator
 {
     public static string GenerateForPronoun(string verb, PronounEnum pronoun)
     {
@@ -22,7 +23,7 @@ public class PastDefiniteTenseGenerator
             }
         }
 
-        var ending = PastDefiniteEnding.GetEnding(verb, pronoun);
+        var ending = PastIndefiniteEnding.GetEnding(verb, pronoun);
         
         return $"{verb}{ending}";
     }
