@@ -20,4 +20,10 @@ public class InterrogativeAffix : Affix
     {
         Value = value;
     }
+
+
+    public override string ToString()
+    {
+        return Value;
+    }
 }

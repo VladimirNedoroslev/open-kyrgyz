@@ -13,6 +13,7 @@ public class VerbConjugationsAllTenses
     public VerbConjugatedByAllForms PastUsedTo { get; set; }
     public VerbConjugatedByAllForms PastSudden { get; set; }
     public VerbConjugatedByAllForms Conditional { get; set; }
+    public VerbConjugatedByAllForms Intention { get; set; }
 
     public SortedDictionary<ImperativeTypeEnum, string> Imperative { get; set; }
     

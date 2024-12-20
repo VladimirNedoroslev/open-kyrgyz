@@ -18,11 +18,15 @@ public class VerbConjugationsPage : PageModel
 
     public VerbConjugationTableView PresentAndFutureConjugations { get; set; }
     public VerbConjugationTableView FutureProbableConjugations { get; set; }
+    
     public VerbConjugationTableView PastDefiniteConjugations { get; set; }
     public VerbConjugationTableView PastIndefiniteConjugations { get; set; }
     public VerbConjugationTableView PastUsedToConjugations { get; set; }
     public VerbConjugationTableView PastSuddenConjugations { get; set; }
+    
     public VerbConjugationTableView ConditionalConjugations { get; set; }
+    public VerbConjugationTableView IntentionConjugations { get; set; }
+    
 
     public void OnPost()
     {
@@ -63,6 +67,11 @@ public class VerbConjugationsPage : PageModel
             {
                 TenseName = "Условное наклонение",
                 VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.Conditional),
+            };
+            IntentionConjugations = new VerbConjugationTableView()
+            {
+                TenseName = "Наклонение намерения",
+                VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.Intention),
             };
         }
     }

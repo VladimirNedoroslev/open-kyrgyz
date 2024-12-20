@@ -1,11 +1,11 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 
-namespace OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;
+namespace OpenKyrgyz.Core.Tenses.ToBe;
 
-public static class PresentAndFutureSimpleEnding
+public static class ToBeEnding
 {
-    private static readonly Dictionary<VowelGroupEnum, Dictionary<PronounEnum, string>> Mapping = new()
+    public static readonly Dictionary<VowelGroupEnum, Dictionary<PronounEnum, string>> Mapping = new()
     {
         {
             VowelGroupEnum.а_я_ы, new Dictionary<PronounEnum, string>
@@ -13,11 +13,11 @@ public static class PresentAndFutureSimpleEnding
                 { PronounEnum.Мен, "мын" },
                 { PronounEnum.Сен, "сың" },
                 { PronounEnum.Сиз, "сыз" },
-                { PronounEnum.Ал, "т" },
+                { PronounEnum.Ал, "" },
                 { PronounEnum.Биз, "быз" },
                 { PronounEnum.Силер, "сыңар" },
                 { PronounEnum.Сиздер, "сыздар" },
-                { PronounEnum.Алар, "шат" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -26,11 +26,11 @@ public static class PresentAndFutureSimpleEnding
                 { PronounEnum.Мен, "мин" },
                 { PronounEnum.Сен, "сиң" },
                 { PronounEnum.Сиз, "сиз" },
-                { PronounEnum.Ал, "т" },
+                { PronounEnum.Ал, "" },
                 { PronounEnum.Биз, "биз" },
                 { PronounEnum.Силер, "сиңер" },
                 { PronounEnum.Сиздер, "сиздер" },
-                { PronounEnum.Алар, "шет" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -39,11 +39,11 @@ public static class PresentAndFutureSimpleEnding
                 { PronounEnum.Мен, "мун" },
                 { PronounEnum.Сен, "суң" },
                 { PronounEnum.Сиз, "суз" },
-                { PronounEnum.Ал, "т" },
+                { PronounEnum.Ал, "" },
                 { PronounEnum.Биз, "буз" },
                 { PronounEnum.Силер, "суңар" },
                 { PronounEnum.Сиздер, "суздар" },
-                { PronounEnum.Алар, "шат" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -52,11 +52,11 @@ public static class PresentAndFutureSimpleEnding
                 { PronounEnum.Мен, "мун" },
                 { PronounEnum.Сен, "суң" },
                 { PronounEnum.Сиз, "суз" },
-                { PronounEnum.Ал, "т" },
+                { PronounEnum.Ал, "" },
                 { PronounEnum.Биз, "буз" },
                 { PronounEnum.Силер, "суңар" },
                 { PronounEnum.Сиздер, "суздар" },
-                { PronounEnum.Алар, "шот" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -74,10 +74,10 @@ public static class PresentAndFutureSimpleEnding
         }
     };
 
-    public static string GetEndingForPronoun(string verb, PronounEnum pronoun)
+
+    public static string GetEndingForPronoun(string word, PronounEnum pronoun)
     {
-        var vowelGroup = verb.GetVowelGroup();
+        var vowelGroup = word.GetVowelGroup();
         return Mapping[vowelGroup][pronoun];
     }
-    
 }

@@ -3,15 +3,14 @@ using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Interrogative;
 using OpenKyrgyz.Core.Negative;
 
-namespace OpenKyrgyz.Core.Tenses.PastDefinite;
+namespace OpenKyrgyz.Core.Tenses.Conditional;
 
-public class PastDefiniteTenseConjugator
+public class ConditionalConjugator
 {
     public static string Conjugate(
         string verb,
         PronounEnum pronoun,
-        VerbFormEnum form
-    )
+        VerbFormEnum form)
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;
@@ -21,7 +20,7 @@ public class PastDefiniteTenseConjugator
             var negativeAffix = verb.GetNegativeAffix();
             verb += negativeAffix.Value;
         }
-        
+
         verb = ConjugateForPositive(verb, pronoun);
 
         if (form is VerbFormEnum.Interrogative or VerbFormEnum.NegativeAndInterrogative)
@@ -31,10 +30,9 @@ public class PastDefiniteTenseConjugator
         }
 
         return verb;
-
     }
 
-    public static string ConjugateForPositive(string verb, PronounEnum pronoun)
+    private static string ConjugateForPositive(string verb, PronounEnum pronoun)
     {
         if (pronoun == PronounEnum.Алар)
         {
@@ -48,7 +46,7 @@ public class PastDefiniteTenseConjugator
             }
         }
 
-        var ending = PastDefiniteEnding.GetEnding(verb, pronoun);
+        var ending = ConditionalEnding.GetEnding(verb, pronoun);
 
         return $"{verb}{ending}";
     }

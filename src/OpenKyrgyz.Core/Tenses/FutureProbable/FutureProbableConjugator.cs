@@ -1,42 +1,20 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Interrogative;
-using OpenKyrgyz.Core.Negative;
+using OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;
 
-namespace OpenKyrgyz.Core.Tenses.PastDefinite;
+namespace OpenKyrgyz.Core.Tenses.FutureProbable;
 
-public class PastDefiniteTenseConjugator
+public class FutureProbableConjugator
 {
     public static string Conjugate(
         string verb,
         PronounEnum pronoun,
-        VerbFormEnum form
-    )
+        VerbFormEnum formEnum = VerbFormEnum.Positive)
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;
 
-        if (form is VerbFormEnum.Negative or VerbFormEnum.NegativeAndInterrogative)
-        {
-            var negativeAffix = verb.GetNegativeAffix();
-            verb += negativeAffix.Value;
-        }
-        
-        verb = ConjugateForPositive(verb, pronoun);
-
-        if (form is VerbFormEnum.Interrogative or VerbFormEnum.NegativeAndInterrogative)
-        {
-            var interrogativeAffix = verb.GetInterrogativeAffix();
-            verb += interrogativeAffix.Value;
-        }
-
-        return verb;
-
-    }
-
-    public static string ConjugateForPositive(string verb, PronounEnum pronoun)
-    {
-        if (pronoun == PronounEnum.Алар)
+        if (pronoun is PronounEnum.Алар)
         {
             var lastLetterType = verb.GetLastLetterType();
             if (lastLetterType is not LetterTypeEnum.Vowel)
@@ -47,8 +25,12 @@ public class PastDefiniteTenseConjugator
                 verb += linkingLetter;
             }
         }
+        else
+        {
+            verb = verb.HarmonizeVerbEndingIfNecessary();
+        }
 
-        var ending = PastDefiniteEnding.GetEnding(verb, pronoun);
+        var ending = FutureProbableEnding.GetEndingForPronoun(verb, pronoun);
 
         return $"{verb}{ending}";
     }

@@ -11,5 +11,5 @@ public enum TenseEnum
     PastUsedTo = 6,
     PastSudden = 7,
     Conditional = 8,
-    SecondConditional = 9,
+    Intention = 9,
 }

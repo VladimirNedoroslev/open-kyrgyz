@@ -3,10 +3,11 @@ using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.Conditional;
 using OpenKyrgyz.Core.Tenses.FutureProbable;
 using OpenKyrgyz.Core.Tenses.PastDefinite;
-using OpenKyrgyz.Core.Tenses.PastIndefinite;
 using OpenKyrgyz.Core.Tenses.PastSudden;
-using OpenKyrgyz.Core.Tenses.PastUsedTo;
 using OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;
+using OpenKyrgyz.Core.Tenses.WithDifferentNegative.Intention;
+using OpenKyrgyz.Core.Tenses.WithDifferentNegative.PastIndefinite;
+using OpenKyrgyz.Core.Tenses.WithDifferentNegative.PastUsedTo;
 
 namespace OpenKyrgyz.Core.Tenses;
 
@@ -17,13 +18,14 @@ public class VerbByTenseConjugator
         var result = new VerbConjugationsAllTenses()
         {
             Verb = verb,
-            Conditional = Conjugate(verb, TenseEnum.Conditional),
             PresentAndFutureSimple = Conjugate(verb, TenseEnum.PresentAndFuture),
             FutureProbable = Conjugate(verb, TenseEnum.FutureProbable),
             PastDefinite = Conjugate(verb, TenseEnum.PastDefinite),
             PastIndefinite = Conjugate(verb, TenseEnum.PastIndefinite),
             PastSudden = Conjugate(verb, TenseEnum.PastSudden),
             PastUsedTo = Conjugate(verb, TenseEnum.PastUsedTo),
+            Conditional = Conjugate(verb, TenseEnum.Conditional),
+            Intention = Conjugate(verb, TenseEnum.Intention)
         };
         return result;
     }
@@ -32,16 +34,16 @@ public class VerbByTenseConjugator
     {
         Func<string, PronounEnum, VerbFormEnum, string> tenseConjugatorFunc = tense switch
         {
-            TenseEnum.PresentAndFuture => PresentAndFutureSimpleTenseConjugator.Conjugate,
+            TenseEnum.PresentAndFuture => PresentAndFutureSimpleConjugator.Conjugate,
             TenseEnum.PresentContinuous => throw new NotImplementedException(),
-            TenseEnum.FutureProbable => FutureProbableTenseConjugator.Conjugate,
+            TenseEnum.FutureProbable => FutureProbableConjugator.Conjugate,
             TenseEnum.FutureGoingTo => throw new NotImplementedException(),
             TenseEnum.PastDefinite => PastDefiniteTenseConjugator.Conjugate,
-            TenseEnum.PastIndefinite => PastIndefiniteTenseConjugator.Conjugate,
-            TenseEnum.PastUsedTo => PastUsedToConjugate.Conjugate,
-            TenseEnum.PastSudden => PastSuddenTenseConjugator.Conjugate,
-            TenseEnum.Conditional => ConditionalTenseConjugator.Conjugate,
-            TenseEnum.SecondConditional => throw new NotImplementedException(),
+            TenseEnum.PastIndefinite => PastIndefiniteConjugator.Conjugate,
+            TenseEnum.PastUsedTo => PastUsedToConjugator.Conjugate,
+            TenseEnum.PastSudden => PastSuddenConjugator.Conjugate,
+            TenseEnum.Conditional => ConditionalConjugator.Conjugate,
+            TenseEnum.Intention => IntentionConjugator.Conjugate,
             _ => throw new ArgumentOutOfRangeException(nameof(tense), tense, null)
         };
 
