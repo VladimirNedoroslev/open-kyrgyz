@@ -18,7 +18,7 @@ public class PastIndefiniteАларTests
     public void PastIndefinite_Алар(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastIndefiniteConjugator.Conjugate(verb, PronounEnum.Алар);
+        var actualResult = PastIndefiniteConjugator.Conjugate(verb, PronounEnum.Алар, VerbFormEnum.Positive);
 
         // assert
         actualResult.Should().Be(expectedResult);

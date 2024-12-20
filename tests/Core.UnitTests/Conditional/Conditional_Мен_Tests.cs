@@ -1,7 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.Conditional;
-using OpenKyrgyz.Core.Tenses.PastDefinite;
 
 namespace UnitTests.Conditional;
 

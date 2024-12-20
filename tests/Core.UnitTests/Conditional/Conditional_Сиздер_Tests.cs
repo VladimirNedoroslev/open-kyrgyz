@@ -1,7 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.Conditional;
-using OpenKyrgyz.Core.Tenses.PastDefinite;
 
 namespace UnitTests.Conditional;
 
@@ -19,7 +18,7 @@ public class ConditionalСиздерTests
     public void Conditional_Сиздер_Positive(string verb, string expectedResult)
     {
         // act
-        var actualResult = ConditionalConjugator.Conjugate(verb, PronounEnum.Сиздер,VerbFormEnum.Positive);
+        var actualResult = ConditionalConjugator.Conjugate(verb, PronounEnum.Сиздер, VerbFormEnum.Positive);
 
         // assert
         actualResult.Should().Be(expectedResult);

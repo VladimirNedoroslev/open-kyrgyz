@@ -1,9 +1,10 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
+using OpenKyrgyz.Core.Negative;
 
 namespace OpenKyrgyz.Core.Tenses.Imperative;
 
-public class ImperativeАл
+public static class ImperativeАл
 {
     private static readonly Dictionary<VowelGroupEnum, string> Mapping = new()
     {
@@ -13,10 +14,16 @@ public class ImperativeАл
         { VowelGroupEnum.о_ё, "сун" },
         { VowelGroupEnum.ө_ү, "сүн" },
     };
-    
-    public static string GetImperativeAlEnding(string verb)
+
+    public static string ConjugatePositive(string verb)
     {
         var vowelGroup = verb.GetVowelGroup();
-        return Mapping[vowelGroup];
+        return verb + Mapping[vowelGroup];
+    }
+
+    public static string ConjugateNegative(string verb)
+    {
+        var negativeVerb = verb + verb.GetNegativeAffix();
+        return ConjugatePositive(negativeVerb);
     }
 }

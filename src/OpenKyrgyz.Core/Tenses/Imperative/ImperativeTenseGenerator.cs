@@ -16,29 +16,14 @@ public static class ImperativeTenseGenerator
         return type switch
         {
             ImperativeTypeEnum.Сен => verb,
-            ImperativeTypeEnum.СенPolite => ImperativeСенPolite.Generate(verb),
-            ImperativeTypeEnum.СенOrder => ImperativeСенOrder.GetImperativeSenOrderEnding(verb),
-            ImperativeTypeEnum.Силер => ImperativeСилер.GetImperativeSilerEnding(verb),
-            ImperativeTypeEnum.Сиз => ImperativeСиз.Generate(verb),
-            ImperativeTypeEnum.Сиздер => ImperativeСиздер.Generate(verb),
-            ImperativeTypeEnum.Ал => ImperativeАл.GetImperativeAlEnding(verb),
-            ImperativeTypeEnum.Алар => ImperativeАлар.Generate(verb),
+            ImperativeTypeEnum.СенPolite => ImperativeСенPolite.ConjugatePositive(verb),
+            ImperativeTypeEnum.СенOrder => ImperativeСенOrder.ConjugatePositive(verb),
+            ImperativeTypeEnum.Силер => ImperativeСилер.ConjugatePositive(verb),
+            ImperativeTypeEnum.Сиз => ImperativeСиз.ConjugatePositive(verb),
+            ImperativeTypeEnum.Сиздер => ImperativeСиздер.ConjugatePositive(verb),
+            ImperativeTypeEnum.Ал => ImperativeАл.ConjugatePositive(verb),
+            ImperativeTypeEnum.Алар => ImperativeАлар.ConjugatePositive(verb),
             _ => null
-        };
-    }
-
-    public static SortedDictionary<ImperativeTypeEnum, string> GenerateAllImperativeTensesForVerb(string verb)
-    {
-        return new SortedDictionary<ImperativeTypeEnum, string>
-        {
-            { ImperativeTypeEnum.Сен, verb },
-            { ImperativeTypeEnum.СенPolite, ImperativeСенPolite.Generate(verb) },
-            { ImperativeTypeEnum.СенOrder, ImperativeСенOrder.GetImperativeSenOrderEnding(verb) },
-            { ImperativeTypeEnum.Силер, ImperativeСилер.GetImperativeSilerEnding(verb) },
-            { ImperativeTypeEnum.Сиз, ImperativeСиз.Generate(verb) },
-            { ImperativeTypeEnum.Сиздер, ImperativeСиздер.Generate(verb) },
-            { ImperativeTypeEnum.Ал, ImperativeАл.GetImperativeAlEnding(verb) },
-            { ImperativeTypeEnum.Алар, ImperativeАлар.Generate(verb) },
         };
     }
 }

@@ -9,7 +9,6 @@
     <ItemGroup>
         <Folder Include="Tenses\FutureGoingTo\"/>
         <Folder Include="Tenses\PresentContinuous\"/>
-        <Folder Include="VerbForms\Gerund\" />
         <Folder Include="VerbForms\Participle\" />
     </ItemGroup>
 

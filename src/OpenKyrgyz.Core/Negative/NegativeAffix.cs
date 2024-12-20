@@ -20,4 +20,9 @@ public class NegativeAffix : Affix
     {
         Value = value;
     }
+
+    public override string ToString()
+    {
+        return Value;
+    }
 }

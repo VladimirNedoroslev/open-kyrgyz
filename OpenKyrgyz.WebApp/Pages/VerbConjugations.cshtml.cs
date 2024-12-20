@@ -14,19 +14,21 @@ public class VerbConjugationsPage : PageModel
         _conjugator = conjugator;
     }
 
-    [BindProperty] public string InputVerb { get; set; }
+    [BindProperty] public string? InputVerb { get; set; }
 
-    public VerbConjugationTableView PresentAndFutureConjugations { get; set; }
-    public VerbConjugationTableView FutureProbableConjugations { get; set; }
-    
-    public VerbConjugationTableView PastDefiniteConjugations { get; set; }
-    public VerbConjugationTableView PastIndefiniteConjugations { get; set; }
-    public VerbConjugationTableView PastUsedToConjugations { get; set; }
-    public VerbConjugationTableView PastSuddenConjugations { get; set; }
-    
-    public VerbConjugationTableView ConditionalConjugations { get; set; }
-    public VerbConjugationTableView IntentionConjugations { get; set; }
-    
+    public VerbConjugationTableView? PresentAndFutureConjugations { get; set; }
+    public VerbConjugationTableView? FutureProbableConjugations { get; set; }
+
+    public VerbConjugationTableView? PastDefiniteConjugations { get; set; }
+    public VerbConjugationTableView? PastIndefiniteConjugations { get; set; }
+    public VerbConjugationTableView? PastUsedToConjugations { get; set; }
+    public VerbConjugationTableView? PastSuddenConjugations { get; set; }
+
+    public VerbConjugationTableView? ConditionalConjugations { get; set; }
+    public VerbConjugationTableView? IntentionConjugations { get; set; }
+
+    public VerbImperativesTableView? ImperativeConjugations { get; set; }
+
 
     public void OnPost()
     {
@@ -72,6 +74,11 @@ public class VerbConjugationsPage : PageModel
             {
                 TenseName = "Наклонение намерения",
                 VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.Intention),
+            };
+            ImperativeConjugations = new VerbImperativesTableView()
+            {
+                Positive = verbConjugationsAllTenses.ImperativePositive,
+                Negative = verbConjugationsAllTenses.ImperativeNegative,
             };
         }
     }

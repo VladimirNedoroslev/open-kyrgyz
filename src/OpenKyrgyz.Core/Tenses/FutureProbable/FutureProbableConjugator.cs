@@ -1,6 +1,6 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;
+using OpenKyrgyz.Core.Interrogative;
 
 namespace OpenKyrgyz.Core.Tenses.FutureProbable;
 
@@ -9,11 +9,33 @@ public class FutureProbableConjugator
     public static string Conjugate(
         string verb,
         PronounEnum pronoun,
-        VerbFormEnum formEnum = VerbFormEnum.Positive)
+        VerbFormEnum formEnum)
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;
 
+        if (formEnum is VerbFormEnum.Negative)
+            return verb + FutureProbableEnding.GetEndingForPronounNegative(verb, pronoun);
+
+        if (formEnum is VerbFormEnum.NegativeAndInterrogative)
+        {
+            var negative = verb + FutureProbableEnding.GetEndingForPronounNegative(verb, pronoun);
+            var interrogativeAffix = negative.GetInterrogativeAffix();
+            return negative + interrogativeAffix;
+        }
+
+        var positive = ConjugateForPositive(verb, pronoun);
+        if (formEnum is VerbFormEnum.Interrogative)
+        {
+            var interrogativeAffix = positive.GetInterrogativeAffix();
+            return positive + interrogativeAffix;
+        }
+
+        return positive;
+    }
+
+    private static string ConjugateForPositive(string verb, PronounEnum pronoun)
+    {
         if (pronoun is PronounEnum.Алар)
         {
             var lastLetterType = verb.GetLastLetterType();
@@ -30,7 +52,7 @@ public class FutureProbableConjugator
             verb = verb.HarmonizeVerbEndingIfNecessary();
         }
 
-        var ending = FutureProbableEnding.GetEndingForPronoun(verb, pronoun);
+        var ending = FutureProbableEnding.GetEndingForPronounPositive(verb, pronoun);
 
         return $"{verb}{ending}";
     }

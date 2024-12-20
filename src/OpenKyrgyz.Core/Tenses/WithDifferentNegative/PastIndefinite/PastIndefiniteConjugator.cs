@@ -9,7 +9,7 @@ public class PastIndefiniteConjugator
     public static string Conjugate(
         string verb,
         PronounEnum pronoun,
-        VerbFormEnum form = VerbFormEnum.Positive)
+        VerbFormEnum form)
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;

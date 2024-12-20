@@ -25,4 +25,9 @@ public class PluralAffix : Affix
     {
         Value = value;
     }
+
+    public override string ToString()
+    {
+        return Value;
+    }
 }

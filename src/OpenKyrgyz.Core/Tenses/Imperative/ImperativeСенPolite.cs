@@ -1,5 +1,6 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
+using OpenKyrgyz.Core.Negative;
 
 namespace OpenKyrgyz.Core.Tenses.Imperative;
 
@@ -14,9 +15,15 @@ public class ImperativeСенPolite
         { VowelGroupEnum.ө_ү, "чү" },
     };
 
-    public static string Generate(string verb)
+    public static string ConjugatePositive(string verb)
     {
         var vowelGroup = verb.GetVowelGroup();
-        return Mapping[vowelGroup];
+        return verb + Mapping[vowelGroup];
+    }
+    
+    public static string ConjugateNegative(string verb)
+    {
+        var negativeVerb = verb + verb.GetNegativeAffix();
+        return ConjugatePositive(negativeVerb);
     }
 }

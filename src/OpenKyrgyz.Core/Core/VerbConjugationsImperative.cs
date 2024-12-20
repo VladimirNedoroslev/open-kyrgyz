@@ -1,46 +1,37 @@
-using OpenKyrgyz.Core.Enums;
-
 namespace OpenKyrgyz.Core.Core;
 
-public class VerbConjugationsByTense
+public class VerbConjugationsImperative
 {
     public string Verb { get; set; }
 
-    public string Мен { get; }
     public string Сен { get; }
+    public string СенPolite { get; }
+    public string СенOrder { get; }
     public string Сиз { get; }
     public string Ал { get; }
-    public string Биз { get; }
     public string Силер { get; }
     public string Сиздер { get; }
     public string Алар { get; }
 
-    public VerbFormEnum Form { get; set; }
-    public TenseEnum Tense { get; }
-
-    public VerbConjugationsByTense(
+    public VerbConjugationsImperative(
         string verb,
-        string мен,
         string сен,
+        string сенPolite,
+        string сенOrder,
         string сиз,
         string ал,
-        string биз,
         string силер,
         string сиздер,
-        string алар,
-        VerbFormEnum form,
-        TenseEnum tense)
+        string алар)
     {
         Verb = verb;
-        Мен = мен;
         Сен = сен;
+        СенPolite = сенPolite;
+        СенOrder = сенOrder;
         Сиз = сиз;
         Ал = ал;
-        Биз = биз;
         Силер = силер;
         Сиздер = сиздер;
         Алар = алар;
-        Form = form;
-        Tense = tense;
     }
 }

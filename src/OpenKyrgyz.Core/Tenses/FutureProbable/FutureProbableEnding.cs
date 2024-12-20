@@ -1,5 +1,6 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
+using OpenKyrgyz.Core.Negative;
 
 namespace OpenKyrgyz.Core.Tenses.FutureProbable;
 
@@ -83,7 +84,76 @@ public static class FutureProbableEnding
         }
     };
 
-    public static string GetEndingForPronoun(string verb, PronounEnum pronoun)
+    private static readonly Dictionary<VowelGroupEnum, Dictionary<PronounEnum, string>> PronounMappingNegative = new()
+    {
+        {
+            VowelGroupEnum.а_я_ы, new Dictionary<PronounEnum, string>
+            {
+                { PronounEnum.Мен, "смын" },
+                { PronounEnum.Сен, "ссың" },
+                { PronounEnum.Сиз, "ссыз" },
+                { PronounEnum.Ал, "с" },
+                { PronounEnum.Биз, "спыз" },
+                { PronounEnum.Силер, "ссыңар" },
+                { PronounEnum.Сиздер, "ссыздар" },
+                { PronounEnum.Алар, "шпас" },
+            }
+        },
+        {
+            VowelGroupEnum.и_е_э, new Dictionary<PronounEnum, string>
+            {
+                { PronounEnum.Мен, "смин" },
+                { PronounEnum.Сен, "ссиң" },
+                { PronounEnum.Сиз, "ссиз" },
+                { PronounEnum.Ал, "с" },
+                { PronounEnum.Биз, "спиз" },
+                { PronounEnum.Силер, "ссиңер" },
+                { PronounEnum.Сиздер, "ссиздер" },
+                { PronounEnum.Алар, "шпес" },
+            }
+        },
+        {
+            VowelGroupEnum.у_ю, new Dictionary<PronounEnum, string>
+            {
+                { PronounEnum.Мен, "смын" },
+                { PronounEnum.Сен, "ссың" },
+                { PronounEnum.Сиз, "ссыз" },
+                { PronounEnum.Ал, "с" },
+                { PronounEnum.Биз, "спыз" },
+                { PronounEnum.Силер, "ссыңар" },
+                { PronounEnum.Сиздер, "ссыздар" },
+                { PronounEnum.Алар, "шпас" },
+            }
+        },
+        {
+            VowelGroupEnum.о_ё, new Dictionary<PronounEnum, string>
+            {
+                { PronounEnum.Мен, "смун" },
+                { PronounEnum.Сен, "ссуң" },
+                { PronounEnum.Сиз, "ссуз" },
+                { PronounEnum.Ал, "с" },
+                { PronounEnum.Биз, "спуз" },
+                { PronounEnum.Силер, "ссуңар" },
+                { PronounEnum.Сиздер, "ссуздар" },
+                { PronounEnum.Алар, "шпос" },
+            }
+        },
+        {
+            VowelGroupEnum.ө_ү, new Dictionary<PronounEnum, string>
+            {
+                { PronounEnum.Мен, "смүн" },
+                { PronounEnum.Сен, "ссүң" },
+                { PronounEnum.Сиз, "ссүз" },
+                { PronounEnum.Ал, "с" },
+                { PronounEnum.Биз, "спүз" },
+                { PronounEnum.Силер, "ссүңөр" },
+                { PronounEnum.Сиздер, "ссүздөр" },
+                { PronounEnum.Алар, "шпөс" },
+            }
+        }
+    };
+
+    public static string GetEndingForPronounPositive(string verb, PronounEnum pronoun)
     {
         var vowelGroup = verb.GetVowelGroup();
         var lastLetterType = verb.GetLastLetterType();
@@ -94,5 +164,13 @@ public static class FutureProbableEnding
         }
 
         return PronounMapping[vowelGroup][pronoun];
+    }
+
+    public static string GetEndingForPronounNegative(string verb, PronounEnum pronoun)
+    {
+        var negativeAffix = verb.GetNegativeAffix();
+        var vowelGroup = negativeAffix.Value.GetVowelGroup();
+
+        return negativeAffix + PronounMappingNegative[vowelGroup][pronoun];
     }
 }

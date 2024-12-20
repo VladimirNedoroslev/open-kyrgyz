@@ -1,5 +1,6 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
+using OpenKyrgyz.Core.Negative;
 
 namespace OpenKyrgyz.Core.Tenses.Imperative;
 
@@ -13,8 +14,8 @@ public class ImperativeАлар
         { VowelGroupEnum.о_ё, "шсун" },
         { VowelGroupEnum.ө_ү, "шсүн" },
     };
-    
-    public static string Generate(string verb)
+
+    public static string ConjugatePositive(string verb)
     {
         var vowelGroup = verb.GetVowelGroup();
         var ending = Mapping[vowelGroup];
@@ -22,9 +23,11 @@ public class ImperativeАлар
         var lastLetterType = verb.GetLastLetterType();
         if (lastLetterType is LetterTypeEnum.Vowel)
         {
-            return ending;
+            return verb + ending;
         }
-        
+
+        verb = verb.HarmonizeVerbEndingIfNecessary();
+
         var linkingVowel = vowelGroup switch
         {
             VowelGroupEnum.а_я_ы => 'ы',
@@ -34,7 +37,13 @@ public class ImperativeАлар
             VowelGroupEnum.ө_ү => 'ү',
             _ => throw new ArgumentOutOfRangeException()
         };
-        
-        return linkingVowel + ending;
+
+        return verb + linkingVowel + ending;
+    }
+
+    public static string ConjugateNegative(string verb)
+    {
+        var negativeVerb = verb + verb.GetNegativeAffix();
+        return ConjugatePositive(negativeVerb);
     }
 }

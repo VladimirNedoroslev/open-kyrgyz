@@ -6,10 +6,10 @@ namespace OpenKyrgyz.WebApp.ViewModels;
 public class VerbConjugatedByPronounDto
 {
     public PronounEnum Pronoun { get; set; }
-    public string Positive { get; set; }
-    public string Negative { get; set; }
-    public string Interrogative { get; set; }
-    public string NegativeInterrogative { get; set; }
+    public required string Positive { get; set; }
+    public required string Negative { get; set; }
+    public required string Interrogative { get; set; }
+    public required string NegativeInterrogative { get; set; }
 
     public static List<VerbConjugatedByPronounDto> MapToTableView(VerbConjugatedByAllForms verb)
     {

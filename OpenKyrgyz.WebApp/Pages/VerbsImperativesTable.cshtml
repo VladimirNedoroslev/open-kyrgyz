@@ -1,0 +1,62 @@
+@model OpenKyrgyz.WebApp.ViewModels.VerbImperativesTableView?
+
+@if (Model is not null)
+{
+    <h2>Повелительные формы</h2>
+    <table class="table table-hover table-sm">
+        <thead>
+        <tr>
+            <th scope="col">Форма</th>
+            <th scope="col">Утверждение</th>
+            <th scope="col">Отрицание</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Сен</td>
+            <td>@Model.Positive.Сен</td>
+            <td>@Model.Negative.Сен</td>
+        </tr>
+
+        <tr>
+            <td>Сен (вежливая)</td>
+            <td>@Model.Positive.СенPolite</td>
+            <td>@Model.Negative.СенPolite</td>
+        </tr>
+        <tr>
+            <td>Сен (приказ)</td>
+            <td>@Model.Positive.СенOrder</td>
+            <td>@Model.Negative.СенOrder</td>
+        </tr>
+
+        <tr>
+            <td>Сиз</td>
+            <td>@Model.Positive.Сиз</td>
+            <td>@Model.Negative.Сиз</td>
+        </tr>
+
+        <tr>
+            <td>Ал</td>
+            <td>@Model.Positive.Ал</td>
+            <td>@Model.Negative.Ал</td>
+        </tr>
+
+        <tr>
+            <td>Силер</td>
+            <td>@Model.Positive.Силер</td>
+            <td>@Model.Negative.Силер</td>
+        </tr>
+
+        <tr>
+            <td>Сиздер</td>
+            <td>@Model.Positive.Сиздер</td>
+            <td>@Model.Negative.Сиздер</td>
+        </tr>
+        <tr>
+            <td>Алар</td>
+            <td>@Model.Positive.Алар</td>
+            <td>@Model.Negative.Алар</td>
+        </tr>
+        </tbody>
+    </table>
+}
