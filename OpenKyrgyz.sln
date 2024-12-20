@@ -10,9 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3D26D2FE-812
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AAB86F55-C095-4EA5-AC73-94CA4E356703}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenKyrgyz.WebApp", "OpenKyrgyz.WebApp\OpenKyrgyz.WebApp.csproj", "{30E1DD43-1DCE-4544-9A35-B62EAB8EB2A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenKyrgyz.WebApp", "src\OpenKyrgyz.WebApp\OpenKyrgyz.WebApp.csproj", "{30E1DD43-1DCE-4544-9A35-B62EAB8EB2A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenKyrgyz.Application", "OpenKyrgyz.Application\OpenKyrgyz.Application.csproj", "{F990E672-6F78-43D0-905D-D2B99A63AB79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenKyrgyz.Application", "src\OpenKyrgyz.Application\OpenKyrgyz.Application.csproj", "{F990E672-6F78-43D0-905D-D2B99A63AB79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
