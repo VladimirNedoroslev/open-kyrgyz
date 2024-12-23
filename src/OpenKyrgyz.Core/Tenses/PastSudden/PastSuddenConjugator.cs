@@ -35,6 +35,8 @@ public class PastSuddenConjugator
             verb += interrogativeAffix.Value;
         }
 
+        verb = УаойReplacer.Replace(verb);
+
         return verb;
     }
 

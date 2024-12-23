@@ -37,8 +37,8 @@ public static class ImperativeСиз
             VowelGroupEnum.ө_ү => 'ү',
             _ => throw new ArgumentOutOfRangeException()
         };
-
-        return verb + linkingVowel + ending;
+        
+        return УаойReplacer.Replace(verb + linkingVowel + ending);
     }
 
     public static string ConjugateNegative(string verb)

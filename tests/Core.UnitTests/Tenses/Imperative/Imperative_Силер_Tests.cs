@@ -1,7 +1,7 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Tenses.Imperative;
 
-namespace UnitTests.Imperative;
+namespace UnitTests.Tenses.Imperative;
 
 public class ImperativeСилерTests
 {

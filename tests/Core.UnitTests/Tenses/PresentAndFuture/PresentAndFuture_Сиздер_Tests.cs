@@ -2,7 +2,7 @@ using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;
 
-namespace UnitTests.PresentAndFuture;
+namespace UnitTests.Tenses.PresentAndFuture;
 
 public class PresentAndFutureСиздерTests
 {

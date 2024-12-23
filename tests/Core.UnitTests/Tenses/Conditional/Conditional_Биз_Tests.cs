@@ -2,7 +2,7 @@ using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.Conditional;
 
-namespace UnitTests.Conditional;
+namespace UnitTests.Tenses.Conditional;
 
 public class ConditionalБизTests
 {

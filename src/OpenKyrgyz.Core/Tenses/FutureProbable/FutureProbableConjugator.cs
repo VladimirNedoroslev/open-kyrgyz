@@ -34,10 +34,10 @@ public class FutureProbableConjugator
         if (formEnum is VerbFormEnum.Interrogative)
         {
             var interrogativeAffix = positive.GetInterrogativeAffix();
-            return positive + interrogativeAffix;
+            return УаойReplacer.Replace(positive + interrogativeAffix);
         }
 
-        return positive;
+        return УаойReplacer.Replace(positive);
     }
 
     private static string ConjugateForPositive(string verb, PronounEnum pronoun)

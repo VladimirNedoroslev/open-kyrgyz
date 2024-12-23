@@ -2,7 +2,7 @@ using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.PastDefinite;
 
-namespace UnitTests.PastDefinite;
+namespace UnitTests.Tenses.Past.Definite;
 
 public class PastDefiniteБизTests
 {

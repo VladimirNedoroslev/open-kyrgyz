@@ -2,7 +2,7 @@ using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.WithDifferentNegative.PastUsedTo;
 
-namespace UnitTests.PastUsedTo;
+namespace UnitTests.Tenses.Past.UsedTo;
 
 public class PasUsedToСенTests
 {

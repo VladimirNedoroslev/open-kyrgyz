@@ -2,7 +2,7 @@ using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.FutureGoingTo;
 
-namespace UnitTests.FutureGoingTo;
+namespace UnitTests.Tenses.FutureGoingTo;
 
 public class FutureGoingToМенTests
 {

@@ -2,7 +2,7 @@ using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.PastSudden;
 
-namespace UnitTests.PastSudden;
+namespace UnitTests.Tenses.Past.Sudden;
 
 public class PastSuddenАларTests
 {
@@ -16,6 +16,7 @@ public class PastSuddenАларTests
     [InlineData("чеч", "чечишиптир")]
     [InlineData("ук", "угушуптур")]
     [InlineData("күт", "күтүшүптүр")]
+    [InlineData("кой", "коюшуптур")]
     public void PastSudden_Алар_Positive(string verb, string expectedResult)
     {
         // act
@@ -52,6 +53,7 @@ public class PastSuddenАларTests
     [InlineData("чеч", "чечишиптирби")]
     [InlineData("ук", "угушуптурбу")]
     [InlineData("күт", "күтүшүптүрбү")]
+    [InlineData("кой", "коюшуптурбу")]
     public void PastSudden_Алар_Interrogative(string verb, string expectedResult)
     {
         // act

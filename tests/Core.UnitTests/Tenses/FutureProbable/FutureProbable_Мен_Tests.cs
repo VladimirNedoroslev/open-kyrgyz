@@ -2,7 +2,7 @@ using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.FutureProbable;
 
-namespace UnitTests.FutureProbable;
+namespace UnitTests.Tenses.FutureProbable;
 
 public class FutureProbableМенTests
 {
@@ -15,6 +15,7 @@ public class FutureProbableМенTests
     [InlineData("чеч", "чечермин")]
     [InlineData("ук", "угармын")]
     [InlineData("күт", "күтөрмүн")]
+    [InlineData("кой", "коёрмун")]
     public void FutureProbable_Мен_Positive(string verb, string expectedResult)
     {
         // act
@@ -52,6 +53,7 @@ public class FutureProbableМенTests
     [InlineData("чеч", "чечерминби")]
     [InlineData("ук", "угармынбы")]
     [InlineData("күт", "күтөрмүнбү")]
+    [InlineData("кой", "коёрмунбу")]
     public void FutureProbable_Мен_Interrogative(string verb, string expectedResult)
     {
         // act

@@ -2,7 +2,7 @@ using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.WithDifferentNegative.PastIndefinite;
 
-namespace UnitTests.PastIndefinite;
+namespace UnitTests.Tenses.Past.Indefinite;
 
 public class PastIndefiniteСилерTests
 {

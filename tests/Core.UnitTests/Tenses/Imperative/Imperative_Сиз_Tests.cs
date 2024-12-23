@@ -1,7 +1,7 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Tenses.Imperative;
 
-namespace UnitTests.Imperative;
+namespace UnitTests.Tenses.Imperative;
 
 public class ImperativeСизTests
 {
@@ -21,6 +21,7 @@ public class ImperativeСизTests
     [InlineData("отур", "отуруңуз")]
     [InlineData("үйрөт", "үйрөтүңүз")]
     [InlineData("ук", "угуңуз")]
+    [InlineData("кой", "коюңуз")]
     public void Imperative_Сиз_Positive(string verb, string expectedResult)
     {
         // act

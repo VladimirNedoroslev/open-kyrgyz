@@ -1,7 +1,7 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Tenses.Imperative;
 
-namespace UnitTests.Imperative;
+namespace UnitTests.Tenses.Imperative;
 
 public class ImperativeАларTests
 {
@@ -20,6 +20,7 @@ public class ImperativeАларTests
     [InlineData("текшер", "текшеришсин")]
     [InlineData("отур", "отурушсун")]
     [InlineData("үйрөт", "үйрөтүшсүн")]
+    [InlineData("кой", "коюшсун")]
     public void Imperative_Алар_Positive(string verb, string expectedResult)
     {
         // act

@@ -2,7 +2,7 @@ using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.PresentContinuous;
 
-namespace UnitTests.PresentContinuous;
+namespace UnitTests.Tenses.PresentContinuous;
 
 public class PresentContinuousСиздерTests
 {

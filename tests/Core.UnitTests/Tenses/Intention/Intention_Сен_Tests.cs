@@ -2,7 +2,7 @@ using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.WithDifferentNegative.Intention;
 
-namespace UnitTests.Intention;
+namespace UnitTests.Tenses.Intention;
 
 public class IntentionСенTests
 {
