@@ -17,7 +17,7 @@ public class VerbConjugatedByPronounDto
         var negative = verb.Negative;
         var interrogative = verb.Interrogative;
         var negativeInterrogative = verb.NegativeInterrogative;
-        var result = new List<VerbConjugatedByPronounDto>()
+        var result = new List<VerbConjugatedByPronounDto>
         {
             new()
             {

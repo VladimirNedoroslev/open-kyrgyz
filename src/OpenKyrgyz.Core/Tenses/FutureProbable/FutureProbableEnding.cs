@@ -27,7 +27,7 @@ public static class FutureProbableEnding
                 { PronounEnum.Биз, "рбыз" },
                 { PronounEnum.Силер, "рсыңар" },
                 { PronounEnum.Сиздер, "рсыздар" },
-                { PronounEnum.Алар, "шар" },
+                { PronounEnum.Алар, "р" },
             }
         },
         {
@@ -40,7 +40,7 @@ public static class FutureProbableEnding
                 { PronounEnum.Биз, "рбиз" },
                 { PronounEnum.Силер, "рсиңер" },
                 { PronounEnum.Сиздер, "рсиздер" },
-                { PronounEnum.Алар, "шер" },
+                { PronounEnum.Алар, "р" },
             }
         },
         {
@@ -53,7 +53,7 @@ public static class FutureProbableEnding
                 { PronounEnum.Биз, "рбуз" },
                 { PronounEnum.Силер, "рсуңар" },
                 { PronounEnum.Сиздер, "рсуздар" },
-                { PronounEnum.Алар, "шар" },
+                { PronounEnum.Алар, "р" },
             }
         },
         {
@@ -66,7 +66,7 @@ public static class FutureProbableEnding
                 { PronounEnum.Биз, "рбуз" },
                 { PronounEnum.Силер, "рсуңар" },
                 { PronounEnum.Сиздер, "рсуздар" },
-                { PronounEnum.Алар, "шор" },
+                { PronounEnum.Алар, "р" },
             }
         },
         {
@@ -79,7 +79,7 @@ public static class FutureProbableEnding
                 { PronounEnum.Биз, "рбүз" },
                 { PronounEnum.Силер, "рсүңөр" },
                 { PronounEnum.Сиздер, "рсүздөр" },
-                { PronounEnum.Алар, "шөр" },
+                { PronounEnum.Алар, "р" },
             }
         }
     };
@@ -96,7 +96,7 @@ public static class FutureProbableEnding
                 { PronounEnum.Биз, "спыз" },
                 { PronounEnum.Силер, "ссыңар" },
                 { PronounEnum.Сиздер, "ссыздар" },
-                { PronounEnum.Алар, "шпас" },
+                { PronounEnum.Алар, "с" },
             }
         },
         {
@@ -109,7 +109,7 @@ public static class FutureProbableEnding
                 { PronounEnum.Биз, "спиз" },
                 { PronounEnum.Силер, "ссиңер" },
                 { PronounEnum.Сиздер, "ссиздер" },
-                { PronounEnum.Алар, "шпес" },
+                { PronounEnum.Алар, "с" },
             }
         },
         {
@@ -122,7 +122,7 @@ public static class FutureProbableEnding
                 { PronounEnum.Биз, "спыз" },
                 { PronounEnum.Силер, "ссыңар" },
                 { PronounEnum.Сиздер, "ссыздар" },
-                { PronounEnum.Алар, "шпас" },
+                { PronounEnum.Алар, "с" },
             }
         },
         {
@@ -135,7 +135,7 @@ public static class FutureProbableEnding
                 { PronounEnum.Биз, "спуз" },
                 { PronounEnum.Силер, "ссуңар" },
                 { PronounEnum.Сиздер, "ссуздар" },
-                { PronounEnum.Алар, "шпос" },
+                { PronounEnum.Алар, "с" },
             }
         },
         {
@@ -148,7 +148,7 @@ public static class FutureProbableEnding
                 { PronounEnum.Биз, "спүз" },
                 { PronounEnum.Силер, "ссүңөр" },
                 { PronounEnum.Сиздер, "ссүздөр" },
-                { PronounEnum.Алар, "шпөс" },
+                { PronounEnum.Алар, "с" },
             }
         }
     };

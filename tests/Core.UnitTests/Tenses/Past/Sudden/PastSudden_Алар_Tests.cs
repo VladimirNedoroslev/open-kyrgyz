@@ -26,14 +26,14 @@ public class PastSuddenАларTests
     }
     
     [Theory]
-    [InlineData("бар", "барбашыптыр")]
-    [InlineData("иште", "иштебешиптир")]
-    [InlineData("бол", "болбошуптур")]
-    [InlineData("көр", "көрбөшүптүр")]
-    [InlineData("тап", "таппашыптыр")]
-    [InlineData("чеч", "чечпешиптир")]
-    [InlineData("ук", "укпашыптыр")]
-    [InlineData("күт", "күтпөшүптүр")]
+    [InlineData("бар", "барышпаптыр")]
+    [InlineData("иште", "иштешпептир")]
+    [InlineData("бол", "болушпаптыр")]
+    [InlineData("көр", "көрүшпөптүр")]
+    [InlineData("тап", "табышпаптыр")]
+    [InlineData("чеч", "чечишпептир")]
+    [InlineData("ук", "угушпаптыр")]
+    [InlineData("күт", "күтүшпөптүр")]
     public void PastSudden_Алар_Negative(string verb, string expectedResult)
     {
         // act
@@ -63,14 +63,14 @@ public class PastSuddenАларTests
     
     
     [Theory]
-    [InlineData("бар", "барбашыптырбы")]
-    [InlineData("иште", "иштебешиптирби")]
-    [InlineData("бол", "болбошуптурбу")]
-    [InlineData("көр", "көрбөшүптүрбү")]
-    [InlineData("тап", "таппашыптырбы")]
-    [InlineData("чеч", "чечпешиптирби")]
-    [InlineData("ук", "укпашыптырбы")]
-    [InlineData("күт", "күтпөшүптүрбү")]
+    [InlineData("бар", "барышпаптырбы")]
+    [InlineData("иште", "иштешпептирби")]
+    [InlineData("бол", "болушпаптырбы")]
+    [InlineData("көр", "көрүшпөптүрбү")]
+    [InlineData("тап", "табышпаптырбы")]
+    [InlineData("чеч", "чечишпептирби")]
+    [InlineData("ук", "угушпаптырбы")]
+    [InlineData("күт", "күтүшпөптүрбү")]
     public void PastSudden_Алар_NegativeInterrogative(string verb, string expectedResult)
     {
         // act

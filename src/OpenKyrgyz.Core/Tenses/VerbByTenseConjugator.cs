@@ -1,11 +1,13 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Tenses.Conditional;
+using OpenKyrgyz.Core.Tenses.FutureGoingTo;
 using OpenKyrgyz.Core.Tenses.FutureProbable;
 using OpenKyrgyz.Core.Tenses.Imperative;
 using OpenKyrgyz.Core.Tenses.PastDefinite;
 using OpenKyrgyz.Core.Tenses.PastSudden;
 using OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;
+using OpenKyrgyz.Core.Tenses.PresentContinuous;
 using OpenKyrgyz.Core.Tenses.WithDifferentNegative.Intention;
 using OpenKyrgyz.Core.Tenses.WithDifferentNegative.PastIndefinite;
 using OpenKyrgyz.Core.Tenses.WithDifferentNegative.PastUsedTo;
@@ -16,10 +18,12 @@ public class VerbByTenseConjugator
 {
     public VerbConjugationsAllTenses ConjugateByAllTenses(string verb)
     {
-        var result = new VerbConjugationsAllTenses()
+        var result = new VerbConjugationsAllTenses
         {
             Verb = verb,
             PresentAndFutureSimple = Conjugate(verb, TenseEnum.PresentAndFuture),
+            PresentContinuous = Conjugate(verb, TenseEnum.PresentContinuous),
+            FutureGoingTo = Conjugate(verb, TenseEnum.FutureGoingTo),
             FutureProbable = Conjugate(verb, TenseEnum.FutureProbable),
             PastDefinite = Conjugate(verb, TenseEnum.PastDefinite),
             PastIndefinite = Conjugate(verb, TenseEnum.PastIndefinite),
@@ -64,9 +68,9 @@ public class VerbByTenseConjugator
         Func<string, PronounEnum, VerbFormEnum, string> tenseConjugatorFunc = tense switch
         {
             TenseEnum.PresentAndFuture => PresentAndFutureSimpleConjugator.Conjugate,
-            TenseEnum.PresentContinuous => throw new NotImplementedException(),
+            TenseEnum.PresentContinuous => PresentContinuousConjugator.Conjugate,
             TenseEnum.FutureProbable => FutureProbableConjugator.Conjugate,
-            TenseEnum.FutureGoingTo => throw new NotImplementedException(),
+            TenseEnum.FutureGoingTo => FutureGoingToConjugator.Conjugate,
             TenseEnum.PastDefinite => PastDefiniteTenseConjugator.Conjugate,
             TenseEnum.PastIndefinite => PastIndefiniteConjugator.Conjugate,
             TenseEnum.PastUsedTo => PastUsedToConjugator.Conjugate,

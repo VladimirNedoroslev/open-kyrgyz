@@ -21,6 +21,7 @@ public class PresentAndFutureСизTests
     [InlineData("текшер", "текшересиз")]
     [InlineData("отур", "отурасыз")]
     [InlineData("үйрөт", "үйрөтөсүз")]
+    [InlineData("кой", "коёсуз")]
     public void PresentAndFuture_Сиз_Positive(string verb, string expectedResult)
     {
         // act
@@ -45,6 +46,7 @@ public class PresentAndFutureСизTests
     [InlineData("текшер", "текшербейсиз")]
     [InlineData("отур", "отурбайсыз")]
     [InlineData("үйрөт", "үйрөтпөйсүз")]
+    [InlineData("кой", "койбойсуз")]
     public void PresentAndFuture_Сиз_Negative(string verb, string expectedResult)
     {
         // act
@@ -69,6 +71,7 @@ public class PresentAndFutureСизTests
     [InlineData("текшер", "текшересизби")]
     [InlineData("отур", "отурасызбы")]
     [InlineData("үйрөт", "үйрөтөсүзбү")]
+    [InlineData("кой", "коёсузбу")]
     public void PresentAndFuture_Сиз_Interrogative(string verb, string expectedResult)
     {
         // act
@@ -93,6 +96,7 @@ public class PresentAndFutureСизTests
     [InlineData("текшер", "текшербейсизби")]
     [InlineData("отур", "отурбайсызбы")]
     [InlineData("үйрөт", "үйрөтпөйсүзбү")]
+    [InlineData("кой", "койбойсузбу")]
     public void PresentAndFuture_Сиз_NegativeInterrogative(string verb, string expectedResult)
     {
         // act

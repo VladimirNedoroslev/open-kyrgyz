@@ -26,7 +26,7 @@ public static class ConditionalEnding
                 { PronounEnum.Биз, "к" },
                 { PronounEnum.Силер, "ңар" },
                 { PronounEnum.Сиздер, "ңыздар" },
-                { PronounEnum.Алар, "шса" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -39,7 +39,7 @@ public static class ConditionalEnding
                 { PronounEnum.Биз, "к" },
                 { PronounEnum.Силер, "ңер" },
                 { PronounEnum.Сиздер, "ңиздер" },
-                { PronounEnum.Алар, "шсе" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -52,7 +52,7 @@ public static class ConditionalEnding
                 { PronounEnum.Биз, "к" },
                 { PronounEnum.Силер, "ңар" },
                 { PronounEnum.Сиздер, "ңыздар" },
-                { PronounEnum.Алар, "шса" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -65,7 +65,7 @@ public static class ConditionalEnding
                 { PronounEnum.Биз, "к" },
                 { PronounEnum.Силер, "ңор" },
                 { PronounEnum.Сиздер, "ңуздар" },
-                { PronounEnum.Алар, "шсо" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -78,7 +78,7 @@ public static class ConditionalEnding
                 { PronounEnum.Биз, "к" },
                 { PronounEnum.Силер, "ңөр" },
                 { PronounEnum.Сиздер, "ңүздөр" },
-                { PronounEnum.Алар, "шсө" },
+                { PronounEnum.Алар, "" },
             }
         }
     };
@@ -87,9 +87,6 @@ public static class ConditionalEnding
     {
         var vowelGroup = verb.GetVowelGroup();
         var pastPronounEnding = PronounMapping[vowelGroup][pronoun];
-        if (pronoun == PronounEnum.Алар)
-            return pastPronounEnding;
-        
         var pastEnding = ConditionalMapping[vowelGroup];
         return pastEnding + pastPronounEnding;
     }

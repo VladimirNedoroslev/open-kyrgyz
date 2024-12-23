@@ -25,14 +25,14 @@ public class PastDefiniteАларTests
     }
 
     [Theory]
-    [InlineData("бар", "барбашты")]
-    [InlineData("иште", "иштебешти")]
-    [InlineData("бол", "болбошту")]
-    [InlineData("көр", "көрбөштү")]
-    [InlineData("тап", "таппашты")]
-    [InlineData("чеч", "чечпешти")]
-    [InlineData("ук", "укпашты")]
-    [InlineData("күт", "күтпөштү")]
+    [InlineData("бар", "барышпады")]
+    [InlineData("иште", "иштешпеди")]
+    [InlineData("бол", "болушпады")]
+    [InlineData("көр", "көрүшпөдү")]
+    [InlineData("тап", "табышпады")]
+    [InlineData("чеч", "чечишпеди")]
+    [InlineData("ук", "угушпады")]
+    [InlineData("күт", "күтүшпөдү")]
     public void PastDefinite_Алар_Negative(string verb, string expectedResult)
     {
         // act
@@ -61,14 +61,14 @@ public class PastDefiniteАларTests
     }
 
     [Theory]
-    [InlineData("бар", "барбаштыбы")]
-    [InlineData("иште", "иштебештиби")]
-    [InlineData("бол", "болбоштубу")]
-    [InlineData("көр", "көрбөштүбү")]
-    [InlineData("тап", "таппаштыбы")]
-    [InlineData("чеч", "чечпештиби")]
-    [InlineData("ук", "укпаштыбы")]
-    [InlineData("күт", "күтпөштүбү")]
+    [InlineData("бар", "барышпадыбы")]
+    [InlineData("иште", "иштешпедиби")]
+    [InlineData("бол", "болушпадыбы")]
+    [InlineData("көр", "көрүшпөдүбү")]
+    [InlineData("тап", "табышпадыбы")]
+    [InlineData("чеч", "чечишпедиби")]
+    [InlineData("ук", "угушпадыбы")]
+    [InlineData("күт", "күтүшпөдүбү")]
     public void PastDefinite_Алар_NegativeInterrogative(string verb, string expectedResult)
     {
         // act

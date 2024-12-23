@@ -21,6 +21,7 @@ public class PresentAndFutureМенTests
     [InlineData("текшер", "текшеремин")]
     [InlineData("отур", "отурамын")]
     [InlineData("үйрөт", "үйрөтөмүн")]
+    [InlineData("кой", "коёмун")]
     public void PresentAndFuture_Мен_Positive(string verb, string expectedResult)
     {
         // act
@@ -45,6 +46,7 @@ public class PresentAndFutureМенTests
     [InlineData("текшер", "текшербеймин")]
     [InlineData("отур", "отурбаймын")]
     [InlineData("үйрөт", "үйрөтпөймүн")]
+    [InlineData("кой", "койбоймун")]
     public void PresentAndFuture_Мен_Negative(string verb, string expectedResult)
     {
         // act
@@ -69,6 +71,7 @@ public class PresentAndFutureМенTests
     [InlineData("текшер", "текшереминби")]
     [InlineData("отур", "отурамынбы")]
     [InlineData("үйрөт", "үйрөтөмүнбү")]
+    [InlineData("кой", "коёмунбу")]
     public void PresentAndFuture_Мен_Interrogative(string verb, string expectedResult)
     {
         // act
@@ -93,6 +96,7 @@ public class PresentAndFutureМенTests
     [InlineData("текшер", "текшербейминби")]
     [InlineData("отур", "отурбаймынбы")]
     [InlineData("үйрөт", "үйрөтпөймүнбү")]
+    [InlineData("кой", "койбоймунбу")]
     public void PresentAndFuture_Мен_NegativeInterrogative(string verb, string expectedResult)
     {
         // act

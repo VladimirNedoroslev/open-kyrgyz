@@ -61,7 +61,7 @@ public static class PastDefiniteEnding
                 { PronounEnum.Биз, "к" },
                 { PronounEnum.Силер, "ңар" },
                 { PronounEnum.Сиздер, "ңыздар" },
-                { PronounEnum.Алар, "шты" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -74,7 +74,7 @@ public static class PastDefiniteEnding
                 { PronounEnum.Биз, "к" },
                 { PronounEnum.Силер, "ңер" },
                 { PronounEnum.Сиздер, "ңиздер" },
-                { PronounEnum.Алар, "шти" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -87,7 +87,7 @@ public static class PastDefiniteEnding
                 { PronounEnum.Биз, "к" },
                 { PronounEnum.Силер, "ңар" },
                 { PronounEnum.Сиздер, "ңуздар" },
-                { PronounEnum.Алар, "шту" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -100,7 +100,7 @@ public static class PastDefiniteEnding
                 { PronounEnum.Биз, "к" },
                 { PronounEnum.Силер, "ңар" },
                 { PronounEnum.Сиздер, "ңуздар" },
-                { PronounEnum.Алар, "шту" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -113,7 +113,7 @@ public static class PastDefiniteEnding
                 { PronounEnum.Биз, "к" },
                 { PronounEnum.Силер, "ңөр" },
                 { PronounEnum.Сиздер, "ңүздөр" },
-                { PronounEnum.Алар, "штү" },
+                { PronounEnum.Алар, "" },
             }
         }
     };
@@ -122,8 +122,6 @@ public static class PastDefiniteEnding
     {
         var vowelGroup = verb.GetVowelGroup();
         var pastPronounEnding = PronounMapping[vowelGroup][pronoun];
-        if (pronoun == PronounEnum.Алар)
-            return pastPronounEnding;
         
         var lastLetterType = verb.GetLastLetterType();
         var pastEnding = PastMapping[vowelGroup][lastLetterType];

@@ -25,14 +25,14 @@ public class ConditionalАларTests
     }
 
     [Theory]
-    [InlineData("бар", "барбашса")]
-    [InlineData("иште", "иштебешсе")]
-    [InlineData("бол", "болбошсо")]
-    [InlineData("көр", "көрбөшсө")]
-    [InlineData("тап", "таппашса")]
-    [InlineData("чеч", "чечпешсе")]
-    [InlineData("ук", "укпашса")]
-    [InlineData("күт", "күтпөшсө")]
+    [InlineData("бар", "барышпаса")]
+    [InlineData("иште", "иштешпесе")]
+    [InlineData("бол", "болушпаса")]
+    [InlineData("көр", "көрүшпөсө")]
+    [InlineData("тап", "табышпаса")]
+    [InlineData("чеч", "чечишпесе")]
+    [InlineData("ук", "угушпаса")]
+    [InlineData("күт", "күтүшпөсө")]
     public void Conditional_Алар_Negative(string verb, string expectedResult)
     {
         // act
@@ -61,14 +61,14 @@ public class ConditionalАларTests
     }
 
     [Theory]
-    [InlineData("бар", "барбашсабы")]
-    [InlineData("иште", "иштебешсеби")]
-    [InlineData("бол", "болбошсобу")]
-    [InlineData("көр", "көрбөшсөбү")]
-    [InlineData("тап", "таппашсабы")]
-    [InlineData("чеч", "чечпешсеби")]
-    [InlineData("ук", "укпашсабы")]
-    [InlineData("күт", "күтпөшсөбү")]
+    [InlineData("бар", "барышпасабы")]
+    [InlineData("иште", "иштешпесеби")]
+    [InlineData("бол", "болушпасабы")]
+    [InlineData("көр", "көрүшпөсөбү")]
+    [InlineData("тап", "табышпасабы")]
+    [InlineData("чеч", "чечишпесеби")]
+    [InlineData("ук", "угушпасабы")]
+    [InlineData("күт", "күтүшпөсөбү")]
     public void Conditional_Алар_NegativeInterrogative(string verb, string expectedResult)
     {
         // act

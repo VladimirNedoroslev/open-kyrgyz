@@ -25,5 +25,9 @@
     <ItemGroup>
       <ProjectReference Include="..\..\src\OpenKyrgyz.Core\OpenKyrgyz.Core.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Tenses\Past\" />
+    </ItemGroup>
     
 </Project>

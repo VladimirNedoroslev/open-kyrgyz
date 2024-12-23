@@ -1,7 +1,7 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 
-namespace OpenKyrgyz.Core.VerbForms.ЫшForm;
+namespace OpenKyrgyz.Core.VerbForms.Cooperative;
 
 public class ЫшEnding
 {
@@ -22,6 +22,7 @@ public class ЫшEnding
         if (lastLetterType is LetterTypeEnum.Vowel)
             return verb + VowelEnding;
         var vowelGroup = verb.GetVowelGroup();
+        verb = verb.HarmonizeVerbEndingIfNecessary();
         return verb + Mapping[vowelGroup];
     }
 }

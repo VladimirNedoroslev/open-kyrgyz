@@ -21,6 +21,7 @@ public class PresentAndFutureСилерTests
     [InlineData("текшер", "текшересиңер")]
     [InlineData("отур", "отурасыңар")]
     [InlineData("үйрөт", "үйрөтөсүңөр")]
+    [InlineData("кой", "коёсуңар")]
     public void PresentAndFuture_Силер_Positive(string verb, string expectedResult)
     {
         // act
@@ -45,6 +46,7 @@ public class PresentAndFutureСилерTests
     [InlineData("текшер", "текшербейсиңер")]
     [InlineData("отур", "отурбайсыңар")]
     [InlineData("үйрөт", "үйрөтпөйсүңөр")]
+    [InlineData("кой", "койбойсуңар")]
     public void PresentAndFuture_Силер_Negative(string verb, string expectedResult)
     {
         // act
@@ -69,6 +71,7 @@ public class PresentAndFutureСилерTests
     [InlineData("текшер", "текшересиңерби")]
     [InlineData("отур", "отурасыңарбы")]
     [InlineData("үйрөт", "үйрөтөсүңөрбү")]
+    [InlineData("кой", "коёсуңарбы")]
     public void PresentAndFuture_Силер_Interrogative(string verb, string expectedResult)
     {
         // act
@@ -93,6 +96,7 @@ public class PresentAndFutureСилерTests
     [InlineData("текшер", "текшербейсиңерби")]
     [InlineData("отур", "отурбайсыңарбы")]
     [InlineData("үйрөт", "үйрөтпөйсүңөрбү")]
+    [InlineData("кой", "койбойсуңарбы")]
     public void PresentAndFuture_Силер_NegativeInterrogative(string verb, string expectedResult)
     {
         // act

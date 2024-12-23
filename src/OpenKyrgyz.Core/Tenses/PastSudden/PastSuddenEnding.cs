@@ -14,6 +14,15 @@ public static class PastSuddenEnding
         { VowelGroupEnum.ө_ү, "птүр" },
     };
 
+    private static readonly Dictionary<VowelGroupEnum, string> PastSuddenMappingConsonantEnding = new()
+    {
+        { VowelGroupEnum.а_я_ы, "ы" },
+        { VowelGroupEnum.и_е_э, "и" },
+        { VowelGroupEnum.у_ю, "у" },
+        { VowelGroupEnum.о_ё, "у" },
+        { VowelGroupEnum.ө_ү, "ү" },
+    };
+
     private static readonly Dictionary<VowelGroupEnum, Dictionary<PronounEnum, string>> PronounMapping = new()
     {
         {
@@ -26,7 +35,7 @@ public static class PastSuddenEnding
                 { PronounEnum.Биз, "быз" },
                 { PronounEnum.Силер, "сыңар" },
                 { PronounEnum.Сиздер, "сыздар" },
-                { PronounEnum.Алар, "шыптыр" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -39,7 +48,7 @@ public static class PastSuddenEnding
                 { PronounEnum.Биз, "биз" },
                 { PronounEnum.Силер, "сиңер" },
                 { PronounEnum.Сиздер, "сиздер" },
-                { PronounEnum.Алар, "шиптир" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -52,7 +61,7 @@ public static class PastSuddenEnding
                 { PronounEnum.Биз, "буз" },
                 { PronounEnum.Силер, "суңар" },
                 { PronounEnum.Сиздер, "суздар" },
-                { PronounEnum.Алар, "шуптур" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -65,7 +74,7 @@ public static class PastSuddenEnding
                 { PronounEnum.Биз, "буз" },
                 { PronounEnum.Силер, "суңар" },
                 { PronounEnum.Сиздер, "суздар" },
-                { PronounEnum.Алар, "шуптур" },
+                { PronounEnum.Алар, "" },
             }
         },
         {
@@ -78,19 +87,20 @@ public static class PastSuddenEnding
                 { PronounEnum.Биз, "бүз" },
                 { PronounEnum.Силер, "сүңөр" },
                 { PronounEnum.Сиздер, "сүздөр" },
-                { PronounEnum.Алар, "шүптүр" },
+                { PronounEnum.Алар, "" },
             }
         }
     };
 
     public static string GetEnding(string verb, PronounEnum pronoun)
     {
+        var lastLetterType = verb.GetLastLetterType();
         var vowelGroup = verb.GetVowelGroup();
-        var pastPronounEnding = PronounMapping[vowelGroup][pronoun];
-        if (pronoun == PronounEnum.Алар)
-            return pastPronounEnding;
-        
-        var pastEnding = PastSuddenMapping[vowelGroup];
-        return pastEnding + pastPronounEnding;
+        if (lastLetterType is LetterTypeEnum.Vowel)
+        {
+            return PastSuddenMapping[vowelGroup] + PronounMapping[vowelGroup][pronoun];
+        }
+
+        return PastSuddenMappingConsonantEnding[vowelGroup] + PastSuddenMapping[vowelGroup] + PronounMapping[vowelGroup][pronoun];
     }
 }

@@ -17,7 +17,7 @@ public static class PresentAndFutureSimpleEnding
                 { PronounEnum.Биз, "быз" },
                 { PronounEnum.Силер, "сыңар" },
                 { PronounEnum.Сиздер, "сыздар" },
-                { PronounEnum.Алар, "шат" },
+                { PronounEnum.Алар, "т" },
             }
         },
         {
@@ -30,7 +30,7 @@ public static class PresentAndFutureSimpleEnding
                 { PronounEnum.Биз, "биз" },
                 { PronounEnum.Силер, "сиңер" },
                 { PronounEnum.Сиздер, "сиздер" },
-                { PronounEnum.Алар, "шет" },
+                { PronounEnum.Алар, "т" },
             }
         },
         {
@@ -43,7 +43,7 @@ public static class PresentAndFutureSimpleEnding
                 { PronounEnum.Биз, "буз" },
                 { PronounEnum.Силер, "суңар" },
                 { PronounEnum.Сиздер, "суздар" },
-                { PronounEnum.Алар, "шат" },
+                { PronounEnum.Алар, "т" },
             }
         },
         {
@@ -56,7 +56,7 @@ public static class PresentAndFutureSimpleEnding
                 { PronounEnum.Биз, "буз" },
                 { PronounEnum.Силер, "суңар" },
                 { PronounEnum.Сиздер, "суздар" },
-                { PronounEnum.Алар, "шот" },
+                { PronounEnum.Алар, "т" },
             }
         },
         {
@@ -69,7 +69,7 @@ public static class PresentAndFutureSimpleEnding
                 { PronounEnum.Биз, "бүз" },
                 { PronounEnum.Силер, "сүңөр" },
                 { PronounEnum.Сиздер, "сүздөр" },
-                { PronounEnum.Алар, "шөт" },
+                { PronounEnum.Алар, "т" },
             }
         }
     };

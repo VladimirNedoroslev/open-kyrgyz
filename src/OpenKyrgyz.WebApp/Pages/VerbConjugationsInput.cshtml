@@ -1,0 +1,28 @@
+@page "/conjugations"
+@model VerbConjugationsInputPage
+@{
+    ViewData["Title"] = "Verb Conjugator";
+}
+
+<h1>Verb Conjugator</h1>
+
+<form id="verbForm" onsubmit="redirectToConjugations(event)">
+    <div class="form-group">
+        <label for="InputVerb">Введите глагол:</label>
+        <input type="text" id="InputVerb" class="form-control" name="InputVerb" required/>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Проспрягать</button>
+</form>
+
+<script>
+    function redirectToConjugations(event) {
+        event.preventDefault();
+        const inputVerb = document.getElementById('InputVerb').value;
+        if (inputVerb) {
+            const url = `/conjugations/${encodeURIComponent(inputVerb)}`;
+            window.location.href = url;
+        } else {
+            alert("Пожалуйста введите глагол");
+        }
+    }
+</script>

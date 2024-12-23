@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\OpenKyrgyz.Core\OpenKyrgyz.Core.csproj" />
+      <ProjectReference Include="..\OpenKyrgyz.Core\OpenKyrgyz.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>

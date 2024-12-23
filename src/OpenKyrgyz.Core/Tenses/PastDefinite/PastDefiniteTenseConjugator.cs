@@ -2,6 +2,7 @@ using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Interrogative;
 using OpenKyrgyz.Core.Negative;
+using OpenKyrgyz.Core.VerbForms.Cooperative;
 
 namespace OpenKyrgyz.Core.Tenses.PastDefinite;
 
@@ -15,6 +16,11 @@ public class PastDefiniteTenseConjugator
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;
+        
+        if (pronoun == PronounEnum.Алар)
+        {
+            verb = ЫшEnding.GetЫшEnding(verb);
+        }
 
         if (form is VerbFormEnum.Negative or VerbFormEnum.NegativeAndInterrogative)
         {
@@ -36,29 +42,8 @@ public class PastDefiniteTenseConjugator
 
     public static string ConjugateForPositive(string verb, PronounEnum pronoun)
     {
-        if (pronoun == PronounEnum.Алар)
-        {
-            var lastLetterType = verb.GetLastLetterType();
-            if (lastLetterType is not LetterTypeEnum.Vowel)
-            {
-                var vowelGroup = verb.GetVowelGroup();
-                var linkingLetter = LinkingLetterForAlarCase[vowelGroup];
-                verb = verb.HarmonizeVerbEndingIfNecessary();
-                verb += linkingLetter;
-            }
-        }
-
         var ending = PastDefiniteEnding.GetEnding(verb, pronoun);
 
         return $"{verb}{ending}";
     }
-
-    private static readonly Dictionary<VowelGroupEnum, char> LinkingLetterForAlarCase = new()
-    {
-        { VowelGroupEnum.а_я_ы, 'ы' },
-        { VowelGroupEnum.у_ю, 'у' },
-        { VowelGroupEnum.и_е_э, 'и' },
-        { VowelGroupEnum.о_ё, 'у' },
-        { VowelGroupEnum.ө_ү, 'ү' },
-    };
 }

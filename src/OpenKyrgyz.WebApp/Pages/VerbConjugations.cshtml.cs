@@ -14,10 +14,12 @@ public class VerbConjugationsPage : PageModel
         _conjugator = conjugator;
     }
 
-    [BindProperty] public string? InputVerb { get; set; }
+    [BindProperty(SupportsGet = true)] public string Verb { get; set; }
 
     public VerbConjugationTableView? PresentAndFutureConjugations { get; set; }
     public VerbConjugationTableView? FutureProbableConjugations { get; set; }
+    public VerbConjugationTableView? FutureGoingToConjugations { get; set; }
+    public VerbConjugationTableView? PresentContinuousConjugations { get; set; }
 
     public VerbConjugationTableView? PastDefiniteConjugations { get; set; }
     public VerbConjugationTableView? PastIndefiniteConjugations { get; set; }
@@ -30,56 +32,67 @@ public class VerbConjugationsPage : PageModel
     public VerbImperativesTableView? ImperativeConjugations { get; set; }
 
 
-    public void OnPost()
+    public void OnGet()
     {
-        if (!string.IsNullOrWhiteSpace(InputVerb))
+        if (string.IsNullOrWhiteSpace(Verb)) return;
+        var verbConjugationsAllTenses = _conjugator.ConjugateByAllTenses(Verb);
+        PresentAndFutureConjugations = new VerbConjugationTableView
         {
-            var verbConjugationsAllTenses = _conjugator.ConjugateByAllTenses(InputVerb);
-            PresentAndFutureConjugations = new VerbConjugationTableView()
-            {
-                TenseName = "Настоящее и будущее время",
-                VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.PresentAndFutureSimple),
-            };
-            FutureProbableConjugations = new VerbConjugationTableView()
-            {
-                TenseName = "Будущее возможное время",
-                VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.FutureProbable),
-            };
-            PastDefiniteConjugations = new VerbConjugationTableView()
-            {
-                TenseName = "Прошлое определенное время",
-                VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.PastDefinite),
-            };
-            PastIndefiniteConjugations = new VerbConjugationTableView()
-            {
-                TenseName = "Прошлое неопределенное время",
-                VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.PastIndefinite),
-            };
-            PastSuddenConjugations = new VerbConjugationTableView()
-            {
-                TenseName = "Прошлое внезапное время",
-                VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.PastSudden),
-            };
-            PastUsedToConjugations = new VerbConjugationTableView()
-            {
-                TenseName = "Прошлое многократное время",
-                VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.PastUsedTo),
-            };
-            ConditionalConjugations = new VerbConjugationTableView()
-            {
-                TenseName = "Условное наклонение",
-                VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.Conditional),
-            };
-            IntentionConjugations = new VerbConjugationTableView()
-            {
-                TenseName = "Наклонение намерения",
-                VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.Intention),
-            };
-            ImperativeConjugations = new VerbImperativesTableView()
-            {
-                Positive = verbConjugationsAllTenses.ImperativePositive,
-                Negative = verbConjugationsAllTenses.ImperativeNegative,
-            };
-        }
+            TenseName = "Настоящее и будущее определенное время (Учур жана айкын келер чак)",
+            VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.PresentAndFutureSimple),
+        };
+
+        PresentContinuousConjugations = new VerbConjugationTableView
+        {
+            TenseName = "Настоящее сложное время (Татаал учур чак)",
+            VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.PresentContinuous),
+        };
+
+        FutureGoingToConjugations =  new VerbConjugationTableView
+        {
+            TenseName = "Будущее сложное время (Татаал келер чак)",
+            VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.FutureGoingTo),
+        };
+        
+        FutureProbableConjugations = new VerbConjugationTableView
+        {
+            TenseName = "Будущее возможное время (Арсар келер чак)",
+            VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.FutureProbable),
+        };
+        PastDefiniteConjugations = new VerbConjugationTableView
+        {
+            TenseName = "Прошедшее определенное время (Айкын өткөн чак)",
+            VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.PastDefinite),
+        };
+        PastIndefiniteConjugations = new VerbConjugationTableView
+        {
+            TenseName = "Прошедшее неопределенное время (Жалпы өткөн чак)",
+            VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.PastIndefinite),
+        };
+        PastSuddenConjugations = new VerbConjugationTableView
+        {
+            TenseName = "Прошедшее неожиданное время (Капыскы өткөн чак)",
+            VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.PastSudden),
+        };
+        PastUsedToConjugations = new VerbConjugationTableView
+        {
+            TenseName = "Прошедшее многократное время (Адат өткөн чак)",
+            VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.PastUsedTo),
+        };
+        ConditionalConjugations = new VerbConjugationTableView
+        {
+            TenseName = "Условное наклонение (Шарттуу ыңгай)",
+            VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.Conditional),
+        };
+        IntentionConjugations = new VerbConjugationTableView
+        {
+            TenseName = "Наклонение намерения (Максат ыңгай)",
+            VerbConjugatedByPronouns = VerbConjugatedByPronounDto.MapToTableView(verbConjugationsAllTenses.Intention),
+        };
+        ImperativeConjugations = new VerbImperativesTableView
+        {
+            Positive = verbConjugationsAllTenses.ImperativePositive,
+            Negative = verbConjugationsAllTenses.ImperativeNegative,
+        };
     }
 }
