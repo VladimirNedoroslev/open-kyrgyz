@@ -1,9 +1,9 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 
-namespace OpenKyrgyz.Core.VerbForms.Gerund;
+namespace OpenKyrgyz.Core.Forms.Gerund;
 
-public static class GerundConjugator
+public static class Gerund
 {
     private static readonly Dictionary<VowelGroupEnum, string> PositiveMapping = new()
     {
@@ -35,11 +35,11 @@ public static class GerundConjugator
     };
 
 
-    public static string GetGerund(string verb, VerbFormEnum verbFormEnum)
+    public static string Get(string verb, VerbFormEnum verbFormEnum)
     {
         // TODO: verify logic for verbs like 'тап'
         if (verbFormEnum is VerbFormEnum.Interrogative or VerbFormEnum.NegativeAndInterrogative)
-            throw new InvalidOperationException();
+            return "-";
         if (verb is "тап")
             return "таап";
         

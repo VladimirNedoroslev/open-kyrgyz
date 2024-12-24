@@ -9,10 +9,6 @@
     <ItemGroup>
       <ProjectReference Include="..\OpenKyrgyz.Core\OpenKyrgyz.Core.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Models\" />
-    </ItemGroup>
     
 
 </Project>

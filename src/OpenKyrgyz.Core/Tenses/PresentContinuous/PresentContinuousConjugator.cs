@@ -1,6 +1,6 @@
 using OpenKyrgyz.Core.Enums;
+using OpenKyrgyz.Core.Forms.Gerund;
 using OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;
-using OpenKyrgyz.Core.VerbForms.Gerund;
 
 namespace OpenKyrgyz.Core.Tenses.PresentContinuous;
 
@@ -23,12 +23,12 @@ public class PresentContinuousConjugator
             {
                 "бар" => "бара",
                 "кел" => "келе",
-                _ => GerundConjugator.GetGerund(verb, VerbFormEnum.Positive)
+                _ => Gerund.Get(verb, VerbFormEnum.Positive)
             };
         }
         else
         {
-            gerundVerb = GerundConjugator.GetGerund(verb, VerbFormEnum.Negative);
+            gerundVerb = Gerund.Get(verb, VerbFormEnum.Negative);
         }
 
         if (form is VerbFormEnum.Negative)

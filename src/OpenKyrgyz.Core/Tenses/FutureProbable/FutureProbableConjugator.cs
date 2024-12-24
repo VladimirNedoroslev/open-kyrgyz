@@ -1,7 +1,7 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
+using OpenKyrgyz.Core.Forms.Cooperative;
 using OpenKyrgyz.Core.Interrogative;
-using OpenKyrgyz.Core.VerbForms.Cooperative;
 
 namespace OpenKyrgyz.Core.Tenses.FutureProbable;
 
@@ -17,7 +17,7 @@ public class FutureProbableConjugator
         
         if (pronoun == PronounEnum.Алар)
         {
-            verb = ЫшEnding.GetЫшEnding(verb);
+            verb = CooperativeMood.Get(verb);
         }
 
         if (formEnum is VerbFormEnum.Negative)

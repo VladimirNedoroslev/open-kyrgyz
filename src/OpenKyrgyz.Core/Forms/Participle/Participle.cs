@@ -1,9 +1,10 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
+using OpenKyrgyz.Core.Negative;
 
-namespace OpenKyrgyz.Core.VerbForms.Participle;
+namespace OpenKyrgyz.Core.Forms.Participle;
 
-public class ParticipleConjugator
+public static class Participle
 {
     private static readonly Dictionary<VowelGroupEnum, string> VowelOrVoicedConsonantMapping = new()
     {
@@ -13,7 +14,7 @@ public class ParticipleConjugator
         { VowelGroupEnum.у_ю, "ган" },
         { VowelGroupEnum.ө_ү, "гөн" },
     };
-    
+
     private static readonly Dictionary<VowelGroupEnum, string> VoicelessConsonantMapping = new()
     {
         { VowelGroupEnum.а_я_ы, "кан" },
@@ -22,15 +23,21 @@ public class ParticipleConjugator
         { VowelGroupEnum.у_ю, "кан" },
         { VowelGroupEnum.ө_ү, "көн" },
     };
-    
 
-    public static string GetPastParticiple(string verb)
+
+    public static string Get(string verb, VerbFormEnum form)
     {
+        if (form is VerbFormEnum.Interrogative or VerbFormEnum.NegativeAndInterrogative)
+            return "-";
+
+        if (form == VerbFormEnum.Negative)
+            verb += verb.GetNegativeAffix();
+
         var lastLetterType = verb.GetLastLetterType();
         var vowelGroup = verb.GetVowelGroup();
         if (lastLetterType is LetterTypeEnum.Vowel or LetterTypeEnum.VoicedConsonant)
             return verb + VowelOrVoicedConsonantMapping[vowelGroup];
-        
+
         return verb + VoicelessConsonantMapping[vowelGroup];
     }
 }

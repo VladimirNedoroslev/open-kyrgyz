@@ -1,25 +1,27 @@
 @page "/conjugations/{verb}"
 @model VerbConjugationsPage
 @{
-    ViewData["Title"] = "Verb Conjugator";
+    ViewData["Title"] = $"Спряжение глагола {Model.Verb}";
 }
 
 @if (!string.IsNullOrWhiteSpace(Model.Verb))
 {
-    <h1>Спряжение для глагола @Model.Verb</h1>
+    <h2>Спряжение для глагола "@Model.Verb"</h2>
 }
 
-<partial name="VerbsImperativesTable" model="Model.ImperativeConjugations"/>
+<partial name="VerbForms" model="Model.AllVerbForms"/>
 
-<partial name="VerbsConjugationTable" model="Model.PresentAndFutureConjugations"/>
-<partial name="VerbsConjugationTable" model="Model.PresentContinuousConjugations"/>
-<partial name="VerbsConjugationTable" model="Model.FutureGoingToConjugations"/>
-<partial name="VerbsConjugationTable" model="Model.FutureProbableConjugations"/>
+<partial name="VerbsImperativesTable" model="Model.AllConjugations.ImperativeConjugations"/>
 
-<partial name="VerbsConjugationTable" model="Model.PastDefiniteConjugations"/>
-<partial name="VerbsConjugationTable" model="Model.PastIndefiniteConjugations"/>
-<partial name="VerbsConjugationTable" model="Model.PastSuddenConjugations"/>
-<partial name="VerbsConjugationTable" model="Model.PastUsedToConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.AllConjugations.PresentAndFutureConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.AllConjugations.PresentContinuousConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.AllConjugations.FutureGoingToConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.AllConjugations.FutureProbableConjugations"/>
 
-<partial name="VerbsConjugationTable" model="Model.ConditionalConjugations"/>
-<partial name="VerbsConjugationTable" model="Model.IntentionConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.AllConjugations.PastDefiniteConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.AllConjugations.PastIndefiniteConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.AllConjugations.PastSuddenConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.AllConjugations.PastUsedToConjugations"/>
+
+<partial name="VerbsConjugationTable" model="Model.AllConjugations.ConditionalConjugations"/>
+<partial name="VerbsConjugationTable" model="Model.AllConjugations.IntentionConjugations"/>

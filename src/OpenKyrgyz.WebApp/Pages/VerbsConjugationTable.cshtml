@@ -2,7 +2,7 @@
 
 @if (Model is not null)
 {
-    <h2>@Model.TenseName</h2>
+    <h4>@Model.TenseName</h4>
     <table class="table table-hover table-sm">
         <thead>
         <tr>
@@ -17,7 +17,7 @@
         @foreach (var dto in Model.VerbConjugatedByPronouns)
         {
             <tr>
-                <td>@dto.Pronoun.ToString("G")</td>
+                <td><strong>@dto.Pronoun.ToString("G")</strong></td>
                 <td>@dto.Positive</td>
                 <td>@dto.Negative</td>
                 <td>@dto.Interrogative</td>

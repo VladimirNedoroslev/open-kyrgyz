@@ -1,9 +1,9 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 
-namespace OpenKyrgyz.Core.VerbForms.Cooperative;
+namespace OpenKyrgyz.Core.Forms.Cooperative;
 
-public class ЫшEnding
+public static class CooperativeMood
 {
     private static readonly Dictionary<VowelGroupEnum, string> Mapping = new()
     {
@@ -16,7 +16,7 @@ public class ЫшEnding
 
     public const char VowelEnding = 'ш';
 
-    public static string GetЫшEnding(string verb)
+    public static string Get(string verb)
     {
         var lastLetterType = verb.GetLastLetterType();
         if (lastLetterType is LetterTypeEnum.Vowel)

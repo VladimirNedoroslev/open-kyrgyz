@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.VerbForms.Gerund;
+using OpenKyrgyz.Core.Forms.Gerund;
 
 namespace UnitTests;
 
@@ -22,7 +22,7 @@ public class GerundTests
     public void Gerund_Positive(string verb, string expectedResult)
     {
         // act
-        var actualResult = GerundConjugator.GetGerund(verb, VerbFormEnum.Positive);
+        var actualResult = Gerund.Get(verb, VerbFormEnum.Positive);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -45,7 +45,7 @@ public class GerundTests
     public void Gerund_Negative(string verb, string expectedResult)
     {
         // act
-        var actualResult = GerundConjugator.GetGerund(verb, VerbFormEnum.Negative);
+        var actualResult = Gerund.Get(verb, VerbFormEnum.Negative);
 
         // assert
         actualResult.Should().Be(expectedResult);

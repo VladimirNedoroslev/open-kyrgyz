@@ -1,8 +1,8 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
+using OpenKyrgyz.Core.Forms.Cooperative;
 using OpenKyrgyz.Core.Interrogative;
 using OpenKyrgyz.Core.Negative;
-using OpenKyrgyz.Core.VerbForms.Cooperative;
 
 namespace OpenKyrgyz.Core.Tenses.PastDefinite;
 
@@ -19,7 +19,7 @@ public class PastDefiniteTenseConjugator
         
         if (pronoun == PronounEnum.Алар)
         {
-            verb = ЫшEnding.GetЫшEnding(verb);
+            verb = CooperativeMood.Get(verb);
         }
 
         if (form is VerbFormEnum.Negative or VerbFormEnum.NegativeAndInterrogative)

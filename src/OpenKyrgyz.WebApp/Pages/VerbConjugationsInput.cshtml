@@ -4,12 +4,18 @@
     ViewData["Title"] = "Verb Conjugator";
 }
 
-<h1>Verb Conjugator</h1>
+<h2>Спряжение для глаголов кыргызского языка</h2>
+<p></p>
 
 <form id="verbForm" onsubmit="redirectToConjugations(event)">
-    <div class="form-group">
-        <label for="InputVerb">Введите глагол:</label>
+    <label for="InputVerb">Введите глагол:</label>
+    <div class="input-group">
         <input type="text" id="InputVerb" class="form-control" name="InputVerb" required/>
+        <div class="input-group-prepend">
+            <button type="button" id="addObutton" class="btn btn-secondary">Ө</button>
+            <button type="button" id="addYbutton" class="btn btn-secondary">Ү</button>
+            <button type="button" id="addNbutton" class="btn btn-secondary">Ң</button>
+        </div>
     </div>
     <button type="submit" class="btn btn-primary mt-2">Проспрягать</button>
 </form>
@@ -25,4 +31,22 @@
             alert("Пожалуйста введите глагол");
         }
     }
+
+    document.getElementById('addObutton').addEventListener('click', function () {
+        appendCharacterToInput('ө');
+    });
+
+    document.getElementById('addYbutton').addEventListener('click', function () {
+        appendCharacterToInput('ү');
+    });
+
+    document.getElementById('addNbutton').addEventListener('click', function () {
+        appendCharacterToInput('ң');
+    });
+
+    function appendCharacterToInput(char) {
+        const input = document.getElementById('InputVerb');
+        input.value += char;
+    }
+    
 </script>

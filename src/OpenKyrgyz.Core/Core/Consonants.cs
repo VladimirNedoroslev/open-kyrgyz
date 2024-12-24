@@ -10,6 +10,12 @@ public static class Consonants
         { 'п', 'б' },
     };
 
+    
+    private static readonly Dictionary<char, char> ReverseConsonantTransforms = new()
+    {
+        { 'г', 'к' },
+        { 'б', 'п' },
+    };
     // TODO: rewrite with Span
     public static string HarmonizeVerbEndingIfNecessary(this string verb)
     {
@@ -19,6 +25,19 @@ public static class Consonants
 
         var sb = new StringBuilder(verb);
         sb[^1] = ConsonantTransforms[lastSymbol];
+        verb = sb.ToString();
+
+        return verb;
+    }
+    
+    public static string UnHarmonizeVerbEndingIfNecessary(this string verb)
+    {
+        var lastSymbol = verb[^1];
+        if (verb[^1] is not ('г' or 'б'))
+            return verb;
+
+        var sb = new StringBuilder(verb);
+        sb[^1] = ReverseConsonantTransforms[lastSymbol];
         verb = sb.ToString();
 
         return verb;

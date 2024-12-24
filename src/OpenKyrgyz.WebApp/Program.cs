@@ -1,10 +1,12 @@
-
 using OpenKyrgyz.Core.Tenses;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var services = builder.Services;
-services.AddRazorPages();
+var mvcBuilder = services.AddRazorPages();
+
+if (builder.Environment.IsDevelopment())
+    mvcBuilder.AddRazorRuntimeCompilation();
 
 services.AddSingleton<VerbByTenseConjugator>();
 
