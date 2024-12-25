@@ -1,11 +1,9 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Forms;
-using OpenKyrgyz.Core.Forms.Cooperative;
-using OpenKyrgyz.Core.Forms.Gerund;
-using OpenKyrgyz.Core.Forms.Noun;
-using OpenKyrgyz.Core.Forms.Until;
-using OpenKyrgyz.Core.Forms.While;
+using OpenKyrgyz.Core.Forms.TimeRelated;
+using OpenKyrgyz.Core.Models;
+using OpenKyrgyz.Core.Moods;
 using OpenKyrgyz.Core.Tenses.Conditional;
 using OpenKyrgyz.Core.Tenses.FutureGoingTo;
 using OpenKyrgyz.Core.Tenses.FutureProbable;
@@ -42,6 +40,7 @@ public class VerbByTenseConjugator
             Intention = Conjugate(verb, TenseEnum.Intention),
             ImperativePositive = ConjugateImperativePositive(verb),
             ImperativeNegative = ConjugateImperativeNegative(verb),
+            OptativeMood = new VerbConjugatedInOptativeMood(verb),
         };
         return result;
     }

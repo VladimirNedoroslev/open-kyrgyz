@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OpenKyrgyz.Core.Core;
-using OpenKyrgyz.Core.Forms.Noun;
+using OpenKyrgyz.Core.Forms;
 using OpenKyrgyz.Core.Tenses;
 using OpenKyrgyz.WebApp.ViewModels;
 

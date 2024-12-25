@@ -1,7 +1,8 @@
+using OpenKyrgyz.Core.Common;
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Forms.Cooperative;
 using OpenKyrgyz.Core.Interrogative;
+using OpenKyrgyz.Core.Moods;
 using OpenKyrgyz.Core.Negative;
 
 namespace OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;

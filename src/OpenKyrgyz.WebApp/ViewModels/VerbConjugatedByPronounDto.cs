@@ -1,5 +1,6 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
+using OpenKyrgyz.Core.Models;
 
 namespace OpenKyrgyz.WebApp.ViewModels;
 

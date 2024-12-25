@@ -1,5 +1,5 @@
 using FluentAssertions;
-using OpenKyrgyz.Core.Forms.Noun;
+using OpenKyrgyz.Core.Forms;
 
 namespace UnitTests.Forms.Noun;
 

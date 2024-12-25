@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Forms.Gerund;
+using OpenKyrgyz.Core.Forms;
 
 namespace UnitTests.Forms;
 

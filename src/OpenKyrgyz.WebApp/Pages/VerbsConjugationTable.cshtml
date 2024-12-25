@@ -7,17 +7,17 @@
         <thead>
         <tr>
             <th scope="col">Местоимение</th>
-            <th scope="col">Утвердительная</th>
-            <th scope="col">Отрицательная</th>
-            <th scope="col">Вопросительная</th>
-            <th scope="col">Отрицательная + вопросительная</th>
+            <th scope="col">Утверждение</th>
+            <th scope="col">Отрицание</th>
+            <th scope="col">Вопрос</th>
+            <th scope="col">Отрицание + вопрос</th>
         </tr>
         </thead>
         <tbody>
         @foreach (var dto in Model.VerbConjugatedByPronouns)
         {
             <tr>
-                <td><strong>@dto.Pronoun.ToString("G")</strong></td>
+                <td><b>@dto.Pronoun.ToString("G")</b></td>
                 <td>@dto.Positive</td>
                 <td>@dto.Negative</td>
                 <td>@dto.Interrogative</td>

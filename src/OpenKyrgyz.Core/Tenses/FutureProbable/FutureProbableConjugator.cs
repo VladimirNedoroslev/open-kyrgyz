@@ -1,7 +1,7 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Forms.Cooperative;
 using OpenKyrgyz.Core.Interrogative;
+using OpenKyrgyz.Core.Moods;
 
 namespace OpenKyrgyz.Core.Tenses.FutureProbable;
 

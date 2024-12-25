@@ -1,5 +1,5 @@
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Forms.Gerund;
+using OpenKyrgyz.Core.Forms;
 using OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;
 
 namespace OpenKyrgyz.Core.Tenses.PresentContinuous;
