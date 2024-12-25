@@ -1,5 +1,6 @@
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
+using OpenKyrgyz.Core.Possessive;
 
 namespace OpenKyrgyz.Core.Cases;
 
@@ -23,15 +24,24 @@ public static class ЖатышCase
         { VowelGroupEnum.ө_ү, "тө" },
     };
 
-    private const char АлCaseLinkinLetter = 'н';
+    private const char АнынАлардынCaseEnding = 'н';
 
-    public static string ToЖатышCase(string word)
+    public static string ToЖатышCase(string word, PronounEnum? withPossessive = null)
     {
-        // todo: handle case for Ал
         if (string.IsNullOrEmpty(word))
             return word;
+
+        if (withPossessive.HasValue)
+            word = word.ToPossessive(withPossessive.Value);
+
         var vowelGroup = word.GetVowelGroup();
+        if (withPossessive is PronounEnum.Ал or PronounEnum.Алар)
+        {
+            return word + АнынАлардынCaseEnding + VowelOrVoicedConsonantMapping[vowelGroup];
+        }
+
         var lastLetter = word.GetLastLetterType();
+
         if (lastLetter is LetterTypeEnum.VoicelessConsonant)
             return word + VoicelessConsonantMapping[vowelGroup];
 

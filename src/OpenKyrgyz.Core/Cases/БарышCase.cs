@@ -1,5 +1,7 @@
+using OpenKyrgyz.Core.Common;
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
+using OpenKyrgyz.Core.Possessive;
 
 namespace OpenKyrgyz.Core.Cases;
 
@@ -13,7 +15,7 @@ public static class БарышCase
         { VowelGroupEnum.у_ю, "га" },
         { VowelGroupEnum.ө_ү, "гө" },
     };
-    
+
     public static readonly Dictionary<VowelGroupEnum, string> VoicelessConsonantMapping = new()
     {
         { VowelGroupEnum.а_я_ы, "ка" },
@@ -22,14 +24,36 @@ public static class БарышCase
         { VowelGroupEnum.у_ю, "ка" },
         { VowelGroupEnum.ө_ү, "кө" },
     };
-    
 
-    public static string ToБарышCase(string word)
-    { 
-        // todo: handle case for Ал
+    public static readonly Dictionary<VowelGroupEnum, string> АнынАлардынCaseMapping = new()
+    {
+        { VowelGroupEnum.а_я_ы, "на" },
+        { VowelGroupEnum.и_е_э, "не" },
+        { VowelGroupEnum.о_ё, "но" }, // not possible with Ал/Алар possessive, since it always ends with ы и у ү 
+        { VowelGroupEnum.у_ю, "на" },
+        { VowelGroupEnum.ө_ү, "нө" },
+    };
+
+
+    public static string ToБарышCase(string word, PronounEnum? withPossessive = null)
+    {
         if (string.IsNullOrEmpty(word))
             return word;
+
+        if (withPossessive.HasValue)
+            word = word.ToPossessive(withPossessive.Value);
+
         var vowelGroup = word.GetVowelGroup();
+        if (withPossessive is PronounEnum.Мен or PronounEnum.Сен)
+        {
+            return word + АеөойLinkingLetter.GetLinkingChar(word);
+        }
+
+        if (withPossessive is PronounEnum.Ал or PronounEnum.Алар)
+        {
+            return word + АнынАлардынCaseMapping[vowelGroup];
+        }
+
         var lastLetter = word.GetLastLetterType();
         if (lastLetter is LetterTypeEnum.VoicelessConsonant)
             return word + VoicelessConsonantMapping[vowelGroup];

@@ -5,8 +5,6 @@ namespace UnitTests.Possessive;
 
 public class PossessiveМенTests
 {
-
-
     [Theory]
     [InlineData("апа", "апам")]
     [InlineData("дос", "досум")]

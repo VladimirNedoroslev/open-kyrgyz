@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Forms;
+using OpenKyrgyz.Core.Models;
 using OpenKyrgyz.Core.Tenses;
 using OpenKyrgyz.WebApp.ViewModels;
 

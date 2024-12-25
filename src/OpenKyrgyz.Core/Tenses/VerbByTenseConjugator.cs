@@ -47,29 +47,7 @@ public class VerbByTenseConjugator
 
     public AllVerbForms GetAllVerbForms(string verb)
     {
-        var nounFormPositive = NounForm.GetPositiveNounForm(verb);
-        var nounFormNegative = NounForm.GetNegativeNounForm(verb);
-        var gerundPositive = Gerund.Get(verb, VerbFormEnum.Positive);
-        var gerundNegative = Gerund.Get(verb, VerbFormEnum.Negative);
-        var participlePositive = Participle.Get(verb, VerbFormEnum.Positive);
-        var participleNegative = Participle.Get(verb, VerbFormEnum.Negative);
-        var cooperative = CooperativeMood.Get(verb);
-        var reflexive = ReflexiveMood.Get(verb);
-        var passive = PassiveMood.Get(verb);
-
-        var whenForm = WhenForm.Get(verb);
-        var beforeForm = BeforeForm.Get(verb);
-        var afterForm = AfterForm.Get(verb);
-        var asSoonAsForm = AsSoonAsForm.Get(verb);
-        var withEveryForm = WithEveryForm.Get(verb);
-        var untilForm = UntilForm.Get(verb);
-        var whileForm = WhileForm.Get(verb);
-
-        var causeFormPositive = CauseForm.Get(verb, VerbFormEnum.Positive);
-        var causeFormNegative = CauseForm.Get(verb, VerbFormEnum.Negative);
-        var result = new AllVerbForms(verb, nounFormPositive, nounFormNegative, gerundPositive, gerundNegative,
-            participlePositive, participleNegative, cooperative, reflexive, passive, whenForm, beforeForm, afterForm,
-            asSoonAsForm, withEveryForm, untilForm, whileForm, causeFormPositive, causeFormNegative);
+        var result = new AllVerbForms(verb);
         return result;
     }
 

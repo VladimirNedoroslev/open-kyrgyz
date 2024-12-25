@@ -1,9 +1,11 @@
-namespace OpenKyrgyz.Core.Core;
+using OpenKyrgyz.Core.Enums;
+using OpenKyrgyz.Core.Forms;
+
+namespace OpenKyrgyz.Core.Models;
 
 public class AllVerbForms
 {
     public string BaseForm { get; set; }
-
 
     public string NounFormPositive { get; set; }
     public string NounFormNegative { get; set; }
@@ -30,48 +32,30 @@ public class AllVerbForms
     public string CauseFormNegative { get; set; }
 
 
-    public AllVerbForms(
-        string baseForm,
-        string nounFormPositive,
-        string nounFormNegative,
-        string gerundPositive,
-        string gerundNegative,
-        string participlePositive,
-        string participleNegative,
-        string cooperativeMood,
-        string reflexiveMood,
-        string passiveMood,
-        string whenForm,
-        string beforeForm,
-        string afterForm,
-        string asSoonAsForm,
-        string withEveryForm,
-        string untilForm,
-        string whileForm,
-        string causeFormPositive,
-        string causeFormNegative
-    )
+    public AllVerbForms(string verb)
     {
-        BaseForm = baseForm;
-        NounFormPositive = nounFormPositive;
-        NounFormNegative = nounFormNegative;
-        GerundPositive = gerundPositive;
-        GerundNegative = gerundNegative;
-        ParticiplePositive = participlePositive;
-        ParticipleNegative = participleNegative;
-        CooperativeMood = cooperativeMood;
-        ReflexiveMood = reflexiveMood;
-        PassiveMood = passiveMood;
+        NounFormPositive = NounForm.GetPositiveNounForm(verb);
+        NounFormNegative = NounForm.GetNegativeNounForm(verb);
+        GerundPositive = Gerund.Get(verb, VerbFormEnum.Positive);
+        GerundNegative = Gerund.Get(verb, VerbFormEnum.Negative);
+        ParticiplePositive = Participle.Get(verb, VerbFormEnum.Positive);
+        ParticipleNegative = Participle.Get(verb, VerbFormEnum.Negative);
+
+        CooperativeMood = Moods.CooperativeMood.Get(verb);
+        ReflexiveMood = Moods.ReflexiveMood.Get(verb);
+        PassiveMood = Moods.PassiveMood.Get(verb);
+
+        WhenForm = Forms.TimeRelated.WhenForm.Get(verb);
+        BeforeForm = Forms.TimeRelated.BeforeForm.Get(verb);
+        AfterForm = Forms.TimeRelated.AfterForm.Get(verb);
+        AsSoonAsForm = Forms.TimeRelated.AsSoonAsForm.Get(verb);
+        WithEveryForm = Forms.TimeRelated.WithEveryForm.Get(verb);
+        UntilForm = Forms.TimeRelated.UntilForm.Get(verb);
+        WhileForm = Forms.TimeRelated.WhileForm.Get(verb);
+
+        CauseFormPositive = CauseForm.Get(verb, VerbFormEnum.Positive);
+        CauseFormNegative = CauseForm.Get(verb, VerbFormEnum.Negative);
+
         
-        WhenForm = whenForm;
-        BeforeForm = beforeForm;
-        AfterForm = afterForm;
-        WithEveryForm = withEveryForm;
-        AsSoonAsForm = asSoonAsForm;
-        UntilForm = untilForm;
-        WhileForm = whileForm;
-        
-        CauseFormPositive = causeFormPositive;
-        CauseFormNegative = causeFormNegative;
     }
 }
