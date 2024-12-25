@@ -77,6 +77,8 @@ public static class ToBeEnding
 
     public static string GetEndingForPronoun(string word, PronounEnum pronoun)
     {
+        if (string.IsNullOrWhiteSpace(word))
+            return word;
         var vowelGroup = word.GetVowelGroup();
         return Mapping[vowelGroup][pronoun];
     }

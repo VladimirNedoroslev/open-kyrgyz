@@ -1,4 +1,3 @@
-using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Forms.Cooperative;
 using OpenKyrgyz.Core.Interrogative;
@@ -16,7 +15,7 @@ public class PastDefiniteTenseConjugator
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;
-        
+
         if (pronoun == PronounEnum.Алар)
         {
             verb = CooperativeMood.Get(verb);
@@ -27,7 +26,7 @@ public class PastDefiniteTenseConjugator
             var negativeAffix = verb.GetNegativeAffix();
             verb += negativeAffix.Value;
         }
-        
+
         verb = ConjugateForPositive(verb, pronoun);
 
         if (form is VerbFormEnum.Interrogative or VerbFormEnum.NegativeAndInterrogative)
@@ -37,11 +36,12 @@ public class PastDefiniteTenseConjugator
         }
 
         return verb;
-
     }
 
     public static string ConjugateForPositive(string verb, PronounEnum pronoun)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         var ending = PastDefiniteEnding.GetEnding(verb, pronoun);
 
         return $"{verb}{ending}";

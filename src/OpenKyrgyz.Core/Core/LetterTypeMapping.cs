@@ -1,9 +1,12 @@
+using System.Text.RegularExpressions;
 using OpenKyrgyz.Core.Enums;
 
 namespace OpenKyrgyz.Core.Core;
 
-public static class LetterTypeMapping
+public static partial class LetterTypeMapping
 {
+    public const string KyrgyzAlphabetLettersRegex = "^[А-ЯЁа-яёҮүӨөҢң\\s]+$";
+
     public static readonly Dictionary<char, LetterTypeEnum> Mappings = new()
     {
         // Vowels
@@ -59,4 +62,7 @@ public static class LetterTypeMapping
     {
         return Mappings[c];
     }
+    
+    [GeneratedRegex("^[БГДЖЗЙКЛМНҢПРСТФХЦЧШЩбгджзйклмнңпрстфхцчшщ]+$")]
+    public static partial Regex OnlyConsonantsRegex();
 }

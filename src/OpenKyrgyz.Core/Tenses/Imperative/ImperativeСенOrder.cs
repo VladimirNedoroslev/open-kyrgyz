@@ -52,13 +52,17 @@ public class ImperativeСенOrder
 
     public static string ConjugatePositive(string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         var vowelGroup = verb.GetVowelGroup();
         var lastLetterType = verb.GetLastLetterType();
         return verb + Mapping[vowelGroup][lastLetterType];
     }
-    
+
     public static string ConjugateNegative(string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         var negativeVerb = verb + verb.GetNegativeAffix();
         return ConjugatePositive(negativeVerb);
     }

@@ -14,6 +14,8 @@ public class NegativeAffix : Affix
     public static readonly NegativeAffix По = new("по");
     public static readonly NegativeAffix Пө = new("пө");
     
+    public static readonly NegativeAffix Empty = new(string.Empty);
+    
     public override string Value { get; }
 
     public NegativeAffix(string value)

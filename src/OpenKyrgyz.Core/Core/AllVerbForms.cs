@@ -3,8 +3,8 @@ namespace OpenKyrgyz.Core.Core;
 public class AllVerbForms
 {
     public string BaseForm { get; set; }
-    
-    
+
+
     public string NounFormPositive { get; set; }
     public string NounFormNegative { get; set; }
 
@@ -18,6 +18,12 @@ public class AllVerbForms
     public string ReflexiveMood { get; set; }
     public string PassiveMood { get; set; }
 
+    public string UntilForm { get; set; }
+    public string WhileForm { get; set; }
+
+    public string CauseFormPositive { get; set; }
+    public string CauseFormNegative { get; set; }
+
 
     public AllVerbForms(
         string baseForm,
@@ -29,7 +35,11 @@ public class AllVerbForms
         string participleNegative,
         string cooperativeMood,
         string reflexiveMood,
-        string passiveMood
+        string passiveMood,
+        string untilForm,
+        string whileForm,
+        string causeFormPositive,
+        string causeFormNegative
     )
     {
         BaseForm = baseForm;
@@ -42,5 +52,9 @@ public class AllVerbForms
         CooperativeMood = cooperativeMood;
         ReflexiveMood = reflexiveMood;
         PassiveMood = passiveMood;
+        UntilForm = untilForm;
+        WhileForm = whileForm;
+        CauseFormPositive = causeFormPositive;
+        CauseFormNegative = causeFormNegative;
     }
 }

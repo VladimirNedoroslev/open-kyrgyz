@@ -2,7 +2,7 @@ using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Forms.Gerund;
 
-namespace UnitTests;
+namespace UnitTests.Forms;
 
 public class GerundTests
 {

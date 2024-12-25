@@ -19,6 +19,8 @@ public static class Consonants
     // TODO: rewrite with Span
     public static string HarmonizeVerbEndingIfNecessary(this string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         var lastSymbol = verb[^1];
         if (verb[^1] is not ('к' or 'п'))
             return verb;
@@ -32,6 +34,8 @@ public static class Consonants
     
     public static string UnHarmonizeVerbEndingIfNecessary(this string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         var lastSymbol = verb[^1];
         if (verb[^1] is not ('г' or 'б'))
             return verb;

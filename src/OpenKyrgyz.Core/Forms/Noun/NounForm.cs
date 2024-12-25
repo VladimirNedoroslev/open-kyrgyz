@@ -11,8 +11,13 @@ public static class NounForm
     public const string ҮүEnding = "үү";
     public const string ӨөEnding = "өө";
 
-    public static string GetNounFormPositive(string verb)
+    public static string GetPositiveNounForm(string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
+        if (verb is "же")
+            return "-";
+        
         var vowelGroup = verb.GetVowelGroup();
         if (verb is "оку")
         {
@@ -32,6 +37,9 @@ public static class NounForm
             return verb[..^1] + ОоEnding;
         }
 
+        if (lastLetter is 'ө')
+            return verb + 'ө';
+
         if (lastLetter is 'о')
         {
             return verb + 'о';
@@ -48,13 +56,17 @@ public static class NounForm
         return УаойReplacer.Replace(verb + УуEnding);
     }
 
-    public static string GetNounFormNegative(string verb)
+    public static string GetNegativeNounForm(string verb)
     {
-        return GetNounFormPositive(verb + verb.GetNegativeAffix());
+        return GetPositiveNounForm(verb + verb.GetNegativeAffix());
     }
 
     public static string GetVerbFromNounForm(string verbInNounForm)
     {
+        if (string.IsNullOrWhiteSpace(verbInNounForm))
+            return verbInNounForm;
+        if (verbInNounForm is "жүктөө")
+            return "жүктө";
         verbInNounForm = УаойReplacer.ReverseReplace(verbInNounForm);
 
 

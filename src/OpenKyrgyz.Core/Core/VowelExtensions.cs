@@ -2,7 +2,7 @@ using OpenKyrgyz.Core.Enums;
 
 namespace OpenKyrgyz.Core.Core;
 
-public static class CharVowelExtensions
+public static class VowelExtensions
 {
     public static bool IsVowel(this char letter)
     {

@@ -1,24 +1,24 @@
-@page "/conjugations"
-@model VerbConjugationsInputPage
+@page "/cases"
+@model NounCasesInputPage
 @{
-    ViewData["Title"] = "Спряжение глаголов";
+    ViewData["Title"] = "Склонение слов";
     var errors = TempData["ErrorMessage"] as string[];
 }
 
-<h2>Спряжение для глаголов кыргызского языка</h2>
+<h2>Склонение для слов кыргызского языка</h2>
 <p></p>
 
-<form id="verbForm" onsubmit="redirectToConjugations(event)">
-    <label for="InputVerb">Введите глагол:</label>
+<form id="verbForm" onsubmit="redirectToCases(event)">
+    <label for="inputWord">Введите существительное:</label>
     <div class="input-group">
-        <input type="text" id="InputVerb" class="form-control" name="InputVerb" required/>
+        <input type="text" id="inputWord" class="form-control" name="inputWord" required/>
         <div class="input-group-prepend">
             <button type="button" id="addObutton" class="btn btn-secondary">Ө</button>
             <button type="button" id="addYbutton" class="btn btn-secondary">Ү</button>
             <button type="button" id="addNbutton" class="btn btn-secondary">Ң</button>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary mt-2">Проспрягать</button>
+    <button type="submit" class="btn btn-primary mt-2">Просклонять</button>
 </form>
 
 @if (errors is not null && errors.Any())
@@ -32,14 +32,14 @@
 }
 
 <script>
-    function redirectToConjugations(event) {
+    function redirectToCases(event) {
         event.preventDefault();
-        const inputVerb = document.getElementById('InputVerb').value.trim();
+        const inputVerb = document.getElementById('inputWord').value.trim();
         if (inputVerb) {
-            const url = `/conjugations/${encodeURIComponent(inputVerb)}`;
+            const url = `/nouns/${encodeURIComponent(inputVerb)}`;
             window.location.href = url;
         } else {
-            alert("Пожалуйста введите глагол");
+            alert("Пожалуйста введите существительное");
         }
     }
 
@@ -56,7 +56,7 @@
     });
 
     function appendCharacterToInput(char) {
-        const input = document.getElementById('InputVerb');
+        const input = document.getElementById('inputWord');
         input.value += char;
     }
     

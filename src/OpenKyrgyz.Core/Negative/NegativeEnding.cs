@@ -52,6 +52,8 @@ public static class NegativeEnding
 
     public static NegativeAffix GetNegativeAffix(this string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return NegativeAffix.Empty;
         var vowelGroup = verb.GetVowelGroup();
         var lastLetterType = verb.GetLastLetterType();
         return Mapping[vowelGroup][lastLetterType];

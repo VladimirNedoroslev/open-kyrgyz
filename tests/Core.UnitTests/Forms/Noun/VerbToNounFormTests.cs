@@ -52,7 +52,7 @@ public class VerbToNounFormTests
     public void ToNounForm_уу(string verb, string expectedResult)
     {
         // act
-        var actualResult = NounForm.GetNounFormPositive(verb);
+        var actualResult = NounForm.GetPositiveNounForm(verb);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -88,7 +88,7 @@ public class VerbToNounFormTests
     public void ToNounForm_үү(string verb, string expectedResult)
     {
         // act
-        var actualResult = NounForm.GetNounFormPositive(verb);
+        var actualResult = NounForm.GetPositiveNounForm(verb);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -113,7 +113,7 @@ public class VerbToNounFormTests
     public void ToNounForm_оо(string verb, string expectedResult)
     {
         // act
-        var actualResult = NounForm.GetNounFormPositive(verb);
+        var actualResult = NounForm.GetPositiveNounForm(verb);
 
         // assert
         actualResult.Should().Be(expectedResult);
@@ -128,7 +128,7 @@ public class VerbToNounFormTests
     public void ToNounForm_өө(string verb, string expectedResult)
     {
         // act
-        var actualResult = NounForm.GetNounFormPositive(verb);
+        var actualResult = NounForm.GetPositiveNounForm(verb);
 
         // assert
         actualResult.Should().Be(expectedResult);

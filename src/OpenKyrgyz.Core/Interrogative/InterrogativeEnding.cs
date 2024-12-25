@@ -51,6 +51,8 @@ public static class InterrogativeEnding
 
     public static InterrogativeAffix GetInterrogativeAffix(this string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return InterrogativeAffix.Empty;
         var vowelGroup = verb.GetVowelGroup();
         var lastLetterType = verb.GetLastLetterType();
         return Mapping[vowelGroup][lastLetterType];

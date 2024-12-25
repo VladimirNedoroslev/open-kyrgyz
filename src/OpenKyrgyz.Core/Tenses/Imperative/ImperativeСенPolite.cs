@@ -17,12 +17,16 @@ public class ImperativeСенPolite
 
     public static string ConjugatePositive(string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         var vowelGroup = verb.GetVowelGroup();
         return verb + Mapping[vowelGroup];
     }
-    
+
     public static string ConjugateNegative(string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         var negativeVerb = verb + verb.GetNegativeAffix();
         return ConjugatePositive(negativeVerb);
     }

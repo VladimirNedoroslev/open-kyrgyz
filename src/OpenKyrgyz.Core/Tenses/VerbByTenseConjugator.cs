@@ -5,6 +5,8 @@ using OpenKyrgyz.Core.Forms.Cooperative;
 using OpenKyrgyz.Core.Forms.Gerund;
 using OpenKyrgyz.Core.Forms.Noun;
 using OpenKyrgyz.Core.Forms.Participle;
+using OpenKyrgyz.Core.Forms.Until;
+using OpenKyrgyz.Core.Forms.While;
 using OpenKyrgyz.Core.Tenses.Conditional;
 using OpenKyrgyz.Core.Tenses.FutureGoingTo;
 using OpenKyrgyz.Core.Tenses.FutureProbable;
@@ -47,9 +49,8 @@ public class VerbByTenseConjugator
 
     public AllVerbForms GetAllVerbForms(string verb)
     {
-
-        var nounFormPositive = NounForm.GetNounFormPositive(verb);
-        var nounFormNegative = NounForm.GetNounFormNegative(verb);
+        var nounFormPositive = NounForm.GetPositiveNounForm(verb);
+        var nounFormNegative = NounForm.GetNegativeNounForm(verb);
         var gerundPositive = Gerund.Get(verb, VerbFormEnum.Positive);
         var gerundNegative = Gerund.Get(verb, VerbFormEnum.Negative);
         var participlePositive = Participle.Get(verb, VerbFormEnum.Positive);
@@ -57,8 +58,12 @@ public class VerbByTenseConjugator
         var cooperative = CooperativeMood.Get(verb);
         var reflexive = ReflexiveMood.Get(verb);
         var passive = PassiveMood.Get(verb);
+        var untilForm = UntilForm.Get(verb);
+        var whileForm = WhileForm.Get(verb);
+        var causeFormPositive = CauseForm.Get(verb, VerbFormEnum.Positive);
+        var causeFormNegative = CauseForm.Get(verb, VerbFormEnum.Negative);
         var result = new AllVerbForms(verb, nounFormPositive, nounFormNegative, gerundPositive, gerundNegative,
-            participlePositive, participleNegative, cooperative, reflexive, passive);
+            participlePositive, participleNegative, cooperative, reflexive, passive, untilForm, whileForm, causeFormPositive, causeFormNegative);
         return result;
     }
 

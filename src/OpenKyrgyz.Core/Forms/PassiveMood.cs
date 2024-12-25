@@ -18,11 +18,18 @@ public class PassiveMood
 
     public static string Get(string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
+
+        // if a verb ends with 'л' then it should become 'н' which is exactly the reflexive mood
+        if (verb.GetLastConsonant() is 'л')
+            return ReflexiveMood.Get(verb);
+
         var lastLetterType = verb.GetLastLetterType();
         if (lastLetterType is LetterTypeEnum.Vowel)
             return verb + VowelEnding;
         var vowelGroup = verb.GetVowelGroup();
         verb = verb.HarmonizeVerbEndingIfNecessary();
-        return verb + Mapping[vowelGroup];
+        return УаойReplacer.Replace(verb + Mapping[vowelGroup]);
     }
 }

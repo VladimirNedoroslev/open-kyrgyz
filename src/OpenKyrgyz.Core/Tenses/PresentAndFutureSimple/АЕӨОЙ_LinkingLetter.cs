@@ -15,12 +15,13 @@ public static class АеөойLinkingLetter
     };
 
     public static char GetLinkingChar(string word)
-    {   
+    {
         var lastLetterType = word.GetLastLetterType();
         if (lastLetterType == LetterTypeEnum.Vowel)
         {
             return 'й';
         }
+
         var vowelGroup = word.GetVowelGroup();
 
         return Mapping[vowelGroup];

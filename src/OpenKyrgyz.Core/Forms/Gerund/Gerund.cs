@@ -37,15 +37,21 @@ public static class Gerund
 
     public static string Get(string verb, VerbFormEnum verbFormEnum)
     {
-        // TODO: verify logic for verbs like 'тап'
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
+
         if (verbFormEnum is VerbFormEnum.Interrogative or VerbFormEnum.NegativeAndInterrogative)
             return "-";
-        if (verb is "тап")
-            return "таап";
-        
+
+
         var lastLetterType = verb.GetLastLetterType();
         if (verbFormEnum is VerbFormEnum.Positive)
         {
+            if (verb is "тап")
+                return "таап";
+            if (verb is "теп")
+                return "тееп";
+
             if (lastLetterType is LetterTypeEnum.Vowel)
                 return verb + PositiveVowelEnding;
             var result = verb + PositiveMapping[verb.GetVowelGroup()];

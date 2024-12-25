@@ -31,7 +31,7 @@ public class PresentAndFutureSimpleConjugator
 
         if (form is VerbFormEnum.Interrogative or VerbFormEnum.NegativeAndInterrogative)
         {
-            if (pronoun == PronounEnum.Ал)
+            if (pronoun is PronounEnum.Ал or PronounEnum.Алар)
             {
                 // remove last letter
                 verb = verb[..^1];
@@ -49,6 +49,8 @@ public class PresentAndFutureSimpleConjugator
 
     private static string ConjugateForPositive(string verb, PronounEnum pronoun)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         verb = verb.HarmonizeVerbEndingIfNecessary();
 
         var linkingLetter = АеөойLinkingLetter.GetLinkingChar(verb);

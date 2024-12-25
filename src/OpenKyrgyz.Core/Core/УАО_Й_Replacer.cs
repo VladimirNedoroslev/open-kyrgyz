@@ -8,7 +8,7 @@ public static class УаойReplacer
         { "йу", "ю" },
         { "йа", "я" },
     };
-    
+
     public static readonly Dictionary<string, string> ReverseMapping = new()
     {
         { "ё", "йо" },
@@ -18,6 +18,8 @@ public static class УаойReplacer
 
     public static string Replace(string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         if (!verb.Contains('й'))
             return verb;
         foreach (var pair in Mapping)
@@ -28,9 +30,12 @@ public static class УаойReplacer
 
         return verb;
     }
-    
+
     public static string ReverseReplace(string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
+
         foreach (var pair in ReverseMapping)
         {
             if (verb.Contains(pair.Key))

@@ -17,6 +17,8 @@ public class ImperativeАлар
 
     public static string ConjugatePositive(string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         var vowelGroup = verb.GetVowelGroup();
         var ending = Mapping[vowelGroup];
 
@@ -37,12 +39,14 @@ public class ImperativeАлар
             VowelGroupEnum.ө_ү => 'ү',
             _ => throw new ArgumentOutOfRangeException()
         };
-        
+
         return УаойReplacer.Replace(verb + linkingVowel + ending);
     }
 
     public static string ConjugateNegative(string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         var negativeVerb = verb + verb.GetNegativeAffix();
         return ConjugatePositive(negativeVerb);
     }

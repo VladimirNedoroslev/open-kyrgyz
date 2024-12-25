@@ -18,11 +18,13 @@ public static class CooperativeMood
 
     public static string Get(string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         var lastLetterType = verb.GetLastLetterType();
         if (lastLetterType is LetterTypeEnum.Vowel)
             return verb + VowelEnding;
         var vowelGroup = verb.GetVowelGroup();
         verb = verb.HarmonizeVerbEndingIfNecessary();
-        return verb + Mapping[vowelGroup];
+        return УаойReplacer.Replace(verb + Mapping[vowelGroup]);
     }
 }

@@ -8,6 +8,7 @@ var mvcBuilder = services.AddRazorPages();
 if (builder.Environment.IsDevelopment())
     mvcBuilder.AddRazorRuntimeCompilation();
 
+services.AddResponseCaching();
 services.AddSingleton<VerbByTenseConjugator>();
 
 var app = builder.Build();
@@ -21,6 +22,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseResponseCaching();
 app.UseStaticFiles();
 
 app.UseRouting();

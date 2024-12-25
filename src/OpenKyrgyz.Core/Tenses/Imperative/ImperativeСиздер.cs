@@ -6,7 +6,6 @@ namespace OpenKyrgyz.Core.Tenses.Imperative;
 
 public class ImperativeСиздер
 {
-    
     private static readonly Dictionary<VowelGroupEnum, string> Mapping = new()
     {
         { VowelGroupEnum.а_я_ы, "ңыздар" },
@@ -15,8 +14,11 @@ public class ImperativeСиздер
         { VowelGroupEnum.о_ё, "ңуздар" },
         { VowelGroupEnum.ө_ү, "ңүздөр" },
     };
+
     public static string ConjugatePositive(string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         var vowelGroup = verb.GetVowelGroup();
         var ending = Mapping[vowelGroup];
 
@@ -37,13 +39,15 @@ public class ImperativeСиздер
             VowelGroupEnum.ө_ү => 'ү',
             _ => throw new ArgumentOutOfRangeException()
         };
-        
+
         return УаойReplacer.Replace(verb + linkingVowel + ending);
     }
 
 
     public static string ConjugateNegative(string verb)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         var negativeVerb = verb + verb.GetNegativeAffix();
         return ConjugatePositive(negativeVerb);
     }

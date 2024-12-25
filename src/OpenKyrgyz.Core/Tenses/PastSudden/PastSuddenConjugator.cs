@@ -42,10 +42,12 @@ public class PastSuddenConjugator
 
     private static string ConjugateForPositive(string verb, PronounEnum pronoun)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         verb = verb.HarmonizeVerbEndingIfNecessary();
-        
+
         var ending = PastSuddenEnding.GetEnding(verb, pronoun);
-        
+
         return $"{verb}{ending}";
     }
 }

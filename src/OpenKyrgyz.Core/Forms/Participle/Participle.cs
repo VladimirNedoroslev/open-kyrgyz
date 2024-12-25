@@ -27,6 +27,8 @@ public static class Participle
 
     public static string Get(string verb, VerbFormEnum form)
     {
+        if (string.IsNullOrWhiteSpace(verb))
+            return verb;
         if (form is VerbFormEnum.Interrogative or VerbFormEnum.NegativeAndInterrogative)
             return "-";
 

@@ -1,11 +1,11 @@
-@page "/conjugations/{verb}"
+@page "/cases/{noun}"
 @model VerbConjugationsPage
 @{
-    ViewData["Title"] = $"Спряжение глагола {Model.Verb}";
+    ViewData["Title"] = $"Склонение слова {Model.Verb}";
     var errorMessage = TempData["ErrorMessage"] as string;
 }
 
-<h2>Спряжение для глаголов кыргызского языка</h2>
+<h2>Склонение для слов кыргызского языка</h2>
 <p></p>
 
 <form method="post">
@@ -18,7 +18,7 @@
             <button type="button" id="addNbutton" class="btn btn-secondary">Ң</button>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary mt-2">Проспрягать</button>
+    <button type="submit" class="btn btn-primary mt-2">Просклонять</button>
 </form>
 
 
