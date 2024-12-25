@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Forms.Participle;
+using OpenKyrgyz.Core.Forms;
 
 namespace UnitTests.Forms;
 
@@ -15,7 +15,7 @@ public class ParticipleTests
     [InlineData("ойло","ойлогон")]
     [InlineData("күй","күйгөн")]
     [InlineData("түш","түшкөн")]
-    public void ParticiplePositive(string verb, string expectedResult)
+    public void ParticiplePositive_Tests(string verb, string expectedResult)
     {
         var actualResult = Participle.Get(verb, VerbFormEnum.Positive);
 
@@ -32,7 +32,7 @@ public class ParticipleTests
     [InlineData("ойло","ойлобогон")]
     [InlineData("күй","күйбөгөн")]
     [InlineData("түш","түшпөгөн")]
-    public void ParticipleNegative(string verb, string expectedResult)
+    public void ParticipleNegative_Tests(string verb, string expectedResult)
     {
         var actualResult = Participle.Get(verb, VerbFormEnum.Negative);
 

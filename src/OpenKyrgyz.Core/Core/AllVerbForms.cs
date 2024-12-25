@@ -18,6 +18,11 @@ public class AllVerbForms
     public string ReflexiveMood { get; set; }
     public string PassiveMood { get; set; }
 
+    public string WhenForm { get; set; }
+    public string AfterForm { get; set; }
+    public string BeforeForm { get; set; }
+    public string AsSoonAsForm { get; set; }
+    public string WithEveryForm { get; set; }
     public string UntilForm { get; set; }
     public string WhileForm { get; set; }
 
@@ -36,6 +41,11 @@ public class AllVerbForms
         string cooperativeMood,
         string reflexiveMood,
         string passiveMood,
+        string whenForm,
+        string beforeForm,
+        string afterForm,
+        string asSoonAsForm,
+        string withEveryForm,
         string untilForm,
         string whileForm,
         string causeFormPositive,
@@ -52,8 +62,15 @@ public class AllVerbForms
         CooperativeMood = cooperativeMood;
         ReflexiveMood = reflexiveMood;
         PassiveMood = passiveMood;
+        
+        WhenForm = whenForm;
+        BeforeForm = beforeForm;
+        AfterForm = afterForm;
+        WithEveryForm = withEveryForm;
+        AsSoonAsForm = asSoonAsForm;
         UntilForm = untilForm;
         WhileForm = whileForm;
+        
         CauseFormPositive = causeFormPositive;
         CauseFormNegative = causeFormNegative;
     }

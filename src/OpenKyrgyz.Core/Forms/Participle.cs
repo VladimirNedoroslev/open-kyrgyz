@@ -2,7 +2,7 @@ using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Negative;
 
-namespace OpenKyrgyz.Core.Forms.Participle;
+namespace OpenKyrgyz.Core.Forms;
 
 public static class Participle
 {

@@ -4,7 +4,6 @@ using OpenKyrgyz.Core.Forms;
 using OpenKyrgyz.Core.Forms.Cooperative;
 using OpenKyrgyz.Core.Forms.Gerund;
 using OpenKyrgyz.Core.Forms.Noun;
-using OpenKyrgyz.Core.Forms.Participle;
 using OpenKyrgyz.Core.Forms.Until;
 using OpenKyrgyz.Core.Forms.While;
 using OpenKyrgyz.Core.Tenses.Conditional;
@@ -58,12 +57,20 @@ public class VerbByTenseConjugator
         var cooperative = CooperativeMood.Get(verb);
         var reflexive = ReflexiveMood.Get(verb);
         var passive = PassiveMood.Get(verb);
+
+        var whenForm = WhenForm.Get(verb);
+        var beforeForm = BeforeForm.Get(verb);
+        var afterForm = AfterForm.Get(verb);
+        var asSoonAsForm = AsSoonAsForm.Get(verb);
+        var withEveryForm = WithEveryForm.Get(verb);
         var untilForm = UntilForm.Get(verb);
         var whileForm = WhileForm.Get(verb);
+
         var causeFormPositive = CauseForm.Get(verb, VerbFormEnum.Positive);
         var causeFormNegative = CauseForm.Get(verb, VerbFormEnum.Negative);
         var result = new AllVerbForms(verb, nounFormPositive, nounFormNegative, gerundPositive, gerundNegative,
-            participlePositive, participleNegative, cooperative, reflexive, passive, untilForm, whileForm, causeFormPositive, causeFormNegative);
+            participlePositive, participleNegative, cooperative, reflexive, passive, whenForm, beforeForm, afterForm,
+            asSoonAsForm, withEveryForm, untilForm, whileForm, causeFormPositive, causeFormNegative);
         return result;
     }
 
