@@ -44,7 +44,7 @@ public class PastSuddenConjugator
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;
-        verb = verb.HarmonizeVerbEndingIfNecessary();
+        verb = verb.HarmonizeEndingIfNecessary();
 
         var ending = PastSuddenEnding.GetEnding(verb, pronoun);
 

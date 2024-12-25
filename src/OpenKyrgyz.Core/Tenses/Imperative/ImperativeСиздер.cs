@@ -28,7 +28,7 @@ public class ImperativeСиздер
             return verb + ending;
         }
 
-        verb = verb.HarmonizeVerbEndingIfNecessary();
+        verb = verb.HarmonizeEndingIfNecessary();
 
         var linkingVowel = vowelGroup switch
         {

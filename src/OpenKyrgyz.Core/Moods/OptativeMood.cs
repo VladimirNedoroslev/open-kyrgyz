@@ -42,7 +42,7 @@ public static class OptativeMood
         if (form is VerbFormEnum.Negative or VerbFormEnum.NegativeAndInterrogative)
             verb += verb.GetNegativeAffix();
 
-        verb = verb.HarmonizeVerbEndingIfNecessary();
+        verb = verb.HarmonizeEndingIfNecessary();
         verb = GetForМенPositive(verb);
 
         if (form is VerbFormEnum.Interrogative or VerbFormEnum.NegativeAndInterrogative)
@@ -63,7 +63,7 @@ public static class OptativeMood
         if (form is VerbFormEnum.Negative or VerbFormEnum.NegativeAndInterrogative)
             verb += verb.GetNegativeAffix();
 
-        verb = verb.HarmonizeVerbEndingIfNecessary();
+        verb = verb.HarmonizeEndingIfNecessary();
         verb = GetForБизPositive(verb);
 
         if (form is VerbFormEnum.Interrogative or VerbFormEnum.NegativeAndInterrogative)

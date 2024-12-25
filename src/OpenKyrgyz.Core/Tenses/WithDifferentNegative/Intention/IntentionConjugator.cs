@@ -58,7 +58,7 @@ public class IntentionConjugator
         {
             var vowelGroup = verb.GetVowelGroup();
             var linkingLetter = LinkingLetterForAlarCase[vowelGroup];
-            verb = verb.HarmonizeVerbEndingIfNecessary();
+            verb = verb.HarmonizeEndingIfNecessary();
             verb += linkingLetter;
         }
 

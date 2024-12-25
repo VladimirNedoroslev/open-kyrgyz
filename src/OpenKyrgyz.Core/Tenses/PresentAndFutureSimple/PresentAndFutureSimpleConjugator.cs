@@ -52,7 +52,7 @@ public class PresentAndFutureSimpleConjugator
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;
-        verb = verb.HarmonizeVerbEndingIfNecessary();
+        verb = verb.HarmonizeEndingIfNecessary();
 
         var linkingLetter = АеөойLinkingLetter.GetLinkingChar(verb);
 

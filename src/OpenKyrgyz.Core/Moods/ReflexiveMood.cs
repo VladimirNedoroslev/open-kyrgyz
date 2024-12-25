@@ -24,7 +24,7 @@ public static class ReflexiveMood
         if (lastLetterType is LetterTypeEnum.Vowel)
             return verb + VowelEnding;
         var vowelGroup = verb.GetVowelGroup();
-        verb = verb.HarmonizeVerbEndingIfNecessary();
+        verb = verb.HarmonizeEndingIfNecessary();
         return УаойReplacer.Replace(verb + Mapping[vowelGroup]);
     }
 }

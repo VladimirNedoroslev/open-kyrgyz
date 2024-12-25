@@ -46,7 +46,7 @@ public static class NounForm
         }
 
         if (verb is not "корк")
-            verb = verb.HarmonizeVerbEndingIfNecessary();
+            verb = verb.HarmonizeEndingIfNecessary();
 
         if (vowelGroup is VowelGroupEnum.ө_ү or VowelGroupEnum.и_е_э)
         {

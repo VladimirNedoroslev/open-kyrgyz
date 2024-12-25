@@ -42,7 +42,7 @@ public class FutureProbableConjugator
 
     private static string ConjugateForPositive(string verb, PronounEnum pronoun)
     {
-        verb = verb.HarmonizeVerbEndingIfNecessary();
+        verb = verb.HarmonizeEndingIfNecessary();
         
         var ending = FutureProbableEnding.GetEndingForPronounPositive(verb, pronoun);
 

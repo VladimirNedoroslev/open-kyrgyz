@@ -1,3 +1,4 @@
+using OpenKyrgyz.Core.Common;
 using OpenKyrgyz.Core.Core;
 using OpenKyrgyz.Core.Enums;
 using OpenKyrgyz.Core.Negative;
@@ -28,17 +29,9 @@ public static class ImperativeСиз
             return verb + ending;
         }
 
-        verb = verb.HarmonizeVerbEndingIfNecessary();
+        verb = verb.HarmonizeEndingIfNecessary();
 
-        var linkingVowel = vowelGroup switch
-        {
-            VowelGroupEnum.а_я_ы => 'ы',
-            VowelGroupEnum.и_е_э => 'и',
-            VowelGroupEnum.у_ю => 'у',
-            VowelGroupEnum.о_ё => 'у',
-            VowelGroupEnum.ө_ү => 'ү',
-            _ => throw new ArgumentOutOfRangeException()
-        };
+        var linkingVowel = ЫиуүLinkingLetter.GetLinkingChar(vowelGroup);
 
         return УаойReplacer.Replace(verb + linkingVowel + ending);
     }

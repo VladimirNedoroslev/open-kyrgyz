@@ -17,7 +17,7 @@ public static class Consonants
         { 'б', 'п' },
     };
     // TODO: rewrite with Span
-    public static string HarmonizeVerbEndingIfNecessary(this string verb)
+    public static string HarmonizeEndingIfNecessary(this string verb)
     {
         if (string.IsNullOrWhiteSpace(verb))
             return verb;

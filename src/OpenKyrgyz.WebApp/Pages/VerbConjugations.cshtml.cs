@@ -46,7 +46,7 @@ public class VerbConjugationsPage : PageModel
             return RedirectToPage("/VerbConjugationsInput");
         }
 
-        Verb = Verb.Trim();
+        Verb = Verb.Trim().ToLower();
         if (NounForm.IsInNounForm(Verb))
             Verb = NounForm.GetVerbFromNounForm(Verb);
 
