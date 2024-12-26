@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace OpenKyrgyz.WebApp.Pages;
+namespace OpenKyrgyz.WebApp.Pages.Verbs;
 
 public class VerbConjugationsInputPage : PageModel
 {
