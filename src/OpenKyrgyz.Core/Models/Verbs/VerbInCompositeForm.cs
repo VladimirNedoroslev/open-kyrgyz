@@ -98,8 +98,7 @@ public class VerbInCompositeForm
             AsSoonAsForm.GetPronounForm(verb, PronounEnum.Биз),
             AsSoonAsForm.GetPronounForm(verb, PronounEnum.Силер),
             AsSoonAsForm.GetPronounForm(verb, PronounEnum.Сиздер),
-            AsSoonAsForm.GetPronounForm(verb, PronounEnum.Алар),
-            null
+            AsSoonAsForm.GetPronounForm(verb, PronounEnum.Алар)
         );
     }
 }

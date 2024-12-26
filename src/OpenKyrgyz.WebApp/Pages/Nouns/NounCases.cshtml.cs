@@ -30,6 +30,8 @@ public class NounCasesPage : PageModel
     public NounDeclinedInAllCasesTable NounDeclinedInAllCasesTable { get; set; }
     public NounDeclinedInAllCasesWithPossessiveViewModel Singular { get; set; }
     public NounDeclinedInAllCasesWithPossessiveViewModel Plural { get; set; }
+    
+    public string NounInИликCase { get; set; }
 
     public IActionResult OnGet()
     {
@@ -46,6 +48,8 @@ public class NounCasesPage : PageModel
             TempData["ErrorMessage"] = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
             return RedirectToPage("/Nouns/NounCasesInput");
         }
+        
+        Noun = Noun.Trim().ToLower();
 
         var allNounDeclensionsSingular = _nounDecliner.GetAllNounDeclensions(Noun);
         var allNounDeclensionsPlural = _nounDecliner.GetAllNounDeclensions(Noun, true);
@@ -58,7 +62,8 @@ public class NounCasesPage : PageModel
         Singular = new NounDeclinedInAllCasesWithPossessiveViewModel("Склонения по падежам с притяжательными формами (ед. ч.)", allNounDeclensionsSingular);
         Plural = new NounDeclinedInAllCasesWithPossessiveViewModel("Склонения по падежам с притяжательными формами (мн. ч.)", allNounDeclensionsPlural);
 
-        Noun = Noun.Trim().ToLower();
+
+        NounInИликCase = ИликCase.Decline(Noun, null, null);
         return Page();
     }
 

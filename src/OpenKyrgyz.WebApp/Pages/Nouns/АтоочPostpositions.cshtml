@@ -1,0 +1,30 @@
+@model string
+@if (!string.IsNullOrWhiteSpace(Model))
+{
+    <h4>Послелоги с Атооч</h4>
+
+    <p>Менен (с/со) -
+        <b>@if (Model is "мен")
+            {
+                <text>мени</text>
+            }
+            else if (Model is "сен")
+            {
+                <text>cени</text>
+            }
+            else if (Model is "ал")
+            {
+                <text>аны</text>
+            }
+            else
+            {
+                <text>@Model</text>
+            }
+            менен</b></p>
+
+    <p>Үчүн (для) - <b>@Model үчүн</b></p>
+    <p>Аркылуу (через) - <b>@Model аркылуу</b></p>
+    <p>Жөнүндө/Тууралуу (о/об, про) - <b>@Model жөнүндө/@Model аркылуу</b></p>
+    <p>Сыяктуу (подобный, похожий) - <b>@Model сыяктуу</b></p>
+    <p>Чакты/чамасында (около [про количество]) - <b>@Model чамасында</b></p>
+}

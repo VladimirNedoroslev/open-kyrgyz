@@ -49,10 +49,16 @@
             Все формы генерируются алгоритмически.
         </i>
     </p>
-    
+
     <partial name="NounDeclensionsTable" model="Model.NounDeclinedInAllCasesTable"/>
     <partial name="NounDeclensionsWithPossessiveTable" model="Model.Singular"/>
     <partial name="NounDeclensionsWithPossessiveTable" model="Model.Plural"/>
+    <hr/>
+    <p><i>Некоторые словосочетания с послелогами ниже могут не иметь смысла</i></p>
+    <partial name="АтоочPostpositions" model="Model.NounDeclinedInAllCasesTable.Singular.Атооч"/>
+    <partial name="ИликPostpositions" model="Model.NounInИликCase"/>
+    <partial name="БарышPostpositions" model="Model.NounDeclinedInAllCasesTable.Singular.Барыш"/>
+    <partial name="ЧыгышPostpositions" model="Model.NounDeclinedInAllCasesTable.Singular.Чыгыш"/>
 }
 
 
