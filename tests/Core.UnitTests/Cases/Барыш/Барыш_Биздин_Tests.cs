@@ -2,21 +2,24 @@ using FluentAssertions;
 using OpenKyrgyz.Core.Cases;
 using OpenKyrgyz.Core.Enums;
 
-namespace UnitTests.Cases;
+namespace UnitTests.Cases.Барыш;
 
 public class БарышБиздинTests
 {
     [Theory]
     [InlineData("апа", "апабызга")]
-    [InlineData("дос", "досубузга")]
     [InlineData("ини", "инибизге")]
-    [InlineData("сүрөт", "сүрөтүбүзгө")]
+    [InlineData("ой", "оюбузга")]
+    [InlineData("күзгү", "күзгүбүзгө")]
     [InlineData("карындаш", "карындашыбызга")]
+    [InlineData("керебет", "керебетибизге")]
+    [InlineData("дос", "досубузга")]
+    [InlineData("сүрөт", "сүрөтүбүзгө")]
     [InlineData("жомок", "жомогубузга")]
     [InlineData("күчүк", "күчүгүбүзгө")]
     public void Барыш_Биздин_Tests(string word, string expectedResult)
     {
-        var actualResult = БарышCase.ToБарышCase(word, PronounEnum.Биз);
+        var actualResult = БарышCase.Decline(word, PronounEnum.Биз);
 
         // assert
         actualResult.Should().Be(expectedResult);

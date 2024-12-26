@@ -1,5 +1,5 @@
 using FluentAssertions;
-using OpenKyrgyz.Core.Moods;
+using OpenKyrgyz.Core.Verbs.Moods;
 
 namespace UnitTests.Moods;
 
@@ -22,7 +22,7 @@ public class PassiveMoodTests
     public void PassiveMood_Tests(string verb, string expectedResult)
     {
         var actualResult = PassiveMood.Get(verb);
-    
+
         // assert
         actualResult.Should().Be(expectedResult);
     }

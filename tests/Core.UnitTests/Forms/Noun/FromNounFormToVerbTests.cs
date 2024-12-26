@@ -1,5 +1,5 @@
 using FluentAssertions;
-using OpenKyrgyz.Core.Forms;
+using OpenKyrgyz.Core.Verbs.Forms;
 
 namespace UnitTests.Forms.Noun;
 
@@ -59,33 +59,32 @@ public class FromNounFormToVerbTests
     }
 
     [Theory]
-    [InlineData("келүү","кел")]
-    [InlineData("көнүү","көн")]
-    [InlineData("ишенүү","ишен")]
-    [InlineData("ичүү","ич")]
-    [InlineData("кирүү","кир")]
-    [InlineData("кетүү","кет")]
-    [InlineData("түшүнүү","түшүн")]
-    [InlineData("жүрүү","жүр")]
-    [InlineData("берүү","бер")]
-    [InlineData("күлүү","күл")]
-    [InlineData("көчүү","көч")]
-    [InlineData("өтүү","өт")]
-    [InlineData("көрүү","көр")]
-    [InlineData("өсүү","өс")]
-    [InlineData("үмүттөнүү","үмүттөн")]
-    [InlineData("түзүү","түз")]
-    [InlineData("түшүү","түш")]
-    [InlineData("көтөрүлүү","көтөрүл")]
-    [InlineData("кечигүү","кечик")]
-    [InlineData("сүзүү","сүз")]
-    [InlineData("секирүү","секир")]
-    [InlineData("өлүү","өл")]
-    [InlineData("көрсөтүү","көрсөт")]
-    [InlineData("түртүү","түрт")]
-    [InlineData("күйүү","күй")]
-    [InlineData("тебүү","теп")]
-  
+    [InlineData("келүү", "кел")]
+    [InlineData("көнүү", "көн")]
+    [InlineData("ишенүү", "ишен")]
+    [InlineData("ичүү", "ич")]
+    [InlineData("кирүү", "кир")]
+    [InlineData("кетүү", "кет")]
+    [InlineData("түшүнүү", "түшүн")]
+    [InlineData("жүрүү", "жүр")]
+    [InlineData("берүү", "бер")]
+    [InlineData("күлүү", "күл")]
+    [InlineData("көчүү", "көч")]
+    [InlineData("өтүү", "өт")]
+    [InlineData("көрүү", "көр")]
+    [InlineData("өсүү", "өс")]
+    [InlineData("үмүттөнүү", "үмүттөн")]
+    [InlineData("түзүү", "түз")]
+    [InlineData("түшүү", "түш")]
+    [InlineData("көтөрүлүү", "көтөрүл")]
+    [InlineData("кечигүү", "кечик")]
+    [InlineData("сүзүү", "сүз")]
+    [InlineData("секирүү", "секир")]
+    [InlineData("өлүү", "өл")]
+    [InlineData("көрсөтүү", "көрсөт")]
+    [InlineData("түртүү", "түрт")]
+    [InlineData("күйүү", "күй")]
+    [InlineData("тебүү", "теп")]
     public void ToVerbFrom_үү(string verb, string expectedResult)
     {
         // act
@@ -96,22 +95,21 @@ public class FromNounFormToVerbTests
     }
 
     [Theory]
-    [InlineData( "байкоо","байка")]
-    [InlineData( "чуркоо","чурка")]
-    [InlineData( "урматтоо","урматта")]
-    [InlineData( "кадырлоо","кадырла")]
-    [InlineData( "ырдоо","ырда")]
-    [InlineData( "жасоо","жаса")]
-    [InlineData( "талдоо","талда")]
-    [InlineData( "аныктоо","аныкта")]
-    [InlineData( "кароо","кара")]
-    [InlineData( "саноо","сана")]
-    [InlineData( "таштоо","ташта")]
-    [InlineData( "алдоо","алда")]
-    [InlineData( "атоо","ата")]
-    [InlineData( "уктоо","укта")]
-    [InlineData( "сактоо","сакта")]
-   
+    [InlineData("байкоо", "байка")]
+    [InlineData("чуркоо", "чурка")]
+    [InlineData("урматтоо", "урматта")]
+    [InlineData("кадырлоо", "кадырла")]
+    [InlineData("ырдоо", "ырда")]
+    [InlineData("жасоо", "жаса")]
+    [InlineData("талдоо", "талда")]
+    [InlineData("аныктоо", "аныкта")]
+    [InlineData("кароо", "кара")]
+    [InlineData("саноо", "сана")]
+    [InlineData("таштоо", "ташта")]
+    [InlineData("алдоо", "алда")]
+    [InlineData("атоо", "ата")]
+    [InlineData("уктоо", "укта")]
+    [InlineData("сактоо", "сакта")]
     public void ToVerbFrom_оо(string verb, string expectedResult)
     {
         // act
@@ -122,10 +120,10 @@ public class FromNounFormToVerbTests
     }
 
     [Theory]
-    [InlineData( "изилдөө","изилде")]
-    [InlineData( "бийлөө","бийле")]
-    [InlineData( "иштөө","иште")]
-    [InlineData( "эсептөө","эсепте")]
+    [InlineData("изилдөө", "изилде")]
+    [InlineData("бийлөө", "бийле")]
+    [InlineData("иштөө", "иште")]
+    [InlineData("эсептөө", "эсепте")]
     public void ToVerbFrom_өө(string verb, string expectedResult)
     {
         // act

@@ -1,5 +1,5 @@
 using FluentAssertions;
-using OpenKyrgyz.Core.Moods;
+using OpenKyrgyz.Core.Verbs.Moods;
 
 namespace UnitTests.Moods;
 
@@ -22,7 +22,7 @@ public class CooperativeMoodTests
     public void CooperativeMood_Tests(string verb, string expectedResult)
     {
         var actualResult = CooperativeMood.Get(verb);
-    
+
         // assert
         actualResult.Should().Be(expectedResult);
     }

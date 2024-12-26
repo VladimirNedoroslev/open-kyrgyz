@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Forms;
+using OpenKyrgyz.Core.Verbs.Forms;
 
 namespace UnitTests.Forms.Although;
 
@@ -16,14 +16,14 @@ public class AlthoughPronounFormБизTests
     [InlineData("ойло", "ойлогонубуз менен")]
     [InlineData("күй", "күйгөнүбүз менен")]
     [InlineData("түш", "түшкөнүбүз менен")]
-    public void AsSoonAsFormPronounForm_Биз_Positive(string verb, string expectedResult)
+    public void AlthoughFormPronounForm_Биз_Positive(string verb, string expectedResult)
     {
         var actualResult = AlthoughForm.ToAlthoughForm(verb, PronounEnum.Биз, VerbFormEnum.Positive);
 
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("кыл", "кылбаганыбыз менен")]
     [InlineData("ташта", "таштабаганыбыз менен")]
@@ -34,7 +34,7 @@ public class AlthoughPronounFormБизTests
     [InlineData("ойло", "ойлобогонубуз менен")]
     [InlineData("күй", "күйбөгөнүбүз менен")]
     [InlineData("түш", "түшпөгөнүбүз менен")]
-    public void AsSoonAsFormPronounForm_Биз_Negative(string verb, string expectedResult)
+    public void AlthoughFormPronounForm_Биз_Negative(string verb, string expectedResult)
     {
         var actualResult = AlthoughForm.ToAlthoughForm(verb, PronounEnum.Биз, VerbFormEnum.Negative);
 

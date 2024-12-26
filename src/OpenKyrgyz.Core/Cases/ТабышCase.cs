@@ -35,7 +35,7 @@ public class ТабышCase
 
     private const char АнынАлардынCase = 'н';
 
-    public static string ToЖатышCase(string word, PronounEnum? withPossessive = null)
+    public static string Decline(string word, PronounEnum? withPossessive = null)
     {
         if (string.IsNullOrEmpty(word))
             return word;

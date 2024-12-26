@@ -1,5 +1,5 @@
 using FluentAssertions;
-using OpenKyrgyz.Core.Tenses.Imperative;
+using OpenKyrgyz.Core.Verbs.Tenses.Imperative;
 
 namespace UnitTests.Tenses.Imperative;
 

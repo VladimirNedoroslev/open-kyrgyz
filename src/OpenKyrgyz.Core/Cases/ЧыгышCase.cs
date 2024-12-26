@@ -34,7 +34,7 @@ public static class ЧыгышCase
     };
 
 
-    public static string ToЧыгышCase(string word, PronounEnum? withPossessive = null)
+    public static string Decline(string word, PronounEnum? withPossessive = null)
     {
         if (string.IsNullOrEmpty(word))
             return word;

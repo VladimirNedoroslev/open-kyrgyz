@@ -8,14 +8,14 @@ public class NegativeAffix : Affix
     public static readonly NegativeAffix Бе = new("бе");
     public static readonly NegativeAffix Бо = new("бо");
     public static readonly NegativeAffix Бө = new("бө");
-    
+
     public static readonly NegativeAffix Па = new("па");
     public static readonly NegativeAffix Пе = new("пе");
     public static readonly NegativeAffix По = new("по");
     public static readonly NegativeAffix Пө = new("пө");
-    
+
     public static readonly NegativeAffix Empty = new(string.Empty);
-    
+
     public override string Value { get; }
 
     public NegativeAffix(string value)

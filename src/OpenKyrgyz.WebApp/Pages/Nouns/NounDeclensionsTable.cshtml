@@ -1,0 +1,48 @@
+@model OpenKyrgyz.WebApp.Pages.Nouns.Models.NounDeclinedInAllCasesTable
+
+@if (Model is not null)
+{
+    <h4>Склонения по падежам</h4>
+    <table class="table table-hover table-sm">
+        <thead>
+        <tr>
+            <th scope="col">Падеж</th>
+            <th scope="col">Единственное число</th>
+            <th scope="col">Множественное число</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><b>Атооч</b></td>
+            <td>@Model.Singular.Атооч</td>
+            <td>@Model.Plural.Атооч</td>
+        </tr>
+        <tr>
+            <td><b>Илик</b></td>
+            <td>@Model.Singular.Илик</td>
+            <td>@Model.Plural.Илик</td>
+        </tr>
+        <tr>
+            <td><b>Барыш</b></td>
+            <td>@Model.Singular.Барыш</td>
+            <td>@Model.Plural.Барыш</td>
+        </tr>
+        <tr>
+            <td><b>Жатыш</b></td>
+            <td>@Model.Singular.Жатыш</td>
+            <td>@Model.Plural.Жатыш</td>
+        </tr>
+        <tr>
+            <td><b>Табыш</b></td>
+            <td>@Model.Singular.Табыш</td>
+            <td>@Model.Plural.Табыш</td>
+        </tr>
+        <tr>
+            <td><b>Чыгыш</b></td>
+            <td>@Model.Singular.Чыгыш</td>
+            <td>@Model.Plural.Чыгыш</td>
+        </tr>
+
+        </tbody>
+    </table>
+}

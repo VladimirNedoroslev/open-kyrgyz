@@ -8,7 +8,7 @@
 <h2>Склонение для слов кыргызского языка</h2>
 <p></p>
 
-<form id="verbForm" onsubmit="redirectToCases(event)">
+<form id="wordForm" onsubmit="redirectToCases(event)">
     <label for="inputWord">Введите существительное:</label>
     <div class="input-group">
         <input type="text" id="inputWord" class="form-control" name="inputWord" required/>
@@ -34,9 +34,9 @@
 <script>
     function redirectToCases(event) {
         event.preventDefault();
-        const inputVerb = document.getElementById('inputWord').value.trim();
-        if (inputVerb) {
-            const url = `/nouns/${encodeURIComponent(inputVerb)}`;
+        const inputWord = document.getElementById('inputWord').value.trim();
+        if (inputWord) {
+            const url = `/cases/${encodeURIComponent(inputWord)}`;
             window.location.href = url;
         } else {
             alert("Пожалуйста введите существительное");

@@ -1,12 +1,11 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.PastSudden;
+using OpenKyrgyz.Core.Verbs.Tenses.PastSudden;
 
 namespace UnitTests.Tenses.Past.Sudden;
 
 public class PastSuddenСиздерTests
 {
-   
     [Theory]
     [InlineData("бар", "барыптырсыздар")]
     [InlineData("иште", "иштептирсиздер")]
@@ -25,7 +24,7 @@ public class PastSuddenСиздерTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("бар", "барбаптырсыздар")]
     [InlineData("иште", "иштебептирсиздер")]
@@ -43,7 +42,7 @@ public class PastSuddenСиздерTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("бар", "барыптырсыздарбы")]
     [InlineData("иште", "иштептирсиздерби")]
@@ -62,8 +61,8 @@ public class PastSuddenСиздерTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
-    
+
+
     [Theory]
     [InlineData("бар", "барбаптырсыздарбы")]
     [InlineData("иште", "иштебептирсиздерби")]

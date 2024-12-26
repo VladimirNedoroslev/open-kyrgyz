@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.PresentContinuous;
+using OpenKyrgyz.Core.Verbs.Tenses.PresentContinuous;
 
 namespace UnitTests.Tenses.PresentContinuous;
 

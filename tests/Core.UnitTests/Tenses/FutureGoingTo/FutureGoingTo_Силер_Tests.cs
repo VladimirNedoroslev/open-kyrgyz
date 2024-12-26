@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.FutureGoingTo;
+using OpenKyrgyz.Core.Verbs.Tenses.FutureGoingTo;
 
 namespace UnitTests.Tenses.FutureGoingTo;
 
@@ -30,7 +30,7 @@ public class PresentContinuousСилерTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("бол", "болгону жатасыңарбы")]
     [InlineData("иште", "иштегени жатасыңарбы")]
@@ -55,5 +55,4 @@ public class PresentContinuousСилерTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
 }

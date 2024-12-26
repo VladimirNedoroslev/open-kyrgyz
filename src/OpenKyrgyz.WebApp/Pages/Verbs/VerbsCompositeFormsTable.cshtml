@@ -1,0 +1,84 @@
+@model OpenKyrgyz.WebApp.Pages.Verbs.Models.VerbCompositeFormTableViewModel
+
+@if (Model is not null)
+{
+    <h4>@Model.FormName</h4>
+    <table class="table table-hover table-sm">
+        <thead>
+        <tr>
+            <th scope="col">Местоимение</th>
+            <th scope="col">Утверждение</th>
+            @if (Model.NegativeForm is not null)
+            {
+                <th scope="col">Отрицание</th>
+            }
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><b>Мен</b></td>
+            <td>@Model.PositiveForm.Мен</td>
+            @if (Model.NegativeForm is not null)
+            {
+                <td>@Model.NegativeForm.Мен</td>
+            }
+        </tr>
+        <tr>
+            <td><b>Сен</b></td>
+            <td>@Model.PositiveForm.Сен</td>
+            @if (Model.NegativeForm is not null)
+            {
+                <td>@Model.NegativeForm.Сен</td>
+            }
+        </tr>
+        <tr>
+            <td><b>Сиз</b></td>
+            <td>@Model.PositiveForm.Сиз</td>
+            @if (Model.NegativeForm is not null)
+            {
+                <td>@Model.NegativeForm.Сиз</td>
+            }
+        </tr>
+        <tr>
+            <td><b>Ал</b></td>
+            <td>@Model.PositiveForm.Ал</td>
+            @if (Model.NegativeForm is not null)
+            {
+                <td>@Model.NegativeForm.Ал</td>
+            }
+        </tr>
+        <tr>
+            <td><b>Биз</b></td>
+            <td>@Model.PositiveForm.Биз</td>
+            @if (Model.NegativeForm is not null)
+            {
+                <td>@Model.NegativeForm.Биз</td>
+            }
+        </tr>
+        <tr>
+            <td><b>Силер</b></td>
+            <td>@Model.PositiveForm.Силер</td>
+            @if (Model.NegativeForm is not null)
+            {
+                <td>@Model.NegativeForm.Силер</td>
+            }
+        </tr>
+        <tr>
+            <td><b>Сиздер</b></td>
+            <td>@Model.PositiveForm.Сиздер</td>
+            @if (Model.NegativeForm is not null)
+            {
+                <td>@Model.NegativeForm.Сиздер</td>
+            }
+        </tr>
+        <tr>
+            <td><b>Алар</b></td>
+            <td>@Model.PositiveForm.Алар</td>
+            @if (Model.NegativeForm is not null)
+            {
+                <td>@Model.NegativeForm.Алар</td>
+            }
+        </tr>
+        </tbody>
+    </table>
+}

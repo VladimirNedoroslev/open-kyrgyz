@@ -58,5 +58,4 @@ public static class NegativeEnding
         var lastLetterType = verb.GetLastLetterType();
         return Mapping[vowelGroup][lastLetterType];
     }
-    
 }

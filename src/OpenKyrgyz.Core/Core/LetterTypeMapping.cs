@@ -62,7 +62,7 @@ public static partial class LetterTypeMapping
     {
         return Mappings[c];
     }
-    
+
     [GeneratedRegex("^[БГДЖЗЙКЛМНҢПРСТФХЦЧШЩбгджзйклмнңпрстфхцчшщ]+$")]
     public static partial Regex OnlyConsonantsRegex();
 }

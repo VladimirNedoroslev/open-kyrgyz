@@ -18,11 +18,11 @@ public class PossessiveАлАлар
         var lastLetterType = word.GetLastLetterType();
         if (lastLetterType == LetterTypeEnum.Vowel)
         {
-            return word + PossessiveАлVowelEndingAffix + алEnding;
+            return УаойReplacer.Replace(word + PossessiveАлVowelEndingAffix + алEnding);
         }
 
         word = word.HarmonizeEndingIfNecessary();
 
-        return word + алEnding;
+        return УаойReplacer.Replace(word + алEnding);
     }
 }

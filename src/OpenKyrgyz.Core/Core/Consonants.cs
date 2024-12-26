@@ -10,12 +10,13 @@ public static class Consonants
         { 'п', 'б' },
     };
 
-    
+
     private static readonly Dictionary<char, char> ReverseConsonantTransforms = new()
     {
         { 'г', 'к' },
         { 'б', 'п' },
     };
+
     // TODO: rewrite with Span
     public static string HarmonizeEndingIfNecessary(this string verb)
     {
@@ -31,7 +32,7 @@ public static class Consonants
 
         return verb;
     }
-    
+
     public static string UnHarmonizeVerbEndingIfNecessary(this string verb)
     {
         if (string.IsNullOrWhiteSpace(verb))

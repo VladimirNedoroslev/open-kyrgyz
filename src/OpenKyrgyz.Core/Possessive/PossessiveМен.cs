@@ -16,7 +16,8 @@ public class PossessiveМен
         var lastLetterType = word.GetLastLetterType();
         if (lastLetterType is LetterTypeEnum.Vowel)
             return word + PossessiveМенAffix;
+
         word = word.HarmonizeEndingIfNecessary();
-        return word + ЫиуүLinkingLetter.GetLinkingChar(vowelGroup) + PossessiveМенAffix;
+        return УаойReplacer.Replace(word + ЫиуүLinkingLetter.GetLinkingChar(vowelGroup) + PossessiveМенAffix);
     }
 }

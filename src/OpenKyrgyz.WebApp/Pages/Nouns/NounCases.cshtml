@@ -1,7 +1,7 @@
 @page "/cases/{noun}"
-@model VerbConjugationsPage
+@model NounCasesPage
 @{
-    ViewData["Title"] = $"Склонение слова {Model.Verb}";
+    ViewData["Title"] = $"Склонение слова {Model.Noun}";
     var errorMessage = TempData["ErrorMessage"] as string;
 }
 
@@ -9,9 +9,9 @@
 <p></p>
 
 <form method="post">
-    <label asp-for="Verb">Введите глагол:</label>
+    <label asp-for="Noun">Введите существительное:</label>
     <div class="input-group">
-        <input type="text" class="form-control" asp-for="Verb" required/>
+        <input type="text" class="form-control" asp-for="Noun" required/>
         <div class="input-group-prepend">
             <button type="button" id="addObutton" class="btn btn-secondary">Ө</button>
             <button type="button" id="addYbutton" class="btn btn-secondary">Ү</button>
@@ -36,38 +36,24 @@
     });
 
     function appendCharacterToInput(char) {
-        const input = document.getElementById('Verb');
+        const input = document.getElementById('Noun');
         input.value += char;
     }
 
 </script>
-@if (!string.IsNullOrWhiteSpace(Model.Verb) && Model.ModelState.IsValid)
+@if (!string.IsNullOrWhiteSpace(Model.Noun) && Model.ModelState.IsValid)
 {
-    <h2>Спряжение для глагола "@Model.Verb"</h2>
-
-    <p><i>
+    <h2>Склонение для слова "@Model.Noun"</h2>
+    <p>
+        <i>
             Все формы генерируются алгоритмически.
-            <br/>
-            В данный момент семантической проверки нет, поэтому некоторые формы могут не иметь смысла
         </i>
     </p>
-
-
-    <partial name="VerbForms" model="Model.AllVerbForms"/>
-
-    <partial name="VerbsImperativesTable" model="Model.AllConjugations.ImperativeConjugations"/>
-
-    <partial name="VerbsConjugationTable" model="Model.AllConjugations.PresentAndFutureConjugations"/>
-    <partial name="VerbsConjugationTable" model="Model.AllConjugations.PresentContinuousConjugations"/>
-    <partial name="VerbsConjugationTable" model="Model.AllConjugations.FutureGoingToConjugations"/>
-    <partial name="VerbsConjugationTable" model="Model.AllConjugations.FutureProbableConjugations"/>
-
-    <partial name="VerbsConjugationTable" model="Model.AllConjugations.PastDefiniteConjugations"/>
-    <partial name="VerbsConjugationTable" model="Model.AllConjugations.PastIndefiniteConjugations"/>
-    <partial name="VerbsConjugationTable" model="Model.AllConjugations.PastSuddenConjugations"/>
-    <partial name="VerbsConjugationTable" model="Model.AllConjugations.PastUsedToConjugations"/>
-
-    <partial name="VerbsConjugationTable" model="Model.AllConjugations.ConditionalConjugations"/>
-    <partial name="VerbsConjugationTable" model="Model.AllConjugations.IntentionConjugations"/>
+    
+    <partial name="NounDeclensionsTable" model="Model.NounDeclinedInAllCasesTable"/>
+    <partial name="NounDeclensionsWithPossessiveTable" model="Model.Singular"/>
+    <partial name="NounDeclensionsWithPossessiveTable" model="Model.Plural"/>
 }
+
+
 

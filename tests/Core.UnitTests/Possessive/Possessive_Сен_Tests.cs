@@ -7,6 +7,7 @@ public class PossessiveСенTests
 {
     [Theory]
     [InlineData("апа", "апаң")]
+    [InlineData("ой", "оюң")]
     [InlineData("дос", "досуң")]
     [InlineData("ини", "иниң")]
     [InlineData("сүрөт", "сүрөтүң")]

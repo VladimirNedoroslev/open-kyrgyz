@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.FutureProbable;
+using OpenKyrgyz.Core.Verbs.Tenses.FutureProbable;
 
 namespace UnitTests.Tenses.FutureProbable;
 
@@ -24,8 +24,8 @@ public class FutureProbableАларTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
-    
+
+
     [Theory]
     [InlineData("бар", "барышпас")]
     [InlineData("иште", "иштешпес")]
@@ -39,11 +39,11 @@ public class FutureProbableАларTests
     {
         // act
         var actualResult = FutureProbableConjugator.Conjugate(verb, PronounEnum.Алар, VerbFormEnum.Negative);
-    
+
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("бар", "барышарбы")]
     [InlineData("иште", "иштешерби")]
@@ -62,7 +62,7 @@ public class FutureProbableАларTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("бар", "барышпаспы")]
     [InlineData("иште", "иштешпеспи")]
@@ -76,7 +76,7 @@ public class FutureProbableАларTests
     {
         // act
         var actualResult = FutureProbableConjugator.Conjugate(verb, PronounEnum.Алар, VerbFormEnum.NegativeAndInterrogative);
-    
+
         // assert
         actualResult.Should().Be(expectedResult);
     }

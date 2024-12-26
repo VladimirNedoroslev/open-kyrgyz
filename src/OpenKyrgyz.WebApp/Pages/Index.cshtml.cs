@@ -7,6 +7,6 @@ public class IndexModel : PageModel
 {
     public IActionResult OnGet()
     {
-        return RedirectToPage("VerbConjugationsInput");
+        return RedirectToPage("/Verbs/VerbConjugationsInput");
     }
 }

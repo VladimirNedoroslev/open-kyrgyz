@@ -1,4 +1,5 @@
-using OpenKyrgyz.Core.Tenses;
+using OpenKyrgyz.Core.Cases;
+using OpenKyrgyz.Core.Verbs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ if (builder.Environment.IsDevelopment())
 
 services.AddResponseCaching();
 services.AddSingleton<VerbByTenseConjugator>();
+services.AddSingleton<NounDecliner>();
 
 var app = builder.Build();
 

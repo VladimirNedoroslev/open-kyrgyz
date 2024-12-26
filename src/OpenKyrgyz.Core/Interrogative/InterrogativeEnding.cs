@@ -8,7 +8,7 @@ public static class InterrogativeEnding
     private static readonly Dictionary<VowelGroupEnum, Dictionary<LetterTypeEnum, InterrogativeAffix>> Mapping = new()
     {
         {
-            VowelGroupEnum.а_я_ы, new Dictionary<LetterTypeEnum,InterrogativeAffix >
+            VowelGroupEnum.а_я_ы, new Dictionary<LetterTypeEnum, InterrogativeAffix>
             {
                 { LetterTypeEnum.Vowel, InterrogativeAffix.Бы },
                 { LetterTypeEnum.VoicedConsonant, InterrogativeAffix.Бы },
@@ -44,7 +44,7 @@ public static class InterrogativeEnding
             {
                 { LetterTypeEnum.Vowel, InterrogativeAffix.Бү },
                 { LetterTypeEnum.VoicedConsonant, InterrogativeAffix.Бү },
-                { LetterTypeEnum.VoicelessConsonant, InterrogativeAffix.Пү},
+                { LetterTypeEnum.VoicelessConsonant, InterrogativeAffix.Пү },
             }
         }
     };

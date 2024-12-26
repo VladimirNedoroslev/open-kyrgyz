@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.PresentContinuous;
+using OpenKyrgyz.Core.Verbs.Tenses.PresentContinuous;
 
 namespace UnitTests.Tenses.PresentContinuous;
 
@@ -29,6 +29,7 @@ public class PresentContinuousСизTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
+
     [Theory]
     [InlineData("бол", "болбой жатасыз")]
     [InlineData("иште", "иштебей жатасыз")]

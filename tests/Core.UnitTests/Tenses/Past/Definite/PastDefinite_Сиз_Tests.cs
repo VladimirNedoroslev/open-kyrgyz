@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.PastDefinite;
+using OpenKyrgyz.Core.Verbs.Tenses.PastDefinite;
 
 namespace UnitTests.Tenses.Past.Definite;
 

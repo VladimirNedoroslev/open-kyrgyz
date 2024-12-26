@@ -1,5 +1,5 @@
 using FluentAssertions;
-using OpenKyrgyz.Core.Forms;
+using OpenKyrgyz.Core.Verbs.Forms;
 
 namespace UnitTests.Forms.Noun;
 
@@ -57,7 +57,7 @@ public class VerbToNounFormTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("кел", "келүү")]
     [InlineData("көн", "көнүү")]
@@ -93,7 +93,7 @@ public class VerbToNounFormTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("байка", "байкоо")]
     [InlineData("чурка", "чуркоо")]
@@ -118,13 +118,12 @@ public class VerbToNounFormTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("изилде", "изилдөө")]
     [InlineData("бийле", "бийлөө")]
     [InlineData("иште", "иштөө")]
     [InlineData("эсепте", "эсептөө")]
-   
     public void ToNounForm_өө(string verb, string expectedResult)
     {
         // act
@@ -133,5 +132,4 @@ public class VerbToNounFormTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
 }

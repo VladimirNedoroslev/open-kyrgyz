@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.WithDifferentNegative.Intention;
+using OpenKyrgyz.Core.Verbs.Tenses.WithDifferentNegative.Intention;
 
 namespace UnitTests.Tenses.Intention;
 

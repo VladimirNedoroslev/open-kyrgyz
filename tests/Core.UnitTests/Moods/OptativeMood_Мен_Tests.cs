@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Moods;
+using OpenKyrgyz.Core.Verbs.Moods;
 
 namespace UnitTests.Moods;
 
@@ -24,11 +24,11 @@ public class OptativeMoodМенTests
     public void OptativeMoodМен_Tests_Positive(string verb, string expectedResult)
     {
         var actualResult = OptativeMood.GetForМен(verb, VerbFormEnum.Positive);
-    
+
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("кыл", "кылбайын")]
     [InlineData("ташта", "таштабайын")]
@@ -47,11 +47,11 @@ public class OptativeMoodМенTests
     public void OptativeMoodМен_Tests_Negative(string verb, string expectedResult)
     {
         var actualResult = OptativeMood.GetForМен(verb, VerbFormEnum.Negative);
-    
+
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("кыл", "кылайынбы")]
     [InlineData("ташта", "таштайынбы")]
@@ -70,11 +70,11 @@ public class OptativeMoodМенTests
     public void OptativeMoodМен_Tests_Interrogative(string verb, string expectedResult)
     {
         var actualResult = OptativeMood.GetForМен(verb, VerbFormEnum.Interrogative);
-    
+
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("кыл", "кылбайынбы")]
     [InlineData("ташта", "таштабайынбы")]
@@ -93,7 +93,7 @@ public class OptativeMoodМенTests
     public void OptativeMoodМен_Tests_NegativeInterrogative(string verb, string expectedResult)
     {
         var actualResult = OptativeMood.GetForМен(verb, VerbFormEnum.NegativeAndInterrogative);
-    
+
         // assert
         actualResult.Should().Be(expectedResult);
     }

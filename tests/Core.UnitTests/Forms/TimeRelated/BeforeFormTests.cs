@@ -1,19 +1,19 @@
 using FluentAssertions;
-using OpenKyrgyz.Core.Forms.TimeRelated;
+using OpenKyrgyz.Core.Verbs.Forms.TimeRelated;
 
 namespace UnitTests.Forms.TimeRelated;
 
 public class BeforeFormTests
 {
     [Theory]
-    [InlineData("кыл","кылганга чейин")]
-    [InlineData("ташта","таштаганга чейин")]
-    [InlineData("айт","айтканга чейин")]
-    [InlineData("изилде","изилдегенге чейин")]
-    [InlineData("кет","кеткенге чейин")]
-    [InlineData("ойло","ойлогонго чейин")]
-    [InlineData("күй","күйгөнгө чейин")]
-    [InlineData("түш","түшкөнгө чейин")]
+    [InlineData("кыл", "кылганга чейин")]
+    [InlineData("ташта", "таштаганга чейин")]
+    [InlineData("айт", "айтканга чейин")]
+    [InlineData("изилде", "изилдегенге чейин")]
+    [InlineData("кет", "кеткенге чейин")]
+    [InlineData("ойло", "ойлогонго чейин")]
+    [InlineData("күй", "күйгөнгө чейин")]
+    [InlineData("түш", "түшкөнгө чейин")]
     public void BeforeForm_Tests(string verb, string expectedResult)
     {
         var actualResult = BeforeForm.Get(verb);

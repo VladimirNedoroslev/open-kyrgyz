@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.Conditional;
+using OpenKyrgyz.Core.Verbs.Tenses.Conditional;
 
 namespace UnitTests.Tenses.Conditional;
 
@@ -18,7 +18,7 @@ public class ConditionalМенTests
     public void Conditional_Мен_Positive(string verb, string expectedResult)
     {
         // act
-        var actualResult = ConditionalConjugator.Conjugate(verb, PronounEnum.Мен,VerbFormEnum.Positive);
+        var actualResult = ConditionalConjugator.Conjugate(verb, PronounEnum.Мен, VerbFormEnum.Positive);
 
         // assert
         actualResult.Should().Be(expectedResult);

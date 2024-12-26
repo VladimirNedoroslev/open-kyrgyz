@@ -19,4 +19,20 @@ public static class PossessiveExtensions
             _ => throw new ArgumentOutOfRangeException(nameof(pronoun), pronoun, null)
         };
     }
+
+    public static string GetPossessivePronoun(this PronounEnum pronounEnum)
+    {
+        return pronounEnum switch
+        {
+            PronounEnum.Мен => "Менин",
+            PronounEnum.Сен => "Сенин",
+            PronounEnum.Сиз => "Сиздин",
+            PronounEnum.Ал => "Анын",
+            PronounEnum.Биз => "Биздин",
+            PronounEnum.Силер => "Силердин",
+            PronounEnum.Сиздер => "Сиздердин",
+            PronounEnum.Алар => "Алардын",
+            _ => throw new ArgumentOutOfRangeException(nameof(pronounEnum), pronounEnum, null)
+        };
+    }
 }

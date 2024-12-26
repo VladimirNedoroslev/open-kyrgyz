@@ -1,5 +1,5 @@
 using FluentAssertions;
-using OpenKyrgyz.Core.Tenses.Imperative;
+using OpenKyrgyz.Core.Verbs.Tenses.Imperative;
 
 namespace UnitTests.Tenses.Imperative;
 
@@ -30,6 +30,7 @@ public class ImperativeСизTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
+
     [Theory]
     [InlineData("бол", "болбоңуз")]
     [InlineData("иште", "иштебеңиз")]

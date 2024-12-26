@@ -7,6 +7,7 @@ public class PossessiveСизTests
 {
     [Theory]
     [InlineData("апа", "апаңыз")]
+    [InlineData("ой", "оюңуз")]
     [InlineData("дос", "досуңуз")]
     [InlineData("ини", "иниңиз")]
     [InlineData("сүрөт", "сүрөтүңүз")]

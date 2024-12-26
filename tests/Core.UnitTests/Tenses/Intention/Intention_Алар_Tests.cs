@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.WithDifferentNegative.Intention;
+using OpenKyrgyz.Core.Verbs.Tenses.WithDifferentNegative.Intention;
 
 namespace UnitTests.Tenses.Intention;
 
@@ -23,7 +23,7 @@ public class IntentionАларTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("бар", "барышмак эмес")]
     [InlineData("иште", "иштешмек эмес")]
@@ -41,7 +41,7 @@ public class IntentionАларTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("бар", "барышмакпы")]
     [InlineData("иште", "иштешмекпи")]
@@ -59,8 +59,8 @@ public class IntentionАларTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
-    
+
+
     [Theory]
     [InlineData("бар", "барышмак эмеспи")]
     [InlineData("иште", "иштешмек эмеспи")]

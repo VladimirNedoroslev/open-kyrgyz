@@ -5,10 +5,9 @@ namespace UnitTests.Possessive;
 
 public class PossessiveАлАларTests
 {
-
-
     [Theory]
     [InlineData("апа", "апасы")]
+    [InlineData("ой", "ою")]
     [InlineData("дос", "досу")]
     [InlineData("ини", "иниси")]
     [InlineData("сүрөт", "сүрөтү")]

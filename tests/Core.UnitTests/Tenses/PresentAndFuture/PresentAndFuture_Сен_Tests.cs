@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.PresentAndFutureSimple;
+using OpenKyrgyz.Core.Verbs.Tenses.PresentAndFutureSimple;
 
 namespace UnitTests.Tenses.PresentAndFuture;
 

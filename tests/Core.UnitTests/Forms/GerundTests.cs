@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Forms;
+using OpenKyrgyz.Core.Verbs.Forms;
 
 namespace UnitTests.Forms;
 
@@ -27,8 +27,8 @@ public class GerundTests
         // assert
         actualResult.Should().Be(expectedResult);
     }
-    
-    
+
+
     [Theory]
     [InlineData("иште", "иштебей")]
     [InlineData("отур", "отурбай")]

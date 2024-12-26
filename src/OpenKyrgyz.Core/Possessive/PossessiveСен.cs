@@ -17,6 +17,6 @@ public class PossessiveСен
         if (lastLetterType is LetterTypeEnum.Vowel)
             return word + PossessiveСенAffix;
         word = word.HarmonizeEndingIfNecessary();
-        return word + ЫиуүLinkingLetter.GetLinkingChar(vowelGroup) + PossessiveСенAffix;
+        return УаойReplacer.Replace(word + ЫиуүLinkingLetter.GetLinkingChar(vowelGroup) + PossessiveСенAffix);
     }
 }

@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.FutureGoingTo;
+using OpenKyrgyz.Core.Verbs.Tenses.FutureGoingTo;
 
 namespace UnitTests.Tenses.FutureGoingTo;
 

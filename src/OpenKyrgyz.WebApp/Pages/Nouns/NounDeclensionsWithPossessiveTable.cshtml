@@ -1,0 +1,34 @@
+@using OpenKyrgyz.Core.Possessive
+@model OpenKyrgyz.WebApp.Pages.Nouns.Models.NounDeclinedInAllCasesWithPossessiveViewModel
+
+@if (Model is not null)
+{
+    <h4>@Model.Name</h4>
+    <table class="table table-hover table-sm">
+        <thead>
+        <tr>
+            <th scope="col">Местоимение</th>
+            <th scope="col">Атооч</th>
+            <th scope="col">Илик</th>
+            <th scope="col">Барыш</th>
+            <th scope="col">Жатыш</th>
+            <th scope="col">Табыш</th>
+            <th scope="col">Чыгыш</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var dto in Model.NounDeclinedInAllCasesWithPossessive)
+        {
+            <tr>
+                <td><b>@dto.PronounEnum!.Value.GetPossessivePronoun()</b></td>
+                <td>@dto.Атооч</td>
+                <td>@dto.Илик</td>
+                <td>@dto.Барыш</td>
+                <td>@dto.Жатыш</td>
+                <td>@dto.Табыш</td>
+                <td>@dto.Чыгыш</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

@@ -1,5 +1,5 @@
 using FluentAssertions;
-using OpenKyrgyz.Core.Moods;
+using OpenKyrgyz.Core.Verbs.Moods;
 
 namespace UnitTests.Moods;
 

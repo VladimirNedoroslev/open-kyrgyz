@@ -1,6 +1,6 @@
 using FluentAssertions;
 using OpenKyrgyz.Core.Enums;
-using OpenKyrgyz.Core.Tenses.PastDefinite;
+using OpenKyrgyz.Core.Verbs.Tenses.PastDefinite;
 
 namespace UnitTests.Tenses.Past.Definite;
 
@@ -18,7 +18,7 @@ public class PastDefiniteСенTests
     public void PastDefinite_Сен_Positive(string verb, string expectedResult)
     {
         // act
-        var actualResult = PastDefiniteTenseConjugator.Conjugate(verb, PronounEnum.Сен,VerbFormEnum.Positive);
+        var actualResult = PastDefiniteTenseConjugator.Conjugate(verb, PronounEnum.Сен, VerbFormEnum.Positive);
 
         // assert
         actualResult.Should().Be(expectedResult);

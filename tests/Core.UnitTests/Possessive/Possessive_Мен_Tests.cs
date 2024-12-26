@@ -7,6 +7,7 @@ public class PossessiveМенTests
 {
     [Theory]
     [InlineData("апа", "апам")]
+    [InlineData("ой", "оюм")]
     [InlineData("дос", "досум")]
     [InlineData("ини", "иним")]
     [InlineData("сүрөт", "сүрөтүм")]
